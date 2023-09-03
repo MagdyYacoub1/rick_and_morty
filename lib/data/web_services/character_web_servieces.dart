@@ -23,7 +23,7 @@ class CharactersWebServices {
       return response.data;
     } catch (e) {
       Log.debug(e);
-      return [];
+      return Future.error(e);
     }
   }
 }
