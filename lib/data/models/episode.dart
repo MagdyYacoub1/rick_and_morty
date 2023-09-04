@@ -9,11 +9,11 @@ part 'episode.g.dart';
 class Episode with _$Episode {
   @JsonSerializable(explicitToJson: true)
   const factory Episode({
-    required int id,
-    required String name,
-    required String airDate,
-    required String episode,
-    required List<Character> characters,
+    @JsonKey(name: 'id') required int id,
+    @JsonKey(name: 'name') required String name,
+    @JsonKey(name: 'air_date') required String airDate,
+    @JsonKey(name: 'episode') required String episode,
+    @JsonKey(name: 'characters') required List<Character> characters,
   }) = _Episode;
 
   factory Episode.fromJson(Map<String, dynamic> json) =>

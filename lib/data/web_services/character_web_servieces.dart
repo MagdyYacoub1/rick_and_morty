@@ -16,7 +16,7 @@ class CharactersWebServices {
     dio = Dio(baseOptions);
   }
 
-  Future<List<dynamic>> getAllCharacters() async {
+  Future<Map<String, dynamic>> getAllCharacters() async {
     try {
       Response response = await dio.get('character');
       Log.debug(response.data);

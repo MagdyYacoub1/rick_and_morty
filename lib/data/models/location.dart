@@ -9,11 +9,11 @@ part 'location.g.dart';
 class Location with _$Location {
   @JsonSerializable(explicitToJson: true)
   const factory Location({
-    required int id,
-    required String name,
-    required String type,
-    required String dimension,
-    required List<Character> residents,
+    @JsonKey(name: 'id') required int id,
+    @JsonKey(name: 'name') required String name,
+    @JsonKey(name: 'type') required String type,
+    @JsonKey(name: 'dimension') required String dimension,
+    @JsonKey(name: 'residents') required List<Character> residents,
   }) = _Location;
   factory Location.fromJson(Map<String, dynamic> json) =>
       _$LocationFromJson(json);

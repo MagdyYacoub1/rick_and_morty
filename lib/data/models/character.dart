@@ -10,16 +10,16 @@ part 'character.g.dart';
 class Character with _$Character {
   @JsonSerializable(explicitToJson: true)
   const factory Character({
-    required int id,
-    required String name,
-    required String species,
-    required String type,
-    required String gender,
-    required Location origin,
-    required Location location,
-    required String image,
-    required String status,
-    required List<int> appearance,
+    @JsonKey(name: 'id') required int id,
+    @JsonKey(name: 'name') required String name,
+    @JsonKey(name: 'species') required String species,
+    @JsonKey(name: 'type') required String type,
+    @JsonKey(name: 'gender') required String gender,
+    @JsonKey(name: 'origin') required Location origin,
+    @JsonKey(name: 'location') required Location location,
+    @JsonKey(name: 'image') required String image,
+    @JsonKey(name: 'status') required String status,
+    @JsonKey(name: 'episode') required List<String> appearance,
   }) = _Character;
 
   factory Character.fromJson(Map<String, dynamic> json) =>

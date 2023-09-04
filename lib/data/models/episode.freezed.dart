@@ -20,10 +20,15 @@ Episode _$EpisodeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Episode {
+  @JsonKey(name: 'id')
   int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'name')
   String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'air_date')
   String get airDate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'episode')
   String get episode => throw _privateConstructorUsedError;
+  @JsonKey(name: 'characters')
   List<Character> get characters => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -37,11 +42,11 @@ abstract class $EpisodeCopyWith<$Res> {
       _$EpisodeCopyWithImpl<$Res, Episode>;
   @useResult
   $Res call(
-      {int id,
-      String name,
-      String airDate,
-      String episode,
-      List<Character> characters});
+      {@JsonKey(name: 'id') int id,
+      @JsonKey(name: 'name') String name,
+      @JsonKey(name: 'air_date') String airDate,
+      @JsonKey(name: 'episode') String episode,
+      @JsonKey(name: 'characters') List<Character> characters});
 }
 
 /// @nodoc
@@ -96,11 +101,11 @@ abstract class _$$_EpisodeCopyWith<$Res> implements $EpisodeCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
-      String name,
-      String airDate,
-      String episode,
-      List<Character> characters});
+      {@JsonKey(name: 'id') int id,
+      @JsonKey(name: 'name') String name,
+      @JsonKey(name: 'air_date') String airDate,
+      @JsonKey(name: 'episode') String episode,
+      @JsonKey(name: 'characters') List<Character> characters});
 }
 
 /// @nodoc
@@ -149,26 +154,31 @@ class __$$_EpisodeCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true)
 class _$_Episode with DiagnosticableTreeMixin implements _Episode {
   const _$_Episode(
-      {required this.id,
-      required this.name,
-      required this.airDate,
-      required this.episode,
-      required final List<Character> characters})
+      {@JsonKey(name: 'id') required this.id,
+      @JsonKey(name: 'name') required this.name,
+      @JsonKey(name: 'air_date') required this.airDate,
+      @JsonKey(name: 'episode') required this.episode,
+      @JsonKey(name: 'characters') required final List<Character> characters})
       : _characters = characters;
 
   factory _$_Episode.fromJson(Map<String, dynamic> json) =>
       _$$_EpisodeFromJson(json);
 
   @override
+  @JsonKey(name: 'id')
   final int id;
   @override
+  @JsonKey(name: 'name')
   final String name;
   @override
+  @JsonKey(name: 'air_date')
   final String airDate;
   @override
+  @JsonKey(name: 'episode')
   final String episode;
   final List<Character> _characters;
   @override
+  @JsonKey(name: 'characters')
   List<Character> get characters {
     if (_characters is EqualUnmodifiableListView) return _characters;
     // ignore: implicit_dynamic_type
@@ -226,23 +236,29 @@ class _$_Episode with DiagnosticableTreeMixin implements _Episode {
 
 abstract class _Episode implements Episode {
   const factory _Episode(
-      {required final int id,
-      required final String name,
-      required final String airDate,
-      required final String episode,
+      {@JsonKey(name: 'id') required final int id,
+      @JsonKey(name: 'name') required final String name,
+      @JsonKey(name: 'air_date') required final String airDate,
+      @JsonKey(name: 'episode') required final String episode,
+      @JsonKey(name: 'characters')
       required final List<Character> characters}) = _$_Episode;
 
   factory _Episode.fromJson(Map<String, dynamic> json) = _$_Episode.fromJson;
 
   @override
+  @JsonKey(name: 'id')
   int get id;
   @override
+  @JsonKey(name: 'name')
   String get name;
   @override
+  @JsonKey(name: 'air_date')
   String get airDate;
   @override
+  @JsonKey(name: 'episode')
   String get episode;
   @override
+  @JsonKey(name: 'characters')
   List<Character> get characters;
   @override
   @JsonKey(ignore: true)

@@ -20,10 +20,15 @@ Location _$LocationFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Location {
+  @JsonKey(name: 'id')
   int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'name')
   String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'type')
   String get type => throw _privateConstructorUsedError;
+  @JsonKey(name: 'dimension')
   String get dimension => throw _privateConstructorUsedError;
+  @JsonKey(name: 'residents')
   List<Character> get residents => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,11 +43,11 @@ abstract class $LocationCopyWith<$Res> {
       _$LocationCopyWithImpl<$Res, Location>;
   @useResult
   $Res call(
-      {int id,
-      String name,
-      String type,
-      String dimension,
-      List<Character> residents});
+      {@JsonKey(name: 'id') int id,
+      @JsonKey(name: 'name') String name,
+      @JsonKey(name: 'type') String type,
+      @JsonKey(name: 'dimension') String dimension,
+      @JsonKey(name: 'residents') List<Character> residents});
 }
 
 /// @nodoc
@@ -97,11 +102,11 @@ abstract class _$$_LocationCopyWith<$Res> implements $LocationCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
-      String name,
-      String type,
-      String dimension,
-      List<Character> residents});
+      {@JsonKey(name: 'id') int id,
+      @JsonKey(name: 'name') String name,
+      @JsonKey(name: 'type') String type,
+      @JsonKey(name: 'dimension') String dimension,
+      @JsonKey(name: 'residents') List<Character> residents});
 }
 
 /// @nodoc
@@ -151,26 +156,31 @@ class __$$_LocationCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true)
 class _$_Location with DiagnosticableTreeMixin implements _Location {
   const _$_Location(
-      {required this.id,
-      required this.name,
-      required this.type,
-      required this.dimension,
-      required final List<Character> residents})
+      {@JsonKey(name: 'id') required this.id,
+      @JsonKey(name: 'name') required this.name,
+      @JsonKey(name: 'type') required this.type,
+      @JsonKey(name: 'dimension') required this.dimension,
+      @JsonKey(name: 'residents') required final List<Character> residents})
       : _residents = residents;
 
   factory _$_Location.fromJson(Map<String, dynamic> json) =>
       _$$_LocationFromJson(json);
 
   @override
+  @JsonKey(name: 'id')
   final int id;
   @override
+  @JsonKey(name: 'name')
   final String name;
   @override
+  @JsonKey(name: 'type')
   final String type;
   @override
+  @JsonKey(name: 'dimension')
   final String dimension;
   final List<Character> _residents;
   @override
+  @JsonKey(name: 'residents')
   List<Character> get residents {
     if (_residents is EqualUnmodifiableListView) return _residents;
     // ignore: implicit_dynamic_type
@@ -229,23 +239,29 @@ class _$_Location with DiagnosticableTreeMixin implements _Location {
 
 abstract class _Location implements Location {
   const factory _Location(
-      {required final int id,
-      required final String name,
-      required final String type,
-      required final String dimension,
+      {@JsonKey(name: 'id') required final int id,
+      @JsonKey(name: 'name') required final String name,
+      @JsonKey(name: 'type') required final String type,
+      @JsonKey(name: 'dimension') required final String dimension,
+      @JsonKey(name: 'residents')
       required final List<Character> residents}) = _$_Location;
 
   factory _Location.fromJson(Map<String, dynamic> json) = _$_Location.fromJson;
 
   @override
+  @JsonKey(name: 'id')
   int get id;
   @override
+  @JsonKey(name: 'name')
   String get name;
   @override
+  @JsonKey(name: 'type')
   String get type;
   @override
+  @JsonKey(name: 'dimension')
   String get dimension;
   @override
+  @JsonKey(name: 'residents')
   List<Character> get residents;
   @override
   @JsonKey(ignore: true)

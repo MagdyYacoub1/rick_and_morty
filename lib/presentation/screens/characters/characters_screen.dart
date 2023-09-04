@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/buisniss_logic/cubit/characters_cubit.dart';
 import 'package:rick_and_morty/data/models/character.dart';
 
+import 'components/details_box.dart';
+
 class CharactersScreen extends StatefulWidget {
   const CharactersScreen({super.key});
 
@@ -23,9 +25,13 @@ class _CharactersScreenState extends State<CharactersScreen> {
   Widget build(BuildContext context) {
     return const Scaffold(
       //appBar: AppBar(leading: IconButton(onPressed: onPressed, icon: Icons.arrow_back_sharp),),
-      extendBodyBehindAppBar: true,
+      //extendBodyBehindAppBar: true,
       body: Column(
-        children: [],
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          DetailsBox(),
+        ],
       ),
 
       bottomNavigationBar: BottomAppBar(),

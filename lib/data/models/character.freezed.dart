@@ -20,16 +20,26 @@ Character _$CharacterFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Character {
+  @JsonKey(name: 'id')
   int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'name')
   String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'species')
   String get species => throw _privateConstructorUsedError;
+  @JsonKey(name: 'type')
   String get type => throw _privateConstructorUsedError;
+  @JsonKey(name: 'gender')
   String get gender => throw _privateConstructorUsedError;
+  @JsonKey(name: 'origin')
   Location get origin => throw _privateConstructorUsedError;
+  @JsonKey(name: 'location')
   Location get location => throw _privateConstructorUsedError;
+  @JsonKey(name: 'image')
   String get image => throw _privateConstructorUsedError;
+  @JsonKey(name: 'status')
   String get status => throw _privateConstructorUsedError;
-  List<int> get appearance => throw _privateConstructorUsedError;
+  @JsonKey(name: 'episode')
+  List<String> get appearance => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,16 +53,16 @@ abstract class $CharacterCopyWith<$Res> {
       _$CharacterCopyWithImpl<$Res, Character>;
   @useResult
   $Res call(
-      {int id,
-      String name,
-      String species,
-      String type,
-      String gender,
-      Location origin,
-      Location location,
-      String image,
-      String status,
-      List<int> appearance});
+      {@JsonKey(name: 'id') int id,
+      @JsonKey(name: 'name') String name,
+      @JsonKey(name: 'species') String species,
+      @JsonKey(name: 'type') String type,
+      @JsonKey(name: 'gender') String gender,
+      @JsonKey(name: 'origin') Location origin,
+      @JsonKey(name: 'location') Location location,
+      @JsonKey(name: 'image') String image,
+      @JsonKey(name: 'status') String status,
+      @JsonKey(name: 'episode') List<String> appearance});
 
   $LocationCopyWith<$Res> get origin;
   $LocationCopyWith<$Res> get location;
@@ -122,7 +132,7 @@ class _$CharacterCopyWithImpl<$Res, $Val extends Character>
       appearance: null == appearance
           ? _value.appearance
           : appearance // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+              as List<String>,
     ) as $Val);
   }
 
@@ -151,16 +161,16 @@ abstract class _$$_CharacterCopyWith<$Res> implements $CharacterCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
-      String name,
-      String species,
-      String type,
-      String gender,
-      Location origin,
-      Location location,
-      String image,
-      String status,
-      List<int> appearance});
+      {@JsonKey(name: 'id') int id,
+      @JsonKey(name: 'name') String name,
+      @JsonKey(name: 'species') String species,
+      @JsonKey(name: 'type') String type,
+      @JsonKey(name: 'gender') String gender,
+      @JsonKey(name: 'origin') Location origin,
+      @JsonKey(name: 'location') Location location,
+      @JsonKey(name: 'image') String image,
+      @JsonKey(name: 'status') String status,
+      @JsonKey(name: 'episode') List<String> appearance});
 
   @override
   $LocationCopyWith<$Res> get origin;
@@ -230,7 +240,7 @@ class __$$_CharacterCopyWithImpl<$Res>
       appearance: null == appearance
           ? _value._appearance
           : appearance // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+              as List<String>,
     ));
   }
 }
@@ -240,42 +250,52 @@ class __$$_CharacterCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true)
 class _$_Character with DiagnosticableTreeMixin implements _Character {
   const _$_Character(
-      {required this.id,
-      required this.name,
-      required this.species,
-      required this.type,
-      required this.gender,
-      required this.origin,
-      required this.location,
-      required this.image,
-      required this.status,
-      required final List<int> appearance})
+      {@JsonKey(name: 'id') required this.id,
+      @JsonKey(name: 'name') required this.name,
+      @JsonKey(name: 'species') required this.species,
+      @JsonKey(name: 'type') required this.type,
+      @JsonKey(name: 'gender') required this.gender,
+      @JsonKey(name: 'origin') required this.origin,
+      @JsonKey(name: 'location') required this.location,
+      @JsonKey(name: 'image') required this.image,
+      @JsonKey(name: 'status') required this.status,
+      @JsonKey(name: 'episode') required final List<String> appearance})
       : _appearance = appearance;
 
   factory _$_Character.fromJson(Map<String, dynamic> json) =>
       _$$_CharacterFromJson(json);
 
   @override
+  @JsonKey(name: 'id')
   final int id;
   @override
+  @JsonKey(name: 'name')
   final String name;
   @override
+  @JsonKey(name: 'species')
   final String species;
   @override
+  @JsonKey(name: 'type')
   final String type;
   @override
+  @JsonKey(name: 'gender')
   final String gender;
   @override
+  @JsonKey(name: 'origin')
   final Location origin;
   @override
+  @JsonKey(name: 'location')
   final Location location;
   @override
+  @JsonKey(name: 'image')
   final String image;
   @override
+  @JsonKey(name: 'status')
   final String status;
-  final List<int> _appearance;
+  final List<String> _appearance;
   @override
-  List<int> get appearance {
+  @JsonKey(name: 'episode')
+  List<String> get appearance {
     if (_appearance is EqualUnmodifiableListView) return _appearance;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_appearance);
@@ -353,40 +373,51 @@ class _$_Character with DiagnosticableTreeMixin implements _Character {
 
 abstract class _Character implements Character {
   const factory _Character(
-      {required final int id,
-      required final String name,
-      required final String species,
-      required final String type,
-      required final String gender,
-      required final Location origin,
-      required final Location location,
-      required final String image,
-      required final String status,
-      required final List<int> appearance}) = _$_Character;
+          {@JsonKey(name: 'id') required final int id,
+          @JsonKey(name: 'name') required final String name,
+          @JsonKey(name: 'species') required final String species,
+          @JsonKey(name: 'type') required final String type,
+          @JsonKey(name: 'gender') required final String gender,
+          @JsonKey(name: 'origin') required final Location origin,
+          @JsonKey(name: 'location') required final Location location,
+          @JsonKey(name: 'image') required final String image,
+          @JsonKey(name: 'status') required final String status,
+          @JsonKey(name: 'episode') required final List<String> appearance}) =
+      _$_Character;
 
   factory _Character.fromJson(Map<String, dynamic> json) =
       _$_Character.fromJson;
 
   @override
+  @JsonKey(name: 'id')
   int get id;
   @override
+  @JsonKey(name: 'name')
   String get name;
   @override
+  @JsonKey(name: 'species')
   String get species;
   @override
+  @JsonKey(name: 'type')
   String get type;
   @override
+  @JsonKey(name: 'gender')
   String get gender;
   @override
+  @JsonKey(name: 'origin')
   Location get origin;
   @override
+  @JsonKey(name: 'location')
   Location get location;
   @override
+  @JsonKey(name: 'image')
   String get image;
   @override
+  @JsonKey(name: 'status')
   String get status;
   @override
-  List<int> get appearance;
+  @JsonKey(name: 'episode')
+  List<String> get appearance;
   @override
   @JsonKey(ignore: true)
   _$$_CharacterCopyWith<_$_Character> get copyWith =>
