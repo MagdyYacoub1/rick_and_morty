@@ -3,7 +3,7 @@ import 'package:rick_and_morty/constants/helper.dart';
 import 'package:rick_and_morty/constants/stings.dart';
 
 class CharactersWebServices {
-  late Dio dio;
+  late Dio defaultDio;
 
   CharactersWebServices() {
     BaseOptions baseOptions = BaseOptions(
@@ -13,17 +13,19 @@ class CharactersWebServices {
       receiveTimeout: const Duration(seconds: 20),
     );
 
-    dio = Dio(baseOptions);
+    defaultDio = Dio(baseOptions);
   }
 
-  Future<Map<String, dynamic>> getAllCharacters() async {
-    try {
-      Response response = await dio.get('character');
-      Log.debug(response.data);
-      return response.data;
-    } catch (e) {
-      Log.debug(e);
-      return Future.error(e);
-    }
+  Future<dynamic> getCharacters() async {
+    Response response = await defaultDio.get('character');
+    Log.debug(response);
+    return response;
+  }
+
+  Future<dynamic> getMoreCharacters(String url) async {
+    Dio dio = Dio();
+    Response response = await dio.get(url);
+    Log.debug(response);
+    return response;
   }
 }
