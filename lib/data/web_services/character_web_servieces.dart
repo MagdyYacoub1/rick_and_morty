@@ -18,14 +18,12 @@ class CharactersWebServices {
 
   Future<dynamic> getCharacters() async {
     Response response = await defaultDio.get('character');
-    Log.debug(response);
     return response;
   }
 
   Future<dynamic> getMoreCharacters(String url) async {
     Dio dio = Dio();
     Response response = await dio.get(url);
-    Log.debug(response);
     return response;
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../constants/helper.dart';
 
 class AppBlocObserver extends BlocObserver {
@@ -29,7 +30,7 @@ class AppBlocObserver extends BlocObserver {
 
     /// With this we can specifically know, when and what changed in our Bloc
     Log.debug(
-        "There was a transition from ${transition.currentState} to ${transition.nextState}");
+        "There was a transition from ${transition.currentState.runtimeType} to ${transition.nextState.runtimeType}");
   }
 
   ///We can react to errors, and we will know the error and the StackTrace

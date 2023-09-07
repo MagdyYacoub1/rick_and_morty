@@ -31,9 +31,9 @@ mixin _$Character {
   @JsonKey(name: 'gender')
   String get gender => throw _privateConstructorUsedError;
   @JsonKey(name: 'origin')
-  Location get origin => throw _privateConstructorUsedError;
+  CharacterLocation get origin => throw _privateConstructorUsedError;
   @JsonKey(name: 'location')
-  Location get location => throw _privateConstructorUsedError;
+  CharacterLocation get location => throw _privateConstructorUsedError;
   @JsonKey(name: 'image')
   String get image => throw _privateConstructorUsedError;
   @JsonKey(name: 'status')
@@ -58,14 +58,14 @@ abstract class $CharacterCopyWith<$Res> {
       @JsonKey(name: 'species') String species,
       @JsonKey(name: 'type') String type,
       @JsonKey(name: 'gender') String gender,
-      @JsonKey(name: 'origin') Location origin,
-      @JsonKey(name: 'location') Location location,
+      @JsonKey(name: 'origin') CharacterLocation origin,
+      @JsonKey(name: 'location') CharacterLocation location,
       @JsonKey(name: 'image') String image,
       @JsonKey(name: 'status') String status,
       @JsonKey(name: 'episode') List<String> appearance});
 
-  $LocationCopyWith<$Res> get origin;
-  $LocationCopyWith<$Res> get location;
+  $CharacterLocationCopyWith<$Res> get origin;
+  $CharacterLocationCopyWith<$Res> get location;
 }
 
 /// @nodoc
@@ -116,11 +116,11 @@ class _$CharacterCopyWithImpl<$Res, $Val extends Character>
       origin: null == origin
           ? _value.origin
           : origin // ignore: cast_nullable_to_non_nullable
-              as Location,
+              as CharacterLocation,
       location: null == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as Location,
+              as CharacterLocation,
       image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
@@ -138,16 +138,16 @@ class _$CharacterCopyWithImpl<$Res, $Val extends Character>
 
   @override
   @pragma('vm:prefer-inline')
-  $LocationCopyWith<$Res> get origin {
-    return $LocationCopyWith<$Res>(_value.origin, (value) {
+  $CharacterLocationCopyWith<$Res> get origin {
+    return $CharacterLocationCopyWith<$Res>(_value.origin, (value) {
       return _then(_value.copyWith(origin: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $LocationCopyWith<$Res> get location {
-    return $LocationCopyWith<$Res>(_value.location, (value) {
+  $CharacterLocationCopyWith<$Res> get location {
+    return $CharacterLocationCopyWith<$Res>(_value.location, (value) {
       return _then(_value.copyWith(location: value) as $Val);
     });
   }
@@ -166,16 +166,16 @@ abstract class _$$_CharacterCopyWith<$Res> implements $CharacterCopyWith<$Res> {
       @JsonKey(name: 'species') String species,
       @JsonKey(name: 'type') String type,
       @JsonKey(name: 'gender') String gender,
-      @JsonKey(name: 'origin') Location origin,
-      @JsonKey(name: 'location') Location location,
+      @JsonKey(name: 'origin') CharacterLocation origin,
+      @JsonKey(name: 'location') CharacterLocation location,
       @JsonKey(name: 'image') String image,
       @JsonKey(name: 'status') String status,
       @JsonKey(name: 'episode') List<String> appearance});
 
   @override
-  $LocationCopyWith<$Res> get origin;
+  $CharacterLocationCopyWith<$Res> get origin;
   @override
-  $LocationCopyWith<$Res> get location;
+  $CharacterLocationCopyWith<$Res> get location;
 }
 
 /// @nodoc
@@ -224,11 +224,11 @@ class __$$_CharacterCopyWithImpl<$Res>
       origin: null == origin
           ? _value.origin
           : origin // ignore: cast_nullable_to_non_nullable
-              as Location,
+              as CharacterLocation,
       location: null == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as Location,
+              as CharacterLocation,
       image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
@@ -282,10 +282,10 @@ class _$_Character with DiagnosticableTreeMixin implements _Character {
   final String gender;
   @override
   @JsonKey(name: 'origin')
-  final Location origin;
+  final CharacterLocation origin;
   @override
   @JsonKey(name: 'location')
-  final Location location;
+  final CharacterLocation location;
   @override
   @JsonKey(name: 'image')
   final String image;
@@ -378,8 +378,8 @@ abstract class _Character implements Character {
           @JsonKey(name: 'species') required final String species,
           @JsonKey(name: 'type') required final String type,
           @JsonKey(name: 'gender') required final String gender,
-          @JsonKey(name: 'origin') required final Location origin,
-          @JsonKey(name: 'location') required final Location location,
+          @JsonKey(name: 'origin') required final CharacterLocation origin,
+          @JsonKey(name: 'location') required final CharacterLocation location,
           @JsonKey(name: 'image') required final String image,
           @JsonKey(name: 'status') required final String status,
           @JsonKey(name: 'episode') required final List<String> appearance}) =
@@ -405,10 +405,10 @@ abstract class _Character implements Character {
   String get gender;
   @override
   @JsonKey(name: 'origin')
-  Location get origin;
+  CharacterLocation get origin;
   @override
   @JsonKey(name: 'location')
-  Location get location;
+  CharacterLocation get location;
   @override
   @JsonKey(name: 'image')
   String get image;

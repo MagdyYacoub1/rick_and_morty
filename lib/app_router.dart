@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'buisniss_logic/bloc/characters/characters_bloc.dart';
 import 'constants/stings.dart';
 import 'data/repository/characters_repository.dart';
-import 'presentation/screens/characters_details_screen.dart';
 import 'presentation/screens/characters/characters_screen.dart';
+import 'presentation/screens/characters_details_screen.dart';
 
 class AppRouter {
   late CharactersRepository charactersRepository;
@@ -19,7 +20,7 @@ class AppRouter {
       case charactersScreen:
         return MaterialPageRoute(
           builder: (context) => BlocProvider(
-            create: (context) => charactersBloc,
+            create: (context) => charactersBloc..add(const Fetch()),
             child: const CharactersScreen(),
           ),
         );

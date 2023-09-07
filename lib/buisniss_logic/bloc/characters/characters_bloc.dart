@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import '../../../constants/helper.dart';
 import '../../../data/models/api_response.dart';
 import '../../../data/models/character.dart';
 import '../../../data/repository/characters_repository.dart';
@@ -9,40 +10,41 @@ part 'characters_event.dart';
 part 'characters_bloc.freezed.dart';
 
 class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
-  CharactersBloc() : super(const CharactersState.loadInProgress()) {
-    on<CharactersEvent>(event, emit) {
-      event.map(fetch: (_) async => await _fetch(emit));
-    }
+  CharactersBloc() : super(const CharactersState.initial()) {
+    on<Fetch>((event, emit) async => _fetch(emit));
   }
 
   _fetch(Emitter<CharactersState> emit) async {
+    if (state is EndOfList) {
+      return;
+    }
     try {
-      if (state is _endOfList) {
-        return;
-        // emit(_fetched((state as _fetched).charactersRepository));
-      } else if (state is _Initial) {
+      if (state is Initial || state is Faild) {
+        emit(const LoadInProgress());
         CharactersRepository charactersRepository = CharactersRepository();
         ApiResponse<List<Character>> response =
             await charactersRepository.getCharacters();
-        emit(_fetched(response));
+        emit(Fetched(response));
       } else {
-        if ((state as _fetched).apiResponse.info?.next != null) {
+        if ((state as Fetched).apiResponse.info?.next != null) {
           CharactersRepository charactersRepository = CharactersRepository();
           ApiResponse<List<Character>> response = await charactersRepository
-              .getMoreCharacters((state as _fetched).apiResponse.info!.next);
+              .getMoreCharacters((state as Fetched).apiResponse.info!.next!);
           emit(
-            (state as _fetched).copyWith(
+            (state as Fetched).copyWith(
               apiResponse: ApiResponse(
                 info: response.info,
-                data: List.of((state as _fetched).apiResponse.data!)
+                data: List.of((state as Fetched).apiResponse.data!)
                   ..addAll(response.data!),
               ),
             ),
           );
+        } else {
+          emit(const EndOfList());
         }
       }
-    } catch (_) {
-      emit(const _faild());
+    } catch (e) {
+      emit(Faild(e.toString()));
     }
   }
 }

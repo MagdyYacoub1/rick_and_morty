@@ -12,8 +12,10 @@ _$_Character _$$_CharacterFromJson(Map<String, dynamic> json) => _$_Character(
       species: json['species'] as String,
       type: json['type'] as String,
       gender: json['gender'] as String,
-      origin: Location.fromJson(json['origin'] as Map<String, dynamic>),
-      location: Location.fromJson(json['location'] as Map<String, dynamic>),
+      origin:
+          CharacterLocation.fromJson(json['origin'] as Map<String, dynamic>),
+      location:
+          CharacterLocation.fromJson(json['location'] as Map<String, dynamic>),
       image: json['image'] as String,
       status: json['status'] as String,
       appearance:

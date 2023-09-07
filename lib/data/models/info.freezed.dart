@@ -22,8 +22,8 @@ Info _$InfoFromJson(Map<String, dynamic> json) {
 mixin _$Info {
   int get count => throw _privateConstructorUsedError;
   int get pages => throw _privateConstructorUsedError;
-  String get next => throw _privateConstructorUsedError;
-  String get prev => throw _privateConstructorUsedError;
+  String? get next => throw _privateConstructorUsedError;
+  String? get prev => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $InfoCopyWith<$Res> {
   factory $InfoCopyWith(Info value, $Res Function(Info) then) =
       _$InfoCopyWithImpl<$Res, Info>;
   @useResult
-  $Res call({int count, int pages, String next, String prev});
+  $Res call({int count, int pages, String? next, String? prev});
 }
 
 /// @nodoc
@@ -53,8 +53,8 @@ class _$InfoCopyWithImpl<$Res, $Val extends Info>
   $Res call({
     Object? count = null,
     Object? pages = null,
-    Object? next = null,
-    Object? prev = null,
+    Object? next = freezed,
+    Object? prev = freezed,
   }) {
     return _then(_value.copyWith(
       count: null == count
@@ -65,14 +65,14 @@ class _$InfoCopyWithImpl<$Res, $Val extends Info>
           ? _value.pages
           : pages // ignore: cast_nullable_to_non_nullable
               as int,
-      next: null == next
+      next: freezed == next
           ? _value.next
           : next // ignore: cast_nullable_to_non_nullable
-              as String,
-      prev: null == prev
+              as String?,
+      prev: freezed == prev
           ? _value.prev
           : prev // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -83,7 +83,7 @@ abstract class _$$_InfoCopyWith<$Res> implements $InfoCopyWith<$Res> {
       __$$_InfoCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int count, int pages, String next, String prev});
+  $Res call({int count, int pages, String? next, String? prev});
 }
 
 /// @nodoc
@@ -97,8 +97,8 @@ class __$$_InfoCopyWithImpl<$Res> extends _$InfoCopyWithImpl<$Res, _$_Info>
   $Res call({
     Object? count = null,
     Object? pages = null,
-    Object? next = null,
-    Object? prev = null,
+    Object? next = freezed,
+    Object? prev = freezed,
   }) {
     return _then(_$_Info(
       count: null == count
@@ -109,14 +109,14 @@ class __$$_InfoCopyWithImpl<$Res> extends _$InfoCopyWithImpl<$Res, _$_Info>
           ? _value.pages
           : pages // ignore: cast_nullable_to_non_nullable
               as int,
-      next: null == next
+      next: freezed == next
           ? _value.next
           : next // ignore: cast_nullable_to_non_nullable
-              as String,
-      prev: null == prev
+              as String?,
+      prev: freezed == prev
           ? _value.prev
           : prev // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -137,9 +137,9 @@ class _$_Info with DiagnosticableTreeMixin implements _Info {
   @override
   final int pages;
   @override
-  final String next;
+  final String? next;
   @override
-  final String prev;
+  final String? prev;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -190,8 +190,8 @@ abstract class _Info implements Info {
   const factory _Info(
       {required final int count,
       required final int pages,
-      required final String next,
-      required final String prev}) = _$_Info;
+      required final String? next,
+      required final String? prev}) = _$_Info;
 
   factory _Info.fromJson(Map<String, dynamic> json) = _$_Info.fromJson;
 
@@ -200,9 +200,9 @@ abstract class _Info implements Info {
   @override
   int get pages;
   @override
-  String get next;
+  String? get next;
   @override
-  String get prev;
+  String? get prev;
   @override
   @JsonKey(ignore: true)
   _$$_InfoCopyWith<_$_Info> get copyWith => throw _privateConstructorUsedError;

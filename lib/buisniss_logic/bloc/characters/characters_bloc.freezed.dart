@@ -21,9 +21,8 @@ mixin _$CharactersState {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(ApiResponse<List<Character>> apiResponse) fetched,
-    required TResult Function() faild,
-    required TResult Function(ApiResponse<List<Character>> apiResponse)
-        endOfList,
+    required TResult Function(String message) faild,
+    required TResult Function() endOfList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,8 +30,8 @@ mixin _$CharactersState {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult? Function()? faild,
-    TResult? Function(ApiResponse<List<Character>> apiResponse)? endOfList,
+    TResult? Function(String message)? faild,
+    TResult? Function()? endOfList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,36 +39,36 @@ mixin _$CharactersState {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult Function()? faild,
-    TResult Function(ApiResponse<List<Character>> apiResponse)? endOfList,
+    TResult Function(String message)? faild,
+    TResult Function()? endOfList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_fetched value) fetched,
-    required TResult Function(_faild value) faild,
-    required TResult Function(_endOfList value) endOfList,
+    required TResult Function(Initial value) initial,
+    required TResult Function(LoadInProgress value) loadInProgress,
+    required TResult Function(Fetched value) fetched,
+    required TResult Function(Faild value) faild,
+    required TResult Function(EndOfList value) endOfList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_LoadInProgress value)? loadInProgress,
-    TResult? Function(_fetched value)? fetched,
-    TResult? Function(_faild value)? faild,
-    TResult? Function(_endOfList value)? endOfList,
+    TResult? Function(Initial value)? initial,
+    TResult? Function(LoadInProgress value)? loadInProgress,
+    TResult? Function(Fetched value)? fetched,
+    TResult? Function(Faild value)? faild,
+    TResult? Function(EndOfList value)? endOfList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_fetched value)? fetched,
-    TResult Function(_faild value)? faild,
-    TResult Function(_endOfList value)? endOfList,
+    TResult Function(Initial value)? initial,
+    TResult Function(LoadInProgress value)? loadInProgress,
+    TResult Function(Fetched value)? fetched,
+    TResult Function(Faild value)? faild,
+    TResult Function(EndOfList value)? endOfList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -94,24 +93,23 @@ class _$CharactersStateCopyWithImpl<$Res, $Val extends CharactersState>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialCopyWith<$Res> {
+  factory _$$InitialCopyWith(_$Initial value, $Res Function(_$Initial) then) =
+      __$$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$CharactersStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialCopyWithImpl<$Res>
+    extends _$CharactersStateCopyWithImpl<$Res, _$Initial>
+    implements _$$InitialCopyWith<$Res> {
+  __$$InitialCopyWithImpl(_$Initial _value, $Res Function(_$Initial) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$Initial implements Initial {
+  const _$Initial();
 
   @override
   String toString() {
@@ -121,7 +119,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$Initial);
   }
 
   @override
@@ -133,9 +131,8 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(ApiResponse<List<Character>> apiResponse) fetched,
-    required TResult Function() faild,
-    required TResult Function(ApiResponse<List<Character>> apiResponse)
-        endOfList,
+    required TResult Function(String message) faild,
+    required TResult Function() endOfList,
   }) {
     return initial();
   }
@@ -146,8 +143,8 @@ class _$_Initial implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult? Function()? faild,
-    TResult? Function(ApiResponse<List<Character>> apiResponse)? endOfList,
+    TResult? Function(String message)? faild,
+    TResult? Function()? endOfList,
   }) {
     return initial?.call();
   }
@@ -158,8 +155,8 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult Function()? faild,
-    TResult Function(ApiResponse<List<Character>> apiResponse)? endOfList,
+    TResult Function(String message)? faild,
+    TResult Function()? endOfList,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -171,11 +168,11 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_fetched value) fetched,
-    required TResult Function(_faild value) faild,
-    required TResult Function(_endOfList value) endOfList,
+    required TResult Function(Initial value) initial,
+    required TResult Function(LoadInProgress value) loadInProgress,
+    required TResult Function(Fetched value) fetched,
+    required TResult Function(Faild value) faild,
+    required TResult Function(EndOfList value) endOfList,
   }) {
     return initial(this);
   }
@@ -183,11 +180,11 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_LoadInProgress value)? loadInProgress,
-    TResult? Function(_fetched value)? fetched,
-    TResult? Function(_faild value)? faild,
-    TResult? Function(_endOfList value)? endOfList,
+    TResult? Function(Initial value)? initial,
+    TResult? Function(LoadInProgress value)? loadInProgress,
+    TResult? Function(Fetched value)? fetched,
+    TResult? Function(Faild value)? faild,
+    TResult? Function(EndOfList value)? endOfList,
   }) {
     return initial?.call(this);
   }
@@ -195,11 +192,11 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_fetched value)? fetched,
-    TResult Function(_faild value)? faild,
-    TResult Function(_endOfList value)? endOfList,
+    TResult Function(Initial value)? initial,
+    TResult Function(LoadInProgress value)? loadInProgress,
+    TResult Function(Fetched value)? fetched,
+    TResult Function(Faild value)? faild,
+    TResult Function(EndOfList value)? endOfList,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -209,30 +206,30 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements CharactersState {
-  const factory _Initial() = _$_Initial;
+abstract class Initial implements CharactersState {
+  const factory Initial() = _$Initial;
 }
 
 /// @nodoc
-abstract class _$$_LoadInProgressCopyWith<$Res> {
-  factory _$$_LoadInProgressCopyWith(
-          _$_LoadInProgress value, $Res Function(_$_LoadInProgress) then) =
-      __$$_LoadInProgressCopyWithImpl<$Res>;
+abstract class _$$LoadInProgressCopyWith<$Res> {
+  factory _$$LoadInProgressCopyWith(
+          _$LoadInProgress value, $Res Function(_$LoadInProgress) then) =
+      __$$LoadInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoadInProgressCopyWithImpl<$Res>
-    extends _$CharactersStateCopyWithImpl<$Res, _$_LoadInProgress>
-    implements _$$_LoadInProgressCopyWith<$Res> {
-  __$$_LoadInProgressCopyWithImpl(
-      _$_LoadInProgress _value, $Res Function(_$_LoadInProgress) _then)
+class __$$LoadInProgressCopyWithImpl<$Res>
+    extends _$CharactersStateCopyWithImpl<$Res, _$LoadInProgress>
+    implements _$$LoadInProgressCopyWith<$Res> {
+  __$$LoadInProgressCopyWithImpl(
+      _$LoadInProgress _value, $Res Function(_$LoadInProgress) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_LoadInProgress implements _LoadInProgress {
-  const _$_LoadInProgress();
+class _$LoadInProgress implements LoadInProgress {
+  const _$LoadInProgress();
 
   @override
   String toString() {
@@ -242,7 +239,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_LoadInProgress);
+        (other.runtimeType == runtimeType && other is _$LoadInProgress);
   }
 
   @override
@@ -254,9 +251,8 @@ class _$_LoadInProgress implements _LoadInProgress {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(ApiResponse<List<Character>> apiResponse) fetched,
-    required TResult Function() faild,
-    required TResult Function(ApiResponse<List<Character>> apiResponse)
-        endOfList,
+    required TResult Function(String message) faild,
+    required TResult Function() endOfList,
   }) {
     return loadInProgress();
   }
@@ -267,8 +263,8 @@ class _$_LoadInProgress implements _LoadInProgress {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult? Function()? faild,
-    TResult? Function(ApiResponse<List<Character>> apiResponse)? endOfList,
+    TResult? Function(String message)? faild,
+    TResult? Function()? endOfList,
   }) {
     return loadInProgress?.call();
   }
@@ -279,8 +275,8 @@ class _$_LoadInProgress implements _LoadInProgress {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult Function()? faild,
-    TResult Function(ApiResponse<List<Character>> apiResponse)? endOfList,
+    TResult Function(String message)? faild,
+    TResult Function()? endOfList,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -292,11 +288,11 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_fetched value) fetched,
-    required TResult Function(_faild value) faild,
-    required TResult Function(_endOfList value) endOfList,
+    required TResult Function(Initial value) initial,
+    required TResult Function(LoadInProgress value) loadInProgress,
+    required TResult Function(Fetched value) fetched,
+    required TResult Function(Faild value) faild,
+    required TResult Function(EndOfList value) endOfList,
   }) {
     return loadInProgress(this);
   }
@@ -304,11 +300,11 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_LoadInProgress value)? loadInProgress,
-    TResult? Function(_fetched value)? fetched,
-    TResult? Function(_faild value)? faild,
-    TResult? Function(_endOfList value)? endOfList,
+    TResult? Function(Initial value)? initial,
+    TResult? Function(LoadInProgress value)? loadInProgress,
+    TResult? Function(Fetched value)? fetched,
+    TResult? Function(Faild value)? faild,
+    TResult? Function(EndOfList value)? endOfList,
   }) {
     return loadInProgress?.call(this);
   }
@@ -316,11 +312,11 @@ class _$_LoadInProgress implements _LoadInProgress {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_fetched value)? fetched,
-    TResult Function(_faild value)? faild,
-    TResult Function(_endOfList value)? endOfList,
+    TResult Function(Initial value)? initial,
+    TResult Function(LoadInProgress value)? loadInProgress,
+    TResult Function(Fetched value)? fetched,
+    TResult Function(Faild value)? faild,
+    TResult Function(EndOfList value)? endOfList,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -330,15 +326,14 @@ class _$_LoadInProgress implements _LoadInProgress {
   }
 }
 
-abstract class _LoadInProgress implements CharactersState {
-  const factory _LoadInProgress() = _$_LoadInProgress;
+abstract class LoadInProgress implements CharactersState {
+  const factory LoadInProgress() = _$LoadInProgress;
 }
 
 /// @nodoc
-abstract class _$$_fetchedCopyWith<$Res> {
-  factory _$$_fetchedCopyWith(
-          _$_fetched value, $Res Function(_$_fetched) then) =
-      __$$_fetchedCopyWithImpl<$Res>;
+abstract class _$$FetchedCopyWith<$Res> {
+  factory _$$FetchedCopyWith(_$Fetched value, $Res Function(_$Fetched) then) =
+      __$$FetchedCopyWithImpl<$Res>;
   @useResult
   $Res call({ApiResponse<List<Character>> apiResponse});
 
@@ -346,10 +341,10 @@ abstract class _$$_fetchedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_fetchedCopyWithImpl<$Res>
-    extends _$CharactersStateCopyWithImpl<$Res, _$_fetched>
-    implements _$$_fetchedCopyWith<$Res> {
-  __$$_fetchedCopyWithImpl(_$_fetched _value, $Res Function(_$_fetched) _then)
+class __$$FetchedCopyWithImpl<$Res>
+    extends _$CharactersStateCopyWithImpl<$Res, _$Fetched>
+    implements _$$FetchedCopyWith<$Res> {
+  __$$FetchedCopyWithImpl(_$Fetched _value, $Res Function(_$Fetched) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -357,7 +352,7 @@ class __$$_fetchedCopyWithImpl<$Res>
   $Res call({
     Object? apiResponse = null,
   }) {
-    return _then(_$_fetched(
+    return _then(_$Fetched(
       null == apiResponse
           ? _value.apiResponse
           : apiResponse // ignore: cast_nullable_to_non_nullable
@@ -377,8 +372,8 @@ class __$$_fetchedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_fetched implements _fetched {
-  const _$_fetched(this.apiResponse);
+class _$Fetched implements Fetched {
+  const _$Fetched(this.apiResponse);
 
   @override
   final ApiResponse<List<Character>> apiResponse;
@@ -392,7 +387,7 @@ class _$_fetched implements _fetched {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_fetched &&
+            other is _$Fetched &&
             (identical(other.apiResponse, apiResponse) ||
                 other.apiResponse == apiResponse));
   }
@@ -403,8 +398,8 @@ class _$_fetched implements _fetched {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_fetchedCopyWith<_$_fetched> get copyWith =>
-      __$$_fetchedCopyWithImpl<_$_fetched>(this, _$identity);
+  _$$FetchedCopyWith<_$Fetched> get copyWith =>
+      __$$FetchedCopyWithImpl<_$Fetched>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -412,9 +407,8 @@ class _$_fetched implements _fetched {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(ApiResponse<List<Character>> apiResponse) fetched,
-    required TResult Function() faild,
-    required TResult Function(ApiResponse<List<Character>> apiResponse)
-        endOfList,
+    required TResult Function(String message) faild,
+    required TResult Function() endOfList,
   }) {
     return fetched(apiResponse);
   }
@@ -425,8 +419,8 @@ class _$_fetched implements _fetched {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult? Function()? faild,
-    TResult? Function(ApiResponse<List<Character>> apiResponse)? endOfList,
+    TResult? Function(String message)? faild,
+    TResult? Function()? endOfList,
   }) {
     return fetched?.call(apiResponse);
   }
@@ -437,8 +431,8 @@ class _$_fetched implements _fetched {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult Function()? faild,
-    TResult Function(ApiResponse<List<Character>> apiResponse)? endOfList,
+    TResult Function(String message)? faild,
+    TResult Function()? endOfList,
     required TResult orElse(),
   }) {
     if (fetched != null) {
@@ -450,11 +444,11 @@ class _$_fetched implements _fetched {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_fetched value) fetched,
-    required TResult Function(_faild value) faild,
-    required TResult Function(_endOfList value) endOfList,
+    required TResult Function(Initial value) initial,
+    required TResult Function(LoadInProgress value) loadInProgress,
+    required TResult Function(Fetched value) fetched,
+    required TResult Function(Faild value) faild,
+    required TResult Function(EndOfList value) endOfList,
   }) {
     return fetched(this);
   }
@@ -462,11 +456,11 @@ class _$_fetched implements _fetched {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_LoadInProgress value)? loadInProgress,
-    TResult? Function(_fetched value)? fetched,
-    TResult? Function(_faild value)? faild,
-    TResult? Function(_endOfList value)? endOfList,
+    TResult? Function(Initial value)? initial,
+    TResult? Function(LoadInProgress value)? loadInProgress,
+    TResult? Function(Fetched value)? fetched,
+    TResult? Function(Faild value)? faild,
+    TResult? Function(EndOfList value)? endOfList,
   }) {
     return fetched?.call(this);
   }
@@ -474,11 +468,11 @@ class _$_fetched implements _fetched {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_fetched value)? fetched,
-    TResult Function(_faild value)? faild,
-    TResult Function(_endOfList value)? endOfList,
+    TResult Function(Initial value)? initial,
+    TResult Function(LoadInProgress value)? loadInProgress,
+    TResult Function(Fetched value)? fetched,
+    TResult Function(Faild value)? faild,
+    TResult Function(EndOfList value)? endOfList,
     required TResult orElse(),
   }) {
     if (fetched != null) {
@@ -488,44 +482,194 @@ class _$_fetched implements _fetched {
   }
 }
 
-abstract class _fetched implements CharactersState {
-  const factory _fetched(final ApiResponse<List<Character>> apiResponse) =
-      _$_fetched;
+abstract class Fetched implements CharactersState {
+  const factory Fetched(final ApiResponse<List<Character>> apiResponse) =
+      _$Fetched;
 
   ApiResponse<List<Character>> get apiResponse;
   @JsonKey(ignore: true)
-  _$$_fetchedCopyWith<_$_fetched> get copyWith =>
+  _$$FetchedCopyWith<_$Fetched> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_faildCopyWith<$Res> {
-  factory _$$_faildCopyWith(_$_faild value, $Res Function(_$_faild) then) =
-      __$$_faildCopyWithImpl<$Res>;
+abstract class _$$FaildCopyWith<$Res> {
+  factory _$$FaildCopyWith(_$Faild value, $Res Function(_$Faild) then) =
+      __$$FaildCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
 }
 
 /// @nodoc
-class __$$_faildCopyWithImpl<$Res>
-    extends _$CharactersStateCopyWithImpl<$Res, _$_faild>
-    implements _$$_faildCopyWith<$Res> {
-  __$$_faildCopyWithImpl(_$_faild _value, $Res Function(_$_faild) _then)
+class __$$FaildCopyWithImpl<$Res>
+    extends _$CharactersStateCopyWithImpl<$Res, _$Faild>
+    implements _$$FaildCopyWith<$Res> {
+  __$$FaildCopyWithImpl(_$Faild _value, $Res Function(_$Faild) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$Faild(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_faild implements _faild {
-  const _$_faild();
+class _$Faild implements Faild {
+  const _$Faild(this.message);
+
+  @override
+  final String message;
 
   @override
   String toString() {
-    return 'CharactersState.faild()';
+    return 'CharactersState.faild(message: $message)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_faild);
+        (other.runtimeType == runtimeType &&
+            other is _$Faild &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FaildCopyWith<_$Faild> get copyWith =>
+      __$$FaildCopyWithImpl<_$Faild>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function(ApiResponse<List<Character>> apiResponse) fetched,
+    required TResult Function(String message) faild,
+    required TResult Function() endOfList,
+  }) {
+    return faild(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function(ApiResponse<List<Character>> apiResponse)? fetched,
+    TResult? Function(String message)? faild,
+    TResult? Function()? endOfList,
+  }) {
+    return faild?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(ApiResponse<List<Character>> apiResponse)? fetched,
+    TResult Function(String message)? faild,
+    TResult Function()? endOfList,
+    required TResult orElse(),
+  }) {
+    if (faild != null) {
+      return faild(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(LoadInProgress value) loadInProgress,
+    required TResult Function(Fetched value) fetched,
+    required TResult Function(Faild value) faild,
+    required TResult Function(EndOfList value) endOfList,
+  }) {
+    return faild(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(LoadInProgress value)? loadInProgress,
+    TResult? Function(Fetched value)? fetched,
+    TResult? Function(Faild value)? faild,
+    TResult? Function(EndOfList value)? endOfList,
+  }) {
+    return faild?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(LoadInProgress value)? loadInProgress,
+    TResult Function(Fetched value)? fetched,
+    TResult Function(Faild value)? faild,
+    TResult Function(EndOfList value)? endOfList,
+    required TResult orElse(),
+  }) {
+    if (faild != null) {
+      return faild(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Faild implements CharactersState {
+  const factory Faild(final String message) = _$Faild;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$FaildCopyWith<_$Faild> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EndOfListCopyWith<$Res> {
+  factory _$$EndOfListCopyWith(
+          _$EndOfList value, $Res Function(_$EndOfList) then) =
+      __$$EndOfListCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$EndOfListCopyWithImpl<$Res>
+    extends _$CharactersStateCopyWithImpl<$Res, _$EndOfList>
+    implements _$$EndOfListCopyWith<$Res> {
+  __$$EndOfListCopyWithImpl(
+      _$EndOfList _value, $Res Function(_$EndOfList) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$EndOfList implements EndOfList {
+  const _$EndOfList();
+
+  @override
+  String toString() {
+    return 'CharactersState.endOfList()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$EndOfList);
   }
 
   @override
@@ -537,11 +681,10 @@ class _$_faild implements _faild {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(ApiResponse<List<Character>> apiResponse) fetched,
-    required TResult Function() faild,
-    required TResult Function(ApiResponse<List<Character>> apiResponse)
-        endOfList,
+    required TResult Function(String message) faild,
+    required TResult Function() endOfList,
   }) {
-    return faild();
+    return endOfList();
   }
 
   @override
@@ -550,10 +693,10 @@ class _$_faild implements _faild {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult? Function()? faild,
-    TResult? Function(ApiResponse<List<Character>> apiResponse)? endOfList,
+    TResult? Function(String message)? faild,
+    TResult? Function()? endOfList,
   }) {
-    return faild?.call();
+    return endOfList?.call();
   }
 
   @override
@@ -562,171 +705,12 @@ class _$_faild implements _faild {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult Function()? faild,
-    TResult Function(ApiResponse<List<Character>> apiResponse)? endOfList,
-    required TResult orElse(),
-  }) {
-    if (faild != null) {
-      return faild();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_fetched value) fetched,
-    required TResult Function(_faild value) faild,
-    required TResult Function(_endOfList value) endOfList,
-  }) {
-    return faild(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_LoadInProgress value)? loadInProgress,
-    TResult? Function(_fetched value)? fetched,
-    TResult? Function(_faild value)? faild,
-    TResult? Function(_endOfList value)? endOfList,
-  }) {
-    return faild?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_fetched value)? fetched,
-    TResult Function(_faild value)? faild,
-    TResult Function(_endOfList value)? endOfList,
-    required TResult orElse(),
-  }) {
-    if (faild != null) {
-      return faild(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _faild implements CharactersState {
-  const factory _faild() = _$_faild;
-}
-
-/// @nodoc
-abstract class _$$_endOfListCopyWith<$Res> {
-  factory _$$_endOfListCopyWith(
-          _$_endOfList value, $Res Function(_$_endOfList) then) =
-      __$$_endOfListCopyWithImpl<$Res>;
-  @useResult
-  $Res call({ApiResponse<List<Character>> apiResponse});
-
-  $ApiResponseCopyWith<List<Character>, $Res> get apiResponse;
-}
-
-/// @nodoc
-class __$$_endOfListCopyWithImpl<$Res>
-    extends _$CharactersStateCopyWithImpl<$Res, _$_endOfList>
-    implements _$$_endOfListCopyWith<$Res> {
-  __$$_endOfListCopyWithImpl(
-      _$_endOfList _value, $Res Function(_$_endOfList) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? apiResponse = null,
-  }) {
-    return _then(_$_endOfList(
-      null == apiResponse
-          ? _value.apiResponse
-          : apiResponse // ignore: cast_nullable_to_non_nullable
-              as ApiResponse<List<Character>>,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ApiResponseCopyWith<List<Character>, $Res> get apiResponse {
-    return $ApiResponseCopyWith<List<Character>, $Res>(_value.apiResponse,
-        (value) {
-      return _then(_value.copyWith(apiResponse: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$_endOfList implements _endOfList {
-  const _$_endOfList(this.apiResponse);
-
-  @override
-  final ApiResponse<List<Character>> apiResponse;
-
-  @override
-  String toString() {
-    return 'CharactersState.endOfList(apiResponse: $apiResponse)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_endOfList &&
-            (identical(other.apiResponse, apiResponse) ||
-                other.apiResponse == apiResponse));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, apiResponse);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_endOfListCopyWith<_$_endOfList> get copyWith =>
-      __$$_endOfListCopyWithImpl<_$_endOfList>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(ApiResponse<List<Character>> apiResponse) fetched,
-    required TResult Function() faild,
-    required TResult Function(ApiResponse<List<Character>> apiResponse)
-        endOfList,
-  }) {
-    return endOfList(apiResponse);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loadInProgress,
-    TResult? Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult? Function()? faild,
-    TResult? Function(ApiResponse<List<Character>> apiResponse)? endOfList,
-  }) {
-    return endOfList?.call(apiResponse);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult Function()? faild,
-    TResult Function(ApiResponse<List<Character>> apiResponse)? endOfList,
+    TResult Function(String message)? faild,
+    TResult Function()? endOfList,
     required TResult orElse(),
   }) {
     if (endOfList != null) {
-      return endOfList(apiResponse);
+      return endOfList();
     }
     return orElse();
   }
@@ -734,11 +718,11 @@ class _$_endOfList implements _endOfList {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_LoadInProgress value) loadInProgress,
-    required TResult Function(_fetched value) fetched,
-    required TResult Function(_faild value) faild,
-    required TResult Function(_endOfList value) endOfList,
+    required TResult Function(Initial value) initial,
+    required TResult Function(LoadInProgress value) loadInProgress,
+    required TResult Function(Fetched value) fetched,
+    required TResult Function(Faild value) faild,
+    required TResult Function(EndOfList value) endOfList,
   }) {
     return endOfList(this);
   }
@@ -746,11 +730,11 @@ class _$_endOfList implements _endOfList {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_LoadInProgress value)? loadInProgress,
-    TResult? Function(_fetched value)? fetched,
-    TResult? Function(_faild value)? faild,
-    TResult? Function(_endOfList value)? endOfList,
+    TResult? Function(Initial value)? initial,
+    TResult? Function(LoadInProgress value)? loadInProgress,
+    TResult? Function(Fetched value)? fetched,
+    TResult? Function(Faild value)? faild,
+    TResult? Function(EndOfList value)? endOfList,
   }) {
     return endOfList?.call(this);
   }
@@ -758,11 +742,11 @@ class _$_endOfList implements _endOfList {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_LoadInProgress value)? loadInProgress,
-    TResult Function(_fetched value)? fetched,
-    TResult Function(_faild value)? faild,
-    TResult Function(_endOfList value)? endOfList,
+    TResult Function(Initial value)? initial,
+    TResult Function(LoadInProgress value)? loadInProgress,
+    TResult Function(Fetched value)? fetched,
+    TResult Function(Faild value)? faild,
+    TResult Function(EndOfList value)? endOfList,
     required TResult orElse(),
   }) {
     if (endOfList != null) {
@@ -772,14 +756,8 @@ class _$_endOfList implements _endOfList {
   }
 }
 
-abstract class _endOfList implements CharactersState {
-  const factory _endOfList(final ApiResponse<List<Character>> apiResponse) =
-      _$_endOfList;
-
-  ApiResponse<List<Character>> get apiResponse;
-  @JsonKey(ignore: true)
-  _$$_endOfListCopyWith<_$_endOfList> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class EndOfList implements CharactersState {
+  const factory EndOfList() = _$EndOfList;
 }
 
 /// @nodoc
@@ -802,17 +780,17 @@ mixin _$CharactersEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_fetch value) fetch,
+    required TResult Function(Fetch value) fetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_fetch value)? fetch,
+    TResult? Function(Fetch value)? fetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_fetch value)? fetch,
+    TResult Function(Fetch value)? fetch,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -837,23 +815,23 @@ class _$CharactersEventCopyWithImpl<$Res, $Val extends CharactersEvent>
 }
 
 /// @nodoc
-abstract class _$$_fetchCopyWith<$Res> {
-  factory _$$_fetchCopyWith(_$_fetch value, $Res Function(_$_fetch) then) =
-      __$$_fetchCopyWithImpl<$Res>;
+abstract class _$$FetchCopyWith<$Res> {
+  factory _$$FetchCopyWith(_$Fetch value, $Res Function(_$Fetch) then) =
+      __$$FetchCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_fetchCopyWithImpl<$Res>
-    extends _$CharactersEventCopyWithImpl<$Res, _$_fetch>
-    implements _$$_fetchCopyWith<$Res> {
-  __$$_fetchCopyWithImpl(_$_fetch _value, $Res Function(_$_fetch) _then)
+class __$$FetchCopyWithImpl<$Res>
+    extends _$CharactersEventCopyWithImpl<$Res, _$Fetch>
+    implements _$$FetchCopyWith<$Res> {
+  __$$FetchCopyWithImpl(_$Fetch _value, $Res Function(_$Fetch) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_fetch implements _fetch {
-  const _$_fetch();
+class _$Fetch implements Fetch {
+  const _$Fetch();
 
   @override
   String toString() {
@@ -863,7 +841,7 @@ class _$_fetch implements _fetch {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_fetch);
+        (other.runtimeType == runtimeType && other is _$Fetch);
   }
 
   @override
@@ -900,7 +878,7 @@ class _$_fetch implements _fetch {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_fetch value) fetch,
+    required TResult Function(Fetch value) fetch,
   }) {
     return fetch(this);
   }
@@ -908,7 +886,7 @@ class _$_fetch implements _fetch {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_fetch value)? fetch,
+    TResult? Function(Fetch value)? fetch,
   }) {
     return fetch?.call(this);
   }
@@ -916,7 +894,7 @@ class _$_fetch implements _fetch {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_fetch value)? fetch,
+    TResult Function(Fetch value)? fetch,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -926,6 +904,6 @@ class _$_fetch implements _fetch {
   }
 }
 
-abstract class _fetch implements CharactersEvent {
-  const factory _fetch() = _$_fetch;
+abstract class Fetch implements CharactersEvent {
+  const factory Fetch() = _$Fetch;
 }
