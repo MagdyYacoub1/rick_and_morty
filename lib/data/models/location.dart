@@ -1,4 +1,4 @@
-import 'package:rick_and_morty/data/models/character.dart';
+import 'character.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 

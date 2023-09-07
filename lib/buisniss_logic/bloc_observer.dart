@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rick_and_morty/constants/helper.dart';
+import '../constants/helper.dart';
 
 class AppBlocObserver extends BlocObserver {
   ///We can run something, when we create our Bloc

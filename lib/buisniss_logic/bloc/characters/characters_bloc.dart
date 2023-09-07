@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:rick_and_morty/data/models/api_response.dart';
-import 'package:rick_and_morty/data/models/character.dart';
-import 'package:rick_and_morty/data/repository/characters_repository.dart';
+import '../../../data/models/api_response.dart';
+import '../../../data/models/character.dart';
+import '../../../data/repository/characters_repository.dart';
 
 part 'characters_state.dart';
 part 'characters_event.dart';

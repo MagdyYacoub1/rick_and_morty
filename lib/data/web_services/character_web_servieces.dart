@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:rick_and_morty/constants/helper.dart';
-import 'package:rick_and_morty/constants/stings.dart';
+import '../../constants/helper.dart';
+import '../../constants/stings.dart';
 
 class CharactersWebServices {
   late Dio defaultDio;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rick_and_morty/app_router.dart';
-import 'package:rick_and_morty/buisniss_logic/bloc_observer.dart';
+import 'app_router.dart';
+import 'buisniss_logic/bloc_observer.dart';
 
 void main() {
   Bloc.observer = AppBlocObserver();
@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
       onGenerateRoute: appRouter.generateRoute,
     );
   }

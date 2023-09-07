@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/services.dart';
-import 'package:rick_and_morty/data/models/api_response.dart';
-import 'package:rick_and_morty/data/models/info.dart';
-import 'package:rick_and_morty/data/web_services/character_web_servieces.dart';
+import '../models/api_response.dart';
+import '../models/info.dart';
+import '../web_services/character_web_servieces.dart';
 
 import '../models/character.dart';
 

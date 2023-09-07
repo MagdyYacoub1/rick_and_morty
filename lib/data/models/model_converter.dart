@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:rick_and_morty/data/models/character.dart';
-import 'package:rick_and_morty/data/models/episode.dart';
-import 'package:rick_and_morty/data/models/location.dart';
+import 'character.dart';
+import 'episode.dart';
+import 'location.dart';
 
 class ModelConverter<T> implements JsonConverter<T, Object> {
   const ModelConverter();

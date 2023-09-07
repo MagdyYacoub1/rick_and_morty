@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rick_and_morty/constants/colors.dart';
+import '../../../../constants/colors.dart';
 
 class DetailsBox extends StatelessWidget {
   const DetailsBox({super.key});
