@@ -29,13 +29,12 @@ class _CharactersScreenState extends State<CharactersScreen> {
       body: BlocBuilder<CharactersBloc, CharactersState>(
         builder: (context, state) {
           return state.maybeWhen(
-            initial: () {
-              return const Center(child: Text("initial"));
-            },
             loadInProgress: () =>
                 const Center(child: CircularProgressIndicator.adaptive()),
-            fetched: (u) {
-              return Center(child: Text(u.data![0].name));
+            fetched: (characters) {
+              return const DetailsBox(
+                index: 0,
+              );
             },
             orElse: () => const Center(child: Text("error")),
           );
