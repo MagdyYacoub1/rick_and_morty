@@ -19,10 +19,12 @@ class DataLine extends StatelessWidget {
         Text(
           '$title: ',
           style: Theme.of(context).textTheme.headlineSmall,
+          overflow: TextOverflow.ellipsis,
         ),
         Text(
           detail,
           style: Theme.of(context).textTheme.headlineSmall,
+          overflow: TextOverflow.ellipsis,
         ),
       ],
     );

@@ -31,8 +31,9 @@ class _CharactersScreenState extends State<CharactersScreen> {
       body: BlocBuilder<CharactersBloc, CharactersState>(
         builder: (context, state) {
           return state.maybeWhen(
-            loadInProgress: () =>
-                const Center(child: CircularProgressIndicator.adaptive()),
+            loadInProgress: () => const Center(
+              child: CircularProgressIndicator(),
+            ),
             fetched: (characters) {
               return const DetailsBox(
                 index: 0,
@@ -50,7 +51,7 @@ class _CharactersScreenState extends State<CharactersScreen> {
             label: 'Character',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
+            icon: Icon(Icons.place),
             label: 'Planet',
           ),
         ],

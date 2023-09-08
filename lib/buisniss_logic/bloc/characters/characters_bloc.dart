@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:rick_and_morty/constants/helper.dart';
 import 'package:rick_and_morty/data/models/api_response.dart';
 import 'package:rick_and_morty/data/models/character.dart';
 import 'package:rick_and_morty/data/repository/characters_repository.dart';
@@ -27,7 +26,6 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         emit(const LoadInProgress());
         final charactersRepository = CharactersRepository();
         final response = await charactersRepository.getCharacters();
-        Log.debug(response);
         emit(Fetched(response));
       } else {
         if ((state as Fetched).apiResponse.info?.next != null) {
