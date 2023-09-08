@@ -16,7 +16,6 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ApiResponse<T> {
-  @ModelConverter()
   T? get data => throw _privateConstructorUsedError;
   Info? get info => throw _privateConstructorUsedError;
 
@@ -31,7 +30,7 @@ abstract class $ApiResponseCopyWith<T, $Res> {
           ApiResponse<T> value, $Res Function(ApiResponse<T>) then) =
       _$ApiResponseCopyWithImpl<T, $Res, ApiResponse<T>>;
   @useResult
-  $Res call({@ModelConverter() T? data, Info? info});
+  $Res call({T? data, Info? info});
 
   $InfoCopyWith<$Res>? get info;
 }
@@ -85,7 +84,7 @@ abstract class _$$_ApiResponseCopyWith<T, $Res>
       __$$_ApiResponseCopyWithImpl<T, $Res>;
   @override
   @useResult
-  $Res call({@ModelConverter() T? data, Info? info});
+  $Res call({T? data, Info? info});
 
   @override
   $InfoCopyWith<$Res>? get info;
@@ -121,10 +120,9 @@ class __$$_ApiResponseCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$_ApiResponse<T> implements _ApiResponse<T> {
-  const _$_ApiResponse({@ModelConverter() this.data, this.info});
+  const _$_ApiResponse({this.data, this.info});
 
   @override
-  @ModelConverter()
   final T? data;
   @override
   final Info? info;
@@ -155,11 +153,10 @@ class _$_ApiResponse<T> implements _ApiResponse<T> {
 }
 
 abstract class _ApiResponse<T> implements ApiResponse<T> {
-  const factory _ApiResponse(
-      {@ModelConverter() final T? data, final Info? info}) = _$_ApiResponse<T>;
+  const factory _ApiResponse({final T? data, final Info? info}) =
+      _$_ApiResponse<T>;
 
   @override
-  @ModelConverter()
   T? get data;
   @override
   Info? get info;

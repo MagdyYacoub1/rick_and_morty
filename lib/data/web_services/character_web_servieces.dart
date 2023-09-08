@@ -1,12 +1,14 @@
 import 'package:dio/dio.dart';
-import '../../constants/stings.dart';
 
+import 'package:rick_and_morty/constants/stings.dart';
+import 'package:rick_and_morty/data/models/error.dart';
+
+///Web service responsible for characters model
 class CharactersWebServices {
-  late Dio defaultDio;
-
+  ///Creates a web service to retrive characters data from API
   CharactersWebServices() {
-    BaseOptions baseOptions = BaseOptions(
-      baseUrl: baseUrl,
+    final baseOptions = BaseOptions(
+      baseUrl: ConstantStrings.baseUrl,
       receiveDataWhenStatusError: true,
       connectTimeout: const Duration(seconds: 20),
       receiveTimeout: const Duration(seconds: 20),
@@ -15,14 +17,22 @@ class CharactersWebServices {
     defaultDio = Dio(baseOptions);
   }
 
+  ///Used to communicate with API using the base url
+  late Dio defaultDio;
+
+  /// Returns a list of characters limited by the page limit
   Future<dynamic> getCharacters() async {
-    Response response = await defaultDio.get('character');
-    return response;
+    try {
+      final response = await defaultDio.get<dynamic>('character');
+      return response;
+    } catch (e) {
+      throw Exceptions(e.toString());
+    }
   }
 
+  ///
   Future<dynamic> getMoreCharacters(String url) async {
-    Dio dio = Dio();
-    Response response = await dio.get(url);
+    final response = await Dio().get<dynamic>(url);
     return response;
   }
 }

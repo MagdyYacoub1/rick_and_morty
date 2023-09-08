@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
+/// Used to create data line in charcter card
 class DataLine extends StatelessWidget {
-  const DataLine({super.key, required this.title, required this.detail});
+  ///Creates data line in charcter card
+  const DataLine({required this.title, required this.detail, super.key});
 
+  ///Data tirle
   final String title;
+
+  ///Data details
   final String detail;
 
   @override
@@ -12,7 +17,7 @@ class DataLine extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
-          title + ": ",
+          '$title: ',
           style: Theme.of(context).textTheme.headlineSmall,
         ),
         Text(

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../constants/colors.dart';
-import '../../../buisniss_logic/bloc/characters/characters_bloc.dart';
-import '../../../data/models/character.dart';
+import 'package:rick_and_morty/buisniss_logic/bloc/characters/characters_bloc.dart';
+import 'package:rick_and_morty/constants/colors.dart';
+import 'package:rick_and_morty/data/models/character.dart';
+import 'package:rick_and_morty/presentation/screens/characters/components/details_box.dart';
 
-import 'components/details_box.dart';
-
+///
 class CharactersScreen extends StatefulWidget {
+  ///
   const CharactersScreen({super.key});
 
   @override
@@ -24,7 +25,8 @@ class _CharactersScreenState extends State<CharactersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //appBar: AppBar(leading: IconButton(onPressed: onPressed, icon: Icons.arrow_back_sharp),),
+      //appBar: AppBar(leading: IconButton(onPressed: onPressed,
+      //icon: Icons.arrow_back_sharp),),
       //extendBodyBehindAppBar: true,
       body: BlocBuilder<CharactersBloc, CharactersState>(
         builder: (context, state) {
@@ -36,7 +38,7 @@ class _CharactersScreenState extends State<CharactersScreen> {
                 index: 0,
               );
             },
-            orElse: () => const Center(child: Text("error")),
+            orElse: () => const Center(child: Text('error')),
           );
         },
       ),
@@ -52,7 +54,6 @@ class _CharactersScreenState extends State<CharactersScreen> {
             label: 'Planet',
           ),
         ],
-        currentIndex: 0,
         selectedItemColor: AppColors.teal,
       ),
     );

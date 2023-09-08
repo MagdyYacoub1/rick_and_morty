@@ -1,7 +1,9 @@
 import 'package:flutter/foundation.dart';
 
+///Used to debug
 class Log {
-  static debug(Object? object) {
+  /// Prinsts Log to the console
+  static void debug(Object? object) {
     if (kDebugMode) print(object);
   }
 }
