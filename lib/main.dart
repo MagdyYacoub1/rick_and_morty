@@ -22,7 +22,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
+      theme: ThemeData.dark().copyWith(
+        textTheme: TextTheme(
+          bodyLarge: ThemeData.dark().textTheme.bodyLarge!.copyWith(
+                fontFamily: 'Orbitron',
+              ),
+          bodyMedium: ThemeData.dark().textTheme.bodyMedium!.copyWith(
+                fontFamily: 'Orbitron',
+                fontSize: 15,
+              ),
+        ),
+      ),
       onGenerateRoute: _appRouter.generateRoute,
     );
   }

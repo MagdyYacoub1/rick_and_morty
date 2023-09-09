@@ -84,7 +84,7 @@ class CharacterFrame extends BoxPainter {
       ..strokeJoin = StrokeJoin.round
       ..strokeCap = StrokeCap.round;
 
-    final height = rect.height * 0.15;
+    var height = rect.height * 0.15;
 
     //Left side shape
     var startX = rect.topLeft.dx - 5;
@@ -151,52 +151,60 @@ class CharacterFrame extends BoxPainter {
     canvas.drawPath(path, paint);
 
     //Right side shape
-    paint.style = PaintingStyle.fill;
+    paint
+      ..style = PaintingStyle.fill
+      ..strokeJoin = StrokeJoin.round
+      ..strokeCap = StrokeCap.round;
 
+    height = rect.height * 0.15;
     startX = rect.topRight.dx + 5;
     startY = rect.topRight.dy + rect.height / 2;
+
+    path
+      ..reset()
+      ..moveTo(startX, startY - height + 60)
+      ..lineTo(startX, startY - height + 30)
+      ..lineTo(startX + 10, startY - height + 20)
+      ..lineTo(startX + 10, startY - height + 50)
+      ..close();
+    canvas.drawPath(path, paint);
+
+    startX = rect.topRight.dx + 5;
+    startY = rect.topRight.dy + 15;
+    endX = rect.bottomRight.dx + 15;
+    endY = rect.topRight.dy - 5;
+    width = rect.width * 0.40;
     path
       ..reset()
       ..moveTo(startX, startY)
-      ..lineTo(startX, startY - 30)
-      ..lineTo(startX + 10, startY - 40)
-      ..lineTo(startX + 10, startY - 10)
-      ..close();
-    //canvas.drawPath(path, paint);
-
-    startX = rect.topRight.dx + 5;
-    startY = rect.topRight.dy;
-    path
-      ..reset()
-      ..moveTo(startX, rect.topLeft.dy + rect.height / 2 - 40)
-      ..lineTo(startX, startY + 10)
-      ..lineTo(startX - 15, startY - 7)
-      ..lineTo(startX - 120, startY - 7)
-      ..lineTo(startX - 120, startY - 9)
-      ..lineTo(startX - 80, startY - 9)
-      ..lineTo(startX - 70, startY - 15)
-      ..lineTo(startX - 15, startY - 15)
-      ..lineTo(startX + 5, startY + 5)
-      ..lineTo(startX + 5, startY + 30)
-      ..lineTo(startX + 10, startY + 40)
-      ..lineTo(startX + 10, startY + 80)
-      ..lineTo(startX + 5, startY + 90)
-      ..lineTo(startX + 5, startY + 120)
-      ..lineTo(startX + 10, startY + 130)
-      ..lineTo(startX + 10, startY + rect.height / 2 - 50)
+      ..lineTo(startX - 20, startY - 20)
+      ..lineTo(startX - width, startY - 20)
+      ..lineTo(startX - width, startY - 22)
+      ..lineTo(startX - width + 30, startY - 22)
+      ..lineTo(startX - width + 40, startY - 28)
+      ..lineTo(startX - 20, startY - 28)
+      ..lineTo(startX + 5, startY)
+      ..lineTo(startX + 5, startY + height - 60)
+      ..lineTo(startX + 10, startY + height - 50)
+      ..lineTo(startX + 10, startY + height - 10)
+      ..lineTo(startX + 5, startY + height)
+      ..lineTo(startX + 5, startY + height + 30)
+      ..lineTo(startX + 10, startY + height + 40)
+      ..lineTo(startX + 10, startY + height + 80)
+      ..lineTo(startX, startY + height + 90)
       ..close();
     canvas.drawPath(path, paint);
 
     path
       ..reset()
-      ..moveTo(startX + 20, startY + 40)
-      ..lineTo(startX + 20, startY + 80)
-      ..lineTo(startX + 12, startY + 90)
-      ..lineTo(startX + 12, startY + 120)
-      ..lineTo(startX + 20, startY + 130)
-      ..lineTo(startX + 20, startY + 150)
-      ..lineTo(startX + 22, startY + 150)
-      ..lineTo(startX + 22, startY + 40)
+      ..moveTo(startX + 15, startY + height - 50)
+      ..lineTo(startX + 15, startY + height - 10)
+      ..lineTo(startX + 10, startY + height)
+      ..lineTo(startX + 10, startY + height * 1.4)
+      ..lineTo(startX + 15, startY + height * 1.4 + 10)
+      ..lineTo(startX + 15, startY + height * 1.4 + 40)
+      ..lineTo(startX + 18, startY + height * 1.4 + 40)
+      ..lineTo(startX + 18, startY + height - 50)
       ..close();
     canvas.drawPath(path, paint);
 
@@ -207,9 +215,9 @@ class CharacterFrame extends BoxPainter {
     path
       ..reset()
       ..moveTo(startX, startY)
-      ..lineTo(startX, startY - rect.height / 2 + 40)
-      ..lineTo(startX + 15, startY - rect.height / 2 + 25)
-      ..lineTo(startX + 15, startY - rect.height / 2 - 50);
+      ..lineTo(startX, startY - height * 2.8)
+      ..lineTo(startX + 12, startY - height * 2.8 - 10)
+      ..lineTo(startX + 12, startY - height * 3.7);
     canvas.drawPath(path, paint);
 
     //bottom side shape
