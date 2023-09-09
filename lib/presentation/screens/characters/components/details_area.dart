@@ -1,70 +1,67 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rick_and_morty/buisniss_logic/bloc/characters/characters_bloc.dart';
 import 'package:rick_and_morty/constants/colors.dart';
+import 'package:rick_and_morty/data/models/character.dart';
 import 'package:rick_and_morty/presentation/screens/characters/components/data_line.dart';
 
 /// Details area for each Character
 class DetailsArea extends StatelessWidget {
   ///Creates details area
   const DetailsArea({
-    required this.index,
+    required this.character,
     super.key,
   });
 
   ///Index to display
-  final int index;
+  final Character character;
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CharactersBloc, CharactersState>(
-      buildWhen: (previous, current) => previous != current,
-      builder: (context, state) {
-        return state.maybeWhen(
-          fetched: (apiResponse) => Column(
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        CharcaterImage(imageUrl: character.image),
+        Padding(
+          padding: const EdgeInsets.only(
+            top: 8,
+            bottom: 12,
+            left: 15,
+            right: 8,
+          ),
+          child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CharcaterImage(imageUrl: apiResponse.data![index].image),
-              Padding(
-                padding: const EdgeInsets.all(8),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    DataLine(
-                      title: 'Name',
-                      detail: apiResponse.data![index].name,
-                    ),
-                    DataLine(
-                      title: 'Species',
-                      detail: apiResponse.data![index].species,
-                    ),
-                    DataLine(
-                      title: 'Type',
-                      detail: apiResponse.data![index].type,
-                    ),
-                    DataLine(
-                      title: 'Gender',
-                      detail: apiResponse.data![index].gender,
-                    ),
-                    DataLine(
-                      title: 'Origin',
-                      detail: apiResponse.data![index].origin.name,
-                    ),
-                    DataLine(
-                      title: 'Location',
-                      detail: apiResponse.data![index].location.name,
-                    ),
-                  ],
+              DataLine(
+                title: 'Name',
+                detail: character.name,
+              ),
+              DataLine(
+                title: 'Species',
+                detail: character.species,
+              ),
+              if (character.type != '')
+                DataLine(
+                  title: 'Type',
+                  detail: character.type,
                 ),
+              DataLine(
+                title: 'Gender',
+                detail: character.gender,
+              ),
+              DataLine(
+                title: 'Origin',
+                detail: character.origin.name,
+              ),
+              DataLine(
+                title: 'Location',
+                detail: character.location.name,
               ),
             ],
           ),
-          orElse: () => const SizedBox(),
-        );
-      },
+        ),
+      ],
     );
   }
 }
@@ -84,8 +81,8 @@ class CharcaterImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CachedNetworkImage(
       imageUrl: imageUrl,
-      width: 300,
-      height: 300,
+      width: 250,
+      height: 250,
       placeholderFadeInDuration: const Duration(milliseconds: 800),
       fadeInDuration: const Duration(milliseconds: 700),
       fadeOutDuration: const Duration(milliseconds: 500),

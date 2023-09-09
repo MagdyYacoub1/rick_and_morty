@@ -35,8 +35,16 @@ class _CharactersScreenState extends State<CharactersScreen> {
               child: CircularProgressIndicator(),
             ),
             fetched: (characters) {
-              return const DetailsBox(
-                index: 0,
+              return ListView.builder(
+                itemCount: characters.data!.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 30),
+                    child: DetailsBox(
+                      character: characters.data![index],
+                    ),
+                  );
+                },
               );
             },
             orElse: () => const Center(child: Text('error')),
