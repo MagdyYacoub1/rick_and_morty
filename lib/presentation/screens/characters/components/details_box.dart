@@ -156,7 +156,6 @@ class CharacterFrame extends BoxPainter {
       ..strokeJoin = StrokeJoin.round
       ..strokeCap = StrokeCap.round;
 
-    height = rect.height * 0.15;
     startX = rect.topRight.dx + 5;
     startY = rect.topRight.dy + rect.height / 2;
 

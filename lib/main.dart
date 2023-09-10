@@ -29,7 +29,6 @@ class MyApp extends StatelessWidget {
               ),
           bodyMedium: ThemeData.dark().textTheme.bodyMedium!.copyWith(
                 fontFamily: 'Orbitron',
-                fontSize: 15,
               ),
         ),
       ),
