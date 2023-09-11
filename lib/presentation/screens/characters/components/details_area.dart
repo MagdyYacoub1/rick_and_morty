@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:rick_and_morty/constants/colors.dart';
 import 'package:rick_and_morty/data/models/character.dart';
 import 'package:rick_and_morty/presentation/screens/characters/components/data_line.dart';
-import 'package:rick_and_morty/presentation/screens/characters/components/liveness_indicator.dart';
 
 /// Details area for each Character
 class DetailsArea extends StatelessWidget {

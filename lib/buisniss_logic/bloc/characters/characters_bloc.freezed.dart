@@ -765,32 +765,38 @@ mixin _$CharactersEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetch,
+    required TResult Function() fetchMore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetch,
+    TResult? Function()? fetchMore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetch,
+    TResult Function()? fetchMore,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Fetch value) fetch,
+    required TResult Function(FetchMore value) fetchMore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Fetch value)? fetch,
+    TResult? Function(FetchMore value)? fetchMore,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Fetch value)? fetch,
+    TResult Function(FetchMore value)? fetchMore,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -851,6 +857,7 @@ class _$Fetch implements Fetch {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetch,
+    required TResult Function() fetchMore,
   }) {
     return fetch();
   }
@@ -859,6 +866,7 @@ class _$Fetch implements Fetch {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetch,
+    TResult? Function()? fetchMore,
   }) {
     return fetch?.call();
   }
@@ -867,6 +875,7 @@ class _$Fetch implements Fetch {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetch,
+    TResult Function()? fetchMore,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -879,6 +888,7 @@ class _$Fetch implements Fetch {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Fetch value) fetch,
+    required TResult Function(FetchMore value) fetchMore,
   }) {
     return fetch(this);
   }
@@ -887,6 +897,7 @@ class _$Fetch implements Fetch {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Fetch value)? fetch,
+    TResult? Function(FetchMore value)? fetchMore,
   }) {
     return fetch?.call(this);
   }
@@ -895,6 +906,7 @@ class _$Fetch implements Fetch {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Fetch value)? fetch,
+    TResult Function(FetchMore value)? fetchMore,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -906,4 +918,106 @@ class _$Fetch implements Fetch {
 
 abstract class Fetch implements CharactersEvent {
   const factory Fetch() = _$Fetch;
+}
+
+/// @nodoc
+abstract class _$$FetchMoreCopyWith<$Res> {
+  factory _$$FetchMoreCopyWith(
+          _$FetchMore value, $Res Function(_$FetchMore) then) =
+      __$$FetchMoreCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FetchMoreCopyWithImpl<$Res>
+    extends _$CharactersEventCopyWithImpl<$Res, _$FetchMore>
+    implements _$$FetchMoreCopyWith<$Res> {
+  __$$FetchMoreCopyWithImpl(
+      _$FetchMore _value, $Res Function(_$FetchMore) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$FetchMore implements FetchMore {
+  const _$FetchMore();
+
+  @override
+  String toString() {
+    return 'CharactersEvent.fetchMore()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$FetchMore);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetch,
+    required TResult Function() fetchMore,
+  }) {
+    return fetchMore();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fetch,
+    TResult? Function()? fetchMore,
+  }) {
+    return fetchMore?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetch,
+    TResult Function()? fetchMore,
+    required TResult orElse(),
+  }) {
+    if (fetchMore != null) {
+      return fetchMore();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Fetch value) fetch,
+    required TResult Function(FetchMore value) fetchMore,
+  }) {
+    return fetchMore(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Fetch value)? fetch,
+    TResult? Function(FetchMore value)? fetchMore,
+  }) {
+    return fetchMore?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Fetch value)? fetch,
+    TResult Function(FetchMore value)? fetchMore,
+    required TResult orElse(),
+  }) {
+    if (fetchMore != null) {
+      return fetchMore(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FetchMore implements CharactersEvent {
+  const factory FetchMore() = _$FetchMore;
 }

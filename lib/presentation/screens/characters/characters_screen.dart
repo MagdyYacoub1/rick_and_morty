@@ -16,10 +16,28 @@ class CharactersScreen extends StatefulWidget {
 
 class _CharactersScreenState extends State<CharactersScreen> {
   late List<Character> allCharacter;
+  late ScrollController scrollController;
 
   @override
   void initState() {
     super.initState();
+    scrollController = ScrollController();
+    scrollController.addListener(() {
+      if (scrollController.position.maxScrollExtent ==
+          scrollController.offset) {
+        context.read<CharactersBloc>().add(const FetchMore());
+      }
+    });
+  }
+
+  Future<void> refresh() async {
+    context.read<CharactersBloc>().add(const Fetch());
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    scrollController.dispose();
   }
 
   @override
@@ -36,18 +54,52 @@ class _CharactersScreenState extends State<CharactersScreen> {
             ),
             fetched: (characters) {
               return ListView.builder(
-                itemCount: characters.data!.length,
+                controller: scrollController,
+                itemCount: characters.data!.length + 1,
                 itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 30),
-                    child: DetailsBox(
-                      character: characters.data![index],
-                    ),
-                  );
+                  return index < characters.data!.length
+                      ? Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 30),
+                          child: DetailsBox(
+                            character: characters.data![index],
+                          ),
+                        )
+                      : const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 32),
+                          child: Center(
+                            child: CircularProgressIndicator.adaptive(),
+                          ),
+                        );
                 },
               );
             },
-            orElse: () => const Center(child: Text('error')),
+            endOfList: () => const Center(
+              child: Text(
+                'End of list',
+                textAlign: TextAlign.center,
+              ),
+            ),
+            faild: (e) => Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    e,
+                    textAlign: TextAlign.center,
+                  ),
+                  TextButton(
+                    onPressed: refresh,
+                    child: const Text('Refresh'),
+                  ),
+                ],
+              ),
+            ),
+            orElse: () => const Center(
+              child: Text(
+                'error',
+                textAlign: TextAlign.center,
+              ),
+            ),
           );
         },
       ),

@@ -30,11 +30,10 @@ class CharactersRepository {
     String nextPageURL,
   ) async {
     final response = await charactersWebServices.getMoreCharacters(nextPageURL);
-    //if (response.statusCode == 200) {
     final repository = ApiResponse<List<Character>>(
-      info: Info.fromJson(response.data['info'] as Map<String, String>),
-      data: (response.data['results'] as List<Map<String, dynamic>>)
-          .map(Character.fromJson)
+      info: Info.fromJson(response.data['info'] as Map<String, dynamic>),
+      data: (response.data['results'] as List<dynamic>)
+          .map((e) => Character.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
     return repository;

@@ -84,7 +84,7 @@ class CharacterFrame extends BoxPainter {
       ..strokeJoin = StrokeJoin.round
       ..strokeCap = StrokeCap.round;
 
-    var height = rect.height * 0.15;
+    final height = rect.height * 0.15;
 
     //Left side shape
     var startX = rect.topLeft.dx - 5;
