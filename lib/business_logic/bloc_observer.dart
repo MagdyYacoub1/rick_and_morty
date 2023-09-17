@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rick_and_morty/buisniss_logic/bloc/characters/characters_bloc.dart';
+import 'package:rick_and_morty/business_logic/bloc/characters/characters_bloc.dart';
 
 import 'package:rick_and_morty/constants/helper.dart';
 

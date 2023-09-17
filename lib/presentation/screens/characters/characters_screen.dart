@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rick_and_morty/buisniss_logic/bloc/characters/characters_bloc.dart';
+import 'package:rick_and_morty/business_logic/bloc/characters/characters_bloc.dart';
 import 'package:rick_and_morty/constants/colors.dart';
 import 'package:rick_and_morty/data/models/character.dart';
 import 'package:rick_and_morty/presentation/screens/characters/components/details_box.dart';

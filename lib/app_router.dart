@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:rick_and_morty/buisniss_logic/bloc/characters/characters_bloc.dart';
+import 'package:rick_and_morty/business_logic/bloc/characters/characters_bloc.dart';
 import 'package:rick_and_morty/constants/stings.dart';
 import 'package:rick_and_morty/presentation/screens/characters/characters_screen.dart';
 import 'package:rick_and_morty/presentation/screens/characters_details_screen.dart';
