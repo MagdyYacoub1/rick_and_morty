@@ -26,8 +26,8 @@ class DetailsArea extends StatelessWidget {
         Expanded(
           child: Padding(
             padding: const EdgeInsets.only(
-              top: 8,
-              bottom: 12,
+              top: 5,
+              bottom: 5,
               left: 15,
               right: 8,
             ),

@@ -55,8 +55,8 @@ class _LivenessIndicatorState extends State<LivenessIndicator> {
           duration: const Duration(milliseconds: 800),
           curve: Curves.fastEaseInToSlowEaseOut,
           child: Container(
-            height: 10,
-            width: 10,
+            height: 7,
+            width: 7,
             decoration: BoxDecoration(
               color: color,
               shape: BoxShape.circle,
@@ -64,11 +64,11 @@ class _LivenessIndicatorState extends State<LivenessIndicator> {
           ),
         ),
         const SizedBox(
-          width: 10,
+          width: 3,
         ),
         Text(
           widget.status,
-          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+          style: Theme.of(context).textTheme.labelSmall!.copyWith(
                 fontWeight: FontWeight.bold,
                 color: color,
               ),

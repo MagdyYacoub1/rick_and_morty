@@ -33,7 +33,7 @@ class DataLine extends StatelessWidget {
             Expanded(
               child: Text(
                 title,
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                style: Theme.of(context).textTheme.labelSmall!.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
                 overflow: TextOverflow.ellipsis,
@@ -55,8 +55,7 @@ class DataLine extends StatelessWidget {
                   detail,
                   curve: Curves.easeInCubic,
                   speed: const Duration(milliseconds: 100),
-                  textStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        fontStyle: FontStyle.italic,
+                  textStyle: Theme.of(context).textTheme.bodySmall!.copyWith(
                         overflow: TextOverflow.ellipsis,
                       ),
                 ),
