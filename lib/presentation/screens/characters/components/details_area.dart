@@ -18,14 +18,13 @@ class DetailsArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return SizedBox(
-      width: size.width * 0.55,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CharcaterImage(imageUrl: character.image),
-          Padding(
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        CharcaterImage(imageUrl: character.image),
+        Expanded(
+          child: Padding(
             padding: const EdgeInsets.only(
               top: 8,
               bottom: 12,
@@ -55,19 +54,19 @@ class DetailsArea extends StatelessWidget {
                   title: 'Gender',
                   detail: character.gender,
                 ),
-                DataLine(
+                /*DataLine(
                   title: 'Origin',
                   detail: character.origin.name,
                 ),
                 DataLine(
                   title: 'Location',
                   detail: character.location.name,
-                ),
+                ),*/
               ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -89,8 +88,8 @@ class CharcaterImage extends StatelessWidget {
 
     return CachedNetworkImage(
       imageUrl: imageUrl,
-      width: size.width * 0.55,
-      height: 200,
+      width: double.infinity,
+      height: 170,
       placeholderFadeInDuration: const Duration(milliseconds: 800),
       fadeInDuration: const Duration(milliseconds: 700),
       fadeOutDuration: const Duration(milliseconds: 500),

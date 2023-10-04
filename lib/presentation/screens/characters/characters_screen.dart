@@ -53,23 +53,52 @@ class _CharactersScreenState extends State<CharactersScreen> {
               child: CircularProgressIndicator(),
             ),
             fetched: (characters) {
-              return ListView.builder(
-                controller: scrollController,
-                itemCount: characters.data!.length + 1,
-                itemBuilder: (context, index) {
-                  return index < characters.data!.length
-                      ? Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 30),
-                          child: DetailsBox(
-                            character: characters.data![index],
-                          ),
-                        )
-                      : const Padding(
-                          padding: EdgeInsets.symmetric(vertical: 32),
-                          child: Center(
-                            child: CircularProgressIndicator.adaptive(),
-                          ),
-                        );
+              return LayoutBuilder(
+                builder: (context, constraints) {
+                  const aspectRatio = 0.55;
+                  final width = constraints.maxWidth;
+                  final itemHeight = (width * 0.5) / aspectRatio;
+                  final height = constraints.maxHeight + itemHeight;
+                  return OverflowBox(
+                    maxHeight: height,
+                    minHeight: height,
+                    maxWidth: width,
+                    minWidth: width,
+                    child: GridView.builder(
+                      controller: scrollController,
+                      cacheExtent: 10,
+                      padding: EdgeInsets.symmetric(
+                        vertical: itemHeight * 0.5,
+                        horizontal: 10,
+                      ),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 12,
+                        mainAxisSpacing: 12,
+                        childAspectRatio: aspectRatio,
+                      ),
+                      itemCount: characters.data!.length + 1,
+                      itemBuilder: (context, index) {
+                        return index < characters.data!.length
+                            ? Transform.translate(
+                                offset: Offset(
+                                  0,
+                                  index.isOdd ? itemHeight * 0.5 : 0.0,
+                                ),
+                                child: DetailsBox(
+                                  character: characters.data![index],
+                                ),
+                              )
+                            : const Padding(
+                                padding: EdgeInsets.symmetric(vertical: 32),
+                                child: Center(
+                                  child: CircularProgressIndicator.adaptive(),
+                                ),
+                              );
+                      },
+                    ),
+                  );
                 },
               );
             },

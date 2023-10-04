@@ -14,21 +14,19 @@ class DetailsBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const cardRadius = 15.0;
-    return Center(
-      child: Container(
-        decoration: const CustomDecoration(skip: cardRadius),
-        child: Material(
-          clipBehavior: Clip.antiAlias,
-          color: AppColors.teal.withOpacity(0.3),
-          shape: BeveledRectangleBorder(
-            borderRadius: BorderRadius.circular(cardRadius),
-            side: const BorderSide(
-              width: 3,
-              color: AppColors.teal,
-            ),
+    return Container(
+      //decoration: const CustomDecoration(skip: cardRadius),
+      child: Material(
+        clipBehavior: Clip.antiAlias,
+        color: AppColors.teal.withOpacity(0.3),
+        shape: BeveledRectangleBorder(
+          borderRadius: BorderRadius.circular(cardRadius),
+          side: const BorderSide(
+            width: 3,
+            color: AppColors.teal,
           ),
-          child: DetailsArea(character: character),
         ),
+        child: DetailsArea(character: character),
       ),
     );
   }

@@ -30,13 +30,14 @@ class DataLine extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              title,
-              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-              overflow: TextOverflow.ellipsis,
-              softWrap: false,
+            Expanded(
+              child: Text(
+                title,
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
             if (title == 'Name' && status != null)
               LivenessIndicator(
@@ -46,19 +47,21 @@ class DataLine extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.only(left: 15),
-          child: AnimatedTextKit(
-            isRepeatingAnimation: false,
-            animatedTexts: [
-              TypewriterAnimatedText(
-                detail,
-                curve: Curves.easeInCubic,
-                speed: const Duration(milliseconds: 100),
-                textStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      fontStyle: FontStyle.italic,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-              ),
-            ],
+          child: FittedBox(
+            child: AnimatedTextKit(
+              isRepeatingAnimation: false,
+              animatedTexts: [
+                TypewriterAnimatedText(
+                  detail,
+                  curve: Curves.easeInCubic,
+                  speed: const Duration(milliseconds: 100),
+                  textStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        fontStyle: FontStyle.italic,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                ),
+              ],
+            ),
           ),
         ),
       ],
