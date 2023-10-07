@@ -1,6 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:rick_and_morty/presentation/screens/characters/components/liveness_indicator.dart';
+import 'package:rick_and_morty/presentation/screens/characters_screen/components/liveness_indicator.dart';
 
 /// Used to create data line in charcter card
 class DataLine extends StatelessWidget {

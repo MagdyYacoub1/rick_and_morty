@@ -2,7 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty/constants/colors.dart';
 import 'package:rick_and_morty/data/models/character.dart';
-import 'package:rick_and_morty/presentation/screens/characters/components/data_line.dart';
+import 'package:rick_and_morty/presentation/screens/characters_screen/components/data_line.dart';
+import 'package:rick_and_morty/presentation/widgets/character_image.dart';
 
 /// Details area for each Character
 class DetailsArea extends StatelessWidget {
@@ -22,7 +23,10 @@ class DetailsArea extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CharcaterImage(imageUrl: character.image),
+        CustomChachedImage(
+          imageUrl: character.image,
+          height: 170,
+        ),
         Expanded(
           child: Padding(
             padding: const EdgeInsets.only(
@@ -67,41 +71,6 @@ class DetailsArea extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-///
-class CharcaterImage extends StatelessWidget {
-  ///
-  const CharcaterImage({
-    required this.imageUrl,
-    super.key,
-  });
-
-  ///
-  final String imageUrl;
-
-  @override
-  Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
-    return CachedNetworkImage(
-      imageUrl: imageUrl,
-      width: double.infinity,
-      height: 170,
-      placeholderFadeInDuration: const Duration(milliseconds: 800),
-      fadeInDuration: const Duration(milliseconds: 700),
-      fadeOutDuration: const Duration(milliseconds: 500),
-      placeholder: (context, url) => Align(
-        alignment: Alignment.topCenter,
-        child: LinearProgressIndicator(
-          minHeight: 10,
-          color: AppColors.teal,
-          backgroundColor: AppColors.teal.withOpacity(0.3),
-        ),
-      ),
-      fit: BoxFit.cover,
     );
   }
 }

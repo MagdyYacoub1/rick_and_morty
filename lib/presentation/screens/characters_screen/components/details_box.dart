@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty/constants/colors.dart';
+import 'package:rick_and_morty/constants/stings.dart';
 import 'package:rick_and_morty/data/models/character.dart';
-import 'package:rick_and_morty/presentation/screens/characters/components/details_area.dart';
+import 'package:rick_and_morty/presentation/screens/characters_screen/components/details_area.dart';
 
 ///details box shows details for each character
 class DetailsBox extends StatelessWidget {

@@ -1,5 +1,5 @@
-import 'package:rick_and_morty/presentation/screens/characters/characters_screen.dart';
-import 'package:rick_and_morty/presentation/screens/characters_details_screen.dart';
+import 'package:rick_and_morty/presentation/screens/characters_screen/characters_screen.dart';
+import 'package:rick_and_morty/presentation/screens/characters_details_screen/characters_details_screen.dart';
 
 ///Constants used in the app
 class ConstantStrings {
