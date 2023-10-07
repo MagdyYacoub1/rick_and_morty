@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:rick_and_morty/constants/helper.dart';
 import 'package:rick_and_morty/data/models/api_response.dart';
 import 'package:rick_and_morty/data/models/character.dart';
-import 'package:rick_and_morty/data/models/error.dart';
+import 'package:rick_and_morty/data/models/location.dart';
 import 'package:rick_and_morty/data/repository/characters_repository.dart';
 
 part 'characters_state.dart';
@@ -19,6 +19,9 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
     on<Fetch>((event, emit) async => _fetch(emit));
     on<FetchMore>((event, emit) async => _fetchMore(emit));
   }
+
+  /// Currently selected character by user to display more details
+  Character? currentlySelectedCharacter;
 
   Future<void> _fetch(Emitter<CharactersState> emit) async {
     if (state is EndOfList) {

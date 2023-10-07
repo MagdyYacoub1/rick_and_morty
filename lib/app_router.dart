@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:rick_and_morty/business_logic/bloc/characters/characters_bloc.dart';
 import 'package:rick_and_morty/constants/stings.dart';
-import 'package:rick_and_morty/data/models/character.dart';
-import 'package:rick_and_morty/presentation/screens/characters_screen/characters_screen.dart';
 import 'package:rick_and_morty/presentation/screens/characters_details_screen/characters_details_screen.dart';
+import 'package:rick_and_morty/presentation/screens/characters_screen/characters_screen.dart';
 
 ///Used to manage routes in the app
 class AppRouter {
@@ -28,12 +26,9 @@ class AppRouter {
           ),
         );
       case ConstantStrings.characterDetailsScreen:
-        final args = settings.arguments! as Character;
         return PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation) =>
-              CharacterDetailscreen(
-            character: args,
-          ),
+              const CharacterDetailscreen(),
         );
       default:
         return MaterialPageRoute(builder: (_) => const CharactersScreen());

@@ -17,7 +17,13 @@ class CharactersState with _$CharactersState {
   ///Faild state means the app faild fetching data from api
   const factory CharactersState.faild(String message) = Faild;
 
-  /// Faild state means the we loaded all data from api
+  /// End Of List state means the we loaded all data from api
   /// and no more data to fetch
   const factory CharactersState.endOfList() = EndOfList;
+
+  /// Character Location Fetched means the region and location
+  /// parameters are fetched from api
+  const factory CharactersState.characterLocationsFetched(
+    List<Location> characterLocations,
+  ) = CharacterLocationsFetched;
 }

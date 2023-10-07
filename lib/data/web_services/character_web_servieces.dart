@@ -30,8 +30,8 @@ class CharactersWebServices {
     }
   }
 
-  ///
-  Future<dynamic> getMoreCharacters(String url) async {
+  /// Returns next page of characters
+  Future<dynamic> fetchMoreData(String url) async {
     final response = await Dio().get<dynamic>(url);
     return response;
   }

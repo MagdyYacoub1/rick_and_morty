@@ -1,6 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:rick_and_morty/constants/colors.dart';
 import 'package:rick_and_morty/data/models/character.dart';
 import 'package:rick_and_morty/presentation/screens/characters_screen/components/data_line.dart';
 import 'package:rick_and_morty/presentation/widgets/character_image.dart';
@@ -18,7 +16,6 @@ class DetailsArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,

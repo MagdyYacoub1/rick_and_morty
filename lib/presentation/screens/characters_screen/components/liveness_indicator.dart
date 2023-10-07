@@ -6,11 +6,17 @@ import 'package:rick_and_morty/constants/colors.dart';
 ///Show liveness indicator
 class LivenessIndicator extends StatefulWidget {
   ///Show liveness indicator
-  const LivenessIndicator({required this.status, super.key});
+  const LivenessIndicator({
+    required this.bigger,
+    required this.status,
+    super.key,
+  });
 
   ///indicated wether character alive or died
   final String status;
 
+  /// Display bigger size suitable for details screen
+  final bool bigger;
   @override
   State<LivenessIndicator> createState() => _LivenessIndicatorState();
 }
@@ -41,7 +47,7 @@ class _LivenessIndicatorState extends State<LivenessIndicator> {
     } else if (widget.status == 'Dead') {
       color = Colors.redAccent;
     } else {
-      color = Colors.purpleAccent;
+      color = Colors.yellowAccent;
     }
   }
 
@@ -55,23 +61,28 @@ class _LivenessIndicatorState extends State<LivenessIndicator> {
           duration: const Duration(milliseconds: 800),
           curve: Curves.fastEaseInToSlowEaseOut,
           child: Container(
-            height: 7,
-            width: 7,
+            height: widget.bigger ? 11 : 7,
+            width: widget.bigger ? 11 : 7,
             decoration: BoxDecoration(
               color: color,
               shape: BoxShape.circle,
             ),
           ),
         ),
-        const SizedBox(
-          width: 3,
+        SizedBox(
+          width: widget.bigger ? 10 : 3,
         ),
         Text(
           widget.status,
-          style: Theme.of(context).textTheme.labelSmall!.copyWith(
-                fontWeight: FontWeight.bold,
-                color: color,
-              ),
+          style: widget.bigger
+              ? Theme.of(context).textTheme.labelLarge!.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: color,
+                  )
+              : Theme.of(context).textTheme.labelSmall!.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: color,
+                  ),
           overflow: TextOverflow.ellipsis,
           softWrap: false,
         ),

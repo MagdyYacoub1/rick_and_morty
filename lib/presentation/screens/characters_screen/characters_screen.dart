@@ -44,9 +44,6 @@ class _CharactersScreenState extends State<CharactersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //appBar: AppBar(leading: IconButton(onPressed: onPressed,
-      //icon: Icons.arrow_back_sharp),),
-      //extendBodyBehindAppBar: true,
       body: BlocBuilder<CharactersBloc, CharactersState>(
         builder: (context, state) {
           return state.maybeWhen(
@@ -89,6 +86,9 @@ class _CharactersScreenState extends State<CharactersScreen> {
                                 ),
                                 child: ContainerWrapper(
                                   character: characters.data![index],
+                                  closedCard: DetailsBox(
+                                    character: characters.data![index],
+                                  ),
                                 ),
                               )
                             : const Padding(
@@ -133,7 +133,6 @@ class _CharactersScreenState extends State<CharactersScreen> {
           );
         },
       ),
-
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

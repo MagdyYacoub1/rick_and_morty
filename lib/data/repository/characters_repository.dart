@@ -29,7 +29,7 @@ class CharactersRepository {
   Future<ApiResponse<List<Character>>> getMoreCharacters(
     String nextPageURL,
   ) async {
-    final response = await charactersWebServices.getMoreCharacters(nextPageURL);
+    final response = await charactersWebServices.fetchMoreData(nextPageURL);
     final repository = ApiResponse<List<Character>>(
       info: Info.fromJson(response.data['info'] as Map<String, dynamic>),
       data: (response.data['results'] as List<dynamic>)

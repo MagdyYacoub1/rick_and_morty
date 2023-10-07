@@ -8,6 +8,7 @@ class DataLine extends StatelessWidget {
   const DataLine({
     required this.title,
     required this.detail,
+    this.bigger = false,
     super.key,
     this.status,
   });
@@ -21,6 +22,9 @@ class DataLine extends StatelessWidget {
   ///Data details
   final String detail;
 
+  /// Display bigger size suitable for details screen
+  final bool bigger;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -33,18 +37,24 @@ class DataLine extends StatelessWidget {
             Expanded(
               child: Text(
                 title,
-                style: Theme.of(context).textTheme.labelSmall!.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                style: bigger
+                    ? Theme.of(context).textTheme.labelLarge!.copyWith(
+                          fontWeight: FontWeight.bold,
+                        )
+                    : Theme.of(context).textTheme.labelSmall!.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
                 overflow: TextOverflow.ellipsis,
               ),
             ),
             if (title == 'Name' && status != null)
               LivenessIndicator(
                 status: status!,
+                bigger: bigger,
               ),
           ],
         ),
+        SizedBox(height: bigger ? 7.0 : 0.0),
         Padding(
           padding: const EdgeInsets.only(left: 15),
           child: FittedBox(
@@ -53,11 +63,15 @@ class DataLine extends StatelessWidget {
               animatedTexts: [
                 TypewriterAnimatedText(
                   detail,
-                  curve: Curves.easeInCubic,
-                  speed: const Duration(milliseconds: 100),
-                  textStyle: Theme.of(context).textTheme.bodySmall!.copyWith(
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                  curve: Curves.easeIn,
+                  speed: Duration(milliseconds: bigger ? 70 : 100),
+                  textStyle: bigger
+                      ? Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            overflow: TextOverflow.ellipsis,
+                          )
+                      : Theme.of(context).textTheme.bodySmall!.copyWith(
+                            overflow: TextOverflow.ellipsis,
+                          ),
                 ),
               ],
             ),

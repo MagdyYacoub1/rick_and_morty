@@ -6,6 +6,10 @@ class CharactersEvent with _$CharactersEvent {
   ///Used to fetch data from [CharactersRepository]
   const factory CharactersEvent.fetch() = Fetch;
 
-  ///Fetch more datafrom api given next page url
+  ///Fetch more data from api given next page url
   const factory CharactersEvent.fetchMore() = FetchMore;
+
+  /// Fetch data locations related to current displayed character
+  const factory CharactersEvent.fetchCharacterLocations() =
+      FetchCharacterLocations;
 }
