@@ -18,69 +18,60 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$CharactersState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(ApiResponse<List<Character>> apiResponse) fetched,
-    required TResult Function(String message) faild,
-    required TResult Function() endOfList,
-    required TResult Function(List<Location> characterLocations)
-        characterLocationsFetched,
+    required TResult Function() charcterInitial,
+    required TResult Function() characterLoadInProgress,
+    required TResult Function(ApiResponse<List<Character>> apiResponse)
+        characterFetched,
+    required TResult Function(String message) characterFaild,
+    required TResult Function() characterEndOfList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loadInProgress,
-    TResult? Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult? Function(String message)? faild,
-    TResult? Function()? endOfList,
-    TResult? Function(List<Location> characterLocations)?
-        characterLocationsFetched,
+    TResult? Function()? charcterInitial,
+    TResult? Function()? characterLoadInProgress,
+    TResult? Function(ApiResponse<List<Character>> apiResponse)?
+        characterFetched,
+    TResult? Function(String message)? characterFaild,
+    TResult? Function()? characterEndOfList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult Function(String message)? faild,
-    TResult Function()? endOfList,
-    TResult Function(List<Location> characterLocations)?
-        characterLocationsFetched,
+    TResult Function()? charcterInitial,
+    TResult Function()? characterLoadInProgress,
+    TResult Function(ApiResponse<List<Character>> apiResponse)?
+        characterFetched,
+    TResult Function(String message)? characterFaild,
+    TResult Function()? characterEndOfList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(LoadInProgress value) loadInProgress,
-    required TResult Function(Fetched value) fetched,
-    required TResult Function(Faild value) faild,
-    required TResult Function(EndOfList value) endOfList,
-    required TResult Function(CharacterLocationsFetched value)
-        characterLocationsFetched,
+    required TResult Function(Initial value) charcterInitial,
+    required TResult Function(LoadInProgress value) characterLoadInProgress,
+    required TResult Function(Fetched value) characterFetched,
+    required TResult Function(Faild value) characterFaild,
+    required TResult Function(EndOfList value) characterEndOfList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(LoadInProgress value)? loadInProgress,
-    TResult? Function(Fetched value)? fetched,
-    TResult? Function(Faild value)? faild,
-    TResult? Function(EndOfList value)? endOfList,
-    TResult? Function(CharacterLocationsFetched value)?
-        characterLocationsFetched,
+    TResult? Function(Initial value)? charcterInitial,
+    TResult? Function(LoadInProgress value)? characterLoadInProgress,
+    TResult? Function(Fetched value)? characterFetched,
+    TResult? Function(Faild value)? characterFaild,
+    TResult? Function(EndOfList value)? characterEndOfList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(LoadInProgress value)? loadInProgress,
-    TResult Function(Fetched value)? fetched,
-    TResult Function(Faild value)? faild,
-    TResult Function(EndOfList value)? endOfList,
-    TResult Function(CharacterLocationsFetched value)?
-        characterLocationsFetched,
+    TResult Function(Initial value)? charcterInitial,
+    TResult Function(LoadInProgress value)? characterLoadInProgress,
+    TResult Function(Fetched value)? characterFetched,
+    TResult Function(Faild value)? characterFaild,
+    TResult Function(EndOfList value)? characterEndOfList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -125,7 +116,7 @@ class _$Initial implements Initial {
 
   @override
   String toString() {
-    return 'CharactersState.initial()';
+    return 'CharactersState.charcterInitial()';
   }
 
   @override
@@ -140,45 +131,42 @@ class _$Initial implements Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(ApiResponse<List<Character>> apiResponse) fetched,
-    required TResult Function(String message) faild,
-    required TResult Function() endOfList,
-    required TResult Function(List<Location> characterLocations)
-        characterLocationsFetched,
+    required TResult Function() charcterInitial,
+    required TResult Function() characterLoadInProgress,
+    required TResult Function(ApiResponse<List<Character>> apiResponse)
+        characterFetched,
+    required TResult Function(String message) characterFaild,
+    required TResult Function() characterEndOfList,
   }) {
-    return initial();
+    return charcterInitial();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loadInProgress,
-    TResult? Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult? Function(String message)? faild,
-    TResult? Function()? endOfList,
-    TResult? Function(List<Location> characterLocations)?
-        characterLocationsFetched,
+    TResult? Function()? charcterInitial,
+    TResult? Function()? characterLoadInProgress,
+    TResult? Function(ApiResponse<List<Character>> apiResponse)?
+        characterFetched,
+    TResult? Function(String message)? characterFaild,
+    TResult? Function()? characterEndOfList,
   }) {
-    return initial?.call();
+    return charcterInitial?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult Function(String message)? faild,
-    TResult Function()? endOfList,
-    TResult Function(List<Location> characterLocations)?
-        characterLocationsFetched,
+    TResult Function()? charcterInitial,
+    TResult Function()? characterLoadInProgress,
+    TResult Function(ApiResponse<List<Character>> apiResponse)?
+        characterFetched,
+    TResult Function(String message)? characterFaild,
+    TResult Function()? characterEndOfList,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial();
+    if (charcterInitial != null) {
+      return charcterInitial();
     }
     return orElse();
   }
@@ -186,45 +174,39 @@ class _$Initial implements Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(LoadInProgress value) loadInProgress,
-    required TResult Function(Fetched value) fetched,
-    required TResult Function(Faild value) faild,
-    required TResult Function(EndOfList value) endOfList,
-    required TResult Function(CharacterLocationsFetched value)
-        characterLocationsFetched,
+    required TResult Function(Initial value) charcterInitial,
+    required TResult Function(LoadInProgress value) characterLoadInProgress,
+    required TResult Function(Fetched value) characterFetched,
+    required TResult Function(Faild value) characterFaild,
+    required TResult Function(EndOfList value) characterEndOfList,
   }) {
-    return initial(this);
+    return charcterInitial(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(LoadInProgress value)? loadInProgress,
-    TResult? Function(Fetched value)? fetched,
-    TResult? Function(Faild value)? faild,
-    TResult? Function(EndOfList value)? endOfList,
-    TResult? Function(CharacterLocationsFetched value)?
-        characterLocationsFetched,
+    TResult? Function(Initial value)? charcterInitial,
+    TResult? Function(LoadInProgress value)? characterLoadInProgress,
+    TResult? Function(Fetched value)? characterFetched,
+    TResult? Function(Faild value)? characterFaild,
+    TResult? Function(EndOfList value)? characterEndOfList,
   }) {
-    return initial?.call(this);
+    return charcterInitial?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(LoadInProgress value)? loadInProgress,
-    TResult Function(Fetched value)? fetched,
-    TResult Function(Faild value)? faild,
-    TResult Function(EndOfList value)? endOfList,
-    TResult Function(CharacterLocationsFetched value)?
-        characterLocationsFetched,
+    TResult Function(Initial value)? charcterInitial,
+    TResult Function(LoadInProgress value)? characterLoadInProgress,
+    TResult Function(Fetched value)? characterFetched,
+    TResult Function(Faild value)? characterFaild,
+    TResult Function(EndOfList value)? characterEndOfList,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(this);
+    if (charcterInitial != null) {
+      return charcterInitial(this);
     }
     return orElse();
   }
@@ -257,7 +239,7 @@ class _$LoadInProgress implements LoadInProgress {
 
   @override
   String toString() {
-    return 'CharactersState.loadInProgress()';
+    return 'CharactersState.characterLoadInProgress()';
   }
 
   @override
@@ -272,45 +254,42 @@ class _$LoadInProgress implements LoadInProgress {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(ApiResponse<List<Character>> apiResponse) fetched,
-    required TResult Function(String message) faild,
-    required TResult Function() endOfList,
-    required TResult Function(List<Location> characterLocations)
-        characterLocationsFetched,
+    required TResult Function() charcterInitial,
+    required TResult Function() characterLoadInProgress,
+    required TResult Function(ApiResponse<List<Character>> apiResponse)
+        characterFetched,
+    required TResult Function(String message) characterFaild,
+    required TResult Function() characterEndOfList,
   }) {
-    return loadInProgress();
+    return characterLoadInProgress();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loadInProgress,
-    TResult? Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult? Function(String message)? faild,
-    TResult? Function()? endOfList,
-    TResult? Function(List<Location> characterLocations)?
-        characterLocationsFetched,
+    TResult? Function()? charcterInitial,
+    TResult? Function()? characterLoadInProgress,
+    TResult? Function(ApiResponse<List<Character>> apiResponse)?
+        characterFetched,
+    TResult? Function(String message)? characterFaild,
+    TResult? Function()? characterEndOfList,
   }) {
-    return loadInProgress?.call();
+    return characterLoadInProgress?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult Function(String message)? faild,
-    TResult Function()? endOfList,
-    TResult Function(List<Location> characterLocations)?
-        characterLocationsFetched,
+    TResult Function()? charcterInitial,
+    TResult Function()? characterLoadInProgress,
+    TResult Function(ApiResponse<List<Character>> apiResponse)?
+        characterFetched,
+    TResult Function(String message)? characterFaild,
+    TResult Function()? characterEndOfList,
     required TResult orElse(),
   }) {
-    if (loadInProgress != null) {
-      return loadInProgress();
+    if (characterLoadInProgress != null) {
+      return characterLoadInProgress();
     }
     return orElse();
   }
@@ -318,45 +297,39 @@ class _$LoadInProgress implements LoadInProgress {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(LoadInProgress value) loadInProgress,
-    required TResult Function(Fetched value) fetched,
-    required TResult Function(Faild value) faild,
-    required TResult Function(EndOfList value) endOfList,
-    required TResult Function(CharacterLocationsFetched value)
-        characterLocationsFetched,
+    required TResult Function(Initial value) charcterInitial,
+    required TResult Function(LoadInProgress value) characterLoadInProgress,
+    required TResult Function(Fetched value) characterFetched,
+    required TResult Function(Faild value) characterFaild,
+    required TResult Function(EndOfList value) characterEndOfList,
   }) {
-    return loadInProgress(this);
+    return characterLoadInProgress(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(LoadInProgress value)? loadInProgress,
-    TResult? Function(Fetched value)? fetched,
-    TResult? Function(Faild value)? faild,
-    TResult? Function(EndOfList value)? endOfList,
-    TResult? Function(CharacterLocationsFetched value)?
-        characterLocationsFetched,
+    TResult? Function(Initial value)? charcterInitial,
+    TResult? Function(LoadInProgress value)? characterLoadInProgress,
+    TResult? Function(Fetched value)? characterFetched,
+    TResult? Function(Faild value)? characterFaild,
+    TResult? Function(EndOfList value)? characterEndOfList,
   }) {
-    return loadInProgress?.call(this);
+    return characterLoadInProgress?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(LoadInProgress value)? loadInProgress,
-    TResult Function(Fetched value)? fetched,
-    TResult Function(Faild value)? faild,
-    TResult Function(EndOfList value)? endOfList,
-    TResult Function(CharacterLocationsFetched value)?
-        characterLocationsFetched,
+    TResult Function(Initial value)? charcterInitial,
+    TResult Function(LoadInProgress value)? characterLoadInProgress,
+    TResult Function(Fetched value)? characterFetched,
+    TResult Function(Faild value)? characterFaild,
+    TResult Function(EndOfList value)? characterEndOfList,
     required TResult orElse(),
   }) {
-    if (loadInProgress != null) {
-      return loadInProgress(this);
+    if (characterLoadInProgress != null) {
+      return characterLoadInProgress(this);
     }
     return orElse();
   }
@@ -416,7 +389,7 @@ class _$Fetched implements Fetched {
 
   @override
   String toString() {
-    return 'CharactersState.fetched(apiResponse: $apiResponse)';
+    return 'CharactersState.characterFetched(apiResponse: $apiResponse)';
   }
 
   @override
@@ -440,45 +413,42 @@ class _$Fetched implements Fetched {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(ApiResponse<List<Character>> apiResponse) fetched,
-    required TResult Function(String message) faild,
-    required TResult Function() endOfList,
-    required TResult Function(List<Location> characterLocations)
-        characterLocationsFetched,
+    required TResult Function() charcterInitial,
+    required TResult Function() characterLoadInProgress,
+    required TResult Function(ApiResponse<List<Character>> apiResponse)
+        characterFetched,
+    required TResult Function(String message) characterFaild,
+    required TResult Function() characterEndOfList,
   }) {
-    return fetched(apiResponse);
+    return characterFetched(apiResponse);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loadInProgress,
-    TResult? Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult? Function(String message)? faild,
-    TResult? Function()? endOfList,
-    TResult? Function(List<Location> characterLocations)?
-        characterLocationsFetched,
+    TResult? Function()? charcterInitial,
+    TResult? Function()? characterLoadInProgress,
+    TResult? Function(ApiResponse<List<Character>> apiResponse)?
+        characterFetched,
+    TResult? Function(String message)? characterFaild,
+    TResult? Function()? characterEndOfList,
   }) {
-    return fetched?.call(apiResponse);
+    return characterFetched?.call(apiResponse);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult Function(String message)? faild,
-    TResult Function()? endOfList,
-    TResult Function(List<Location> characterLocations)?
-        characterLocationsFetched,
+    TResult Function()? charcterInitial,
+    TResult Function()? characterLoadInProgress,
+    TResult Function(ApiResponse<List<Character>> apiResponse)?
+        characterFetched,
+    TResult Function(String message)? characterFaild,
+    TResult Function()? characterEndOfList,
     required TResult orElse(),
   }) {
-    if (fetched != null) {
-      return fetched(apiResponse);
+    if (characterFetched != null) {
+      return characterFetched(apiResponse);
     }
     return orElse();
   }
@@ -486,45 +456,39 @@ class _$Fetched implements Fetched {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(LoadInProgress value) loadInProgress,
-    required TResult Function(Fetched value) fetched,
-    required TResult Function(Faild value) faild,
-    required TResult Function(EndOfList value) endOfList,
-    required TResult Function(CharacterLocationsFetched value)
-        characterLocationsFetched,
+    required TResult Function(Initial value) charcterInitial,
+    required TResult Function(LoadInProgress value) characterLoadInProgress,
+    required TResult Function(Fetched value) characterFetched,
+    required TResult Function(Faild value) characterFaild,
+    required TResult Function(EndOfList value) characterEndOfList,
   }) {
-    return fetched(this);
+    return characterFetched(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(LoadInProgress value)? loadInProgress,
-    TResult? Function(Fetched value)? fetched,
-    TResult? Function(Faild value)? faild,
-    TResult? Function(EndOfList value)? endOfList,
-    TResult? Function(CharacterLocationsFetched value)?
-        characterLocationsFetched,
+    TResult? Function(Initial value)? charcterInitial,
+    TResult? Function(LoadInProgress value)? characterLoadInProgress,
+    TResult? Function(Fetched value)? characterFetched,
+    TResult? Function(Faild value)? characterFaild,
+    TResult? Function(EndOfList value)? characterEndOfList,
   }) {
-    return fetched?.call(this);
+    return characterFetched?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(LoadInProgress value)? loadInProgress,
-    TResult Function(Fetched value)? fetched,
-    TResult Function(Faild value)? faild,
-    TResult Function(EndOfList value)? endOfList,
-    TResult Function(CharacterLocationsFetched value)?
-        characterLocationsFetched,
+    TResult Function(Initial value)? charcterInitial,
+    TResult Function(LoadInProgress value)? characterLoadInProgress,
+    TResult Function(Fetched value)? characterFetched,
+    TResult Function(Faild value)? characterFaild,
+    TResult Function(EndOfList value)? characterEndOfList,
     required TResult orElse(),
   }) {
-    if (fetched != null) {
-      return fetched(this);
+    if (characterFetched != null) {
+      return characterFetched(this);
     }
     return orElse();
   }
@@ -579,7 +543,7 @@ class _$Faild implements Faild {
 
   @override
   String toString() {
-    return 'CharactersState.faild(message: $message)';
+    return 'CharactersState.characterFaild(message: $message)';
   }
 
   @override
@@ -602,45 +566,42 @@ class _$Faild implements Faild {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(ApiResponse<List<Character>> apiResponse) fetched,
-    required TResult Function(String message) faild,
-    required TResult Function() endOfList,
-    required TResult Function(List<Location> characterLocations)
-        characterLocationsFetched,
+    required TResult Function() charcterInitial,
+    required TResult Function() characterLoadInProgress,
+    required TResult Function(ApiResponse<List<Character>> apiResponse)
+        characterFetched,
+    required TResult Function(String message) characterFaild,
+    required TResult Function() characterEndOfList,
   }) {
-    return faild(message);
+    return characterFaild(message);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loadInProgress,
-    TResult? Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult? Function(String message)? faild,
-    TResult? Function()? endOfList,
-    TResult? Function(List<Location> characterLocations)?
-        characterLocationsFetched,
+    TResult? Function()? charcterInitial,
+    TResult? Function()? characterLoadInProgress,
+    TResult? Function(ApiResponse<List<Character>> apiResponse)?
+        characterFetched,
+    TResult? Function(String message)? characterFaild,
+    TResult? Function()? characterEndOfList,
   }) {
-    return faild?.call(message);
+    return characterFaild?.call(message);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult Function(String message)? faild,
-    TResult Function()? endOfList,
-    TResult Function(List<Location> characterLocations)?
-        characterLocationsFetched,
+    TResult Function()? charcterInitial,
+    TResult Function()? characterLoadInProgress,
+    TResult Function(ApiResponse<List<Character>> apiResponse)?
+        characterFetched,
+    TResult Function(String message)? characterFaild,
+    TResult Function()? characterEndOfList,
     required TResult orElse(),
   }) {
-    if (faild != null) {
-      return faild(message);
+    if (characterFaild != null) {
+      return characterFaild(message);
     }
     return orElse();
   }
@@ -648,45 +609,39 @@ class _$Faild implements Faild {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(LoadInProgress value) loadInProgress,
-    required TResult Function(Fetched value) fetched,
-    required TResult Function(Faild value) faild,
-    required TResult Function(EndOfList value) endOfList,
-    required TResult Function(CharacterLocationsFetched value)
-        characterLocationsFetched,
+    required TResult Function(Initial value) charcterInitial,
+    required TResult Function(LoadInProgress value) characterLoadInProgress,
+    required TResult Function(Fetched value) characterFetched,
+    required TResult Function(Faild value) characterFaild,
+    required TResult Function(EndOfList value) characterEndOfList,
   }) {
-    return faild(this);
+    return characterFaild(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(LoadInProgress value)? loadInProgress,
-    TResult? Function(Fetched value)? fetched,
-    TResult? Function(Faild value)? faild,
-    TResult? Function(EndOfList value)? endOfList,
-    TResult? Function(CharacterLocationsFetched value)?
-        characterLocationsFetched,
+    TResult? Function(Initial value)? charcterInitial,
+    TResult? Function(LoadInProgress value)? characterLoadInProgress,
+    TResult? Function(Fetched value)? characterFetched,
+    TResult? Function(Faild value)? characterFaild,
+    TResult? Function(EndOfList value)? characterEndOfList,
   }) {
-    return faild?.call(this);
+    return characterFaild?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(LoadInProgress value)? loadInProgress,
-    TResult Function(Fetched value)? fetched,
-    TResult Function(Faild value)? faild,
-    TResult Function(EndOfList value)? endOfList,
-    TResult Function(CharacterLocationsFetched value)?
-        characterLocationsFetched,
+    TResult Function(Initial value)? charcterInitial,
+    TResult Function(LoadInProgress value)? characterLoadInProgress,
+    TResult Function(Fetched value)? characterFetched,
+    TResult Function(Faild value)? characterFaild,
+    TResult Function(EndOfList value)? characterEndOfList,
     required TResult orElse(),
   }) {
-    if (faild != null) {
-      return faild(this);
+    if (characterFaild != null) {
+      return characterFaild(this);
     }
     return orElse();
   }
@@ -723,7 +678,7 @@ class _$EndOfList implements EndOfList {
 
   @override
   String toString() {
-    return 'CharactersState.endOfList()';
+    return 'CharactersState.characterEndOfList()';
   }
 
   @override
@@ -738,45 +693,42 @@ class _$EndOfList implements EndOfList {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(ApiResponse<List<Character>> apiResponse) fetched,
-    required TResult Function(String message) faild,
-    required TResult Function() endOfList,
-    required TResult Function(List<Location> characterLocations)
-        characterLocationsFetched,
+    required TResult Function() charcterInitial,
+    required TResult Function() characterLoadInProgress,
+    required TResult Function(ApiResponse<List<Character>> apiResponse)
+        characterFetched,
+    required TResult Function(String message) characterFaild,
+    required TResult Function() characterEndOfList,
   }) {
-    return endOfList();
+    return characterEndOfList();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loadInProgress,
-    TResult? Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult? Function(String message)? faild,
-    TResult? Function()? endOfList,
-    TResult? Function(List<Location> characterLocations)?
-        characterLocationsFetched,
+    TResult? Function()? charcterInitial,
+    TResult? Function()? characterLoadInProgress,
+    TResult? Function(ApiResponse<List<Character>> apiResponse)?
+        characterFetched,
+    TResult? Function(String message)? characterFaild,
+    TResult? Function()? characterEndOfList,
   }) {
-    return endOfList?.call();
+    return characterEndOfList?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult Function(String message)? faild,
-    TResult Function()? endOfList,
-    TResult Function(List<Location> characterLocations)?
-        characterLocationsFetched,
+    TResult Function()? charcterInitial,
+    TResult Function()? characterLoadInProgress,
+    TResult Function(ApiResponse<List<Character>> apiResponse)?
+        characterFetched,
+    TResult Function(String message)? characterFaild,
+    TResult Function()? characterEndOfList,
     required TResult orElse(),
   }) {
-    if (endOfList != null) {
-      return endOfList();
+    if (characterEndOfList != null) {
+      return characterEndOfList();
     }
     return orElse();
   }
@@ -784,45 +736,39 @@ class _$EndOfList implements EndOfList {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(LoadInProgress value) loadInProgress,
-    required TResult Function(Fetched value) fetched,
-    required TResult Function(Faild value) faild,
-    required TResult Function(EndOfList value) endOfList,
-    required TResult Function(CharacterLocationsFetched value)
-        characterLocationsFetched,
+    required TResult Function(Initial value) charcterInitial,
+    required TResult Function(LoadInProgress value) characterLoadInProgress,
+    required TResult Function(Fetched value) characterFetched,
+    required TResult Function(Faild value) characterFaild,
+    required TResult Function(EndOfList value) characterEndOfList,
   }) {
-    return endOfList(this);
+    return characterEndOfList(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(LoadInProgress value)? loadInProgress,
-    TResult? Function(Fetched value)? fetched,
-    TResult? Function(Faild value)? faild,
-    TResult? Function(EndOfList value)? endOfList,
-    TResult? Function(CharacterLocationsFetched value)?
-        characterLocationsFetched,
+    TResult? Function(Initial value)? charcterInitial,
+    TResult? Function(LoadInProgress value)? characterLoadInProgress,
+    TResult? Function(Fetched value)? characterFetched,
+    TResult? Function(Faild value)? characterFaild,
+    TResult? Function(EndOfList value)? characterEndOfList,
   }) {
-    return endOfList?.call(this);
+    return characterEndOfList?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(LoadInProgress value)? loadInProgress,
-    TResult Function(Fetched value)? fetched,
-    TResult Function(Faild value)? faild,
-    TResult Function(EndOfList value)? endOfList,
-    TResult Function(CharacterLocationsFetched value)?
-        characterLocationsFetched,
+    TResult Function(Initial value)? charcterInitial,
+    TResult Function(LoadInProgress value)? characterLoadInProgress,
+    TResult Function(Fetched value)? characterFetched,
+    TResult Function(Faild value)? characterFaild,
+    TResult Function(EndOfList value)? characterEndOfList,
     required TResult orElse(),
   }) {
-    if (endOfList != null) {
-      return endOfList(this);
+    if (characterEndOfList != null) {
+      return characterEndOfList(this);
     }
     return orElse();
   }
@@ -833,223 +779,48 @@ abstract class EndOfList implements CharactersState {
 }
 
 /// @nodoc
-abstract class _$$CharacterLocationsFetchedCopyWith<$Res> {
-  factory _$$CharacterLocationsFetchedCopyWith(
-          _$CharacterLocationsFetched value,
-          $Res Function(_$CharacterLocationsFetched) then) =
-      __$$CharacterLocationsFetchedCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<Location> characterLocations});
-}
-
-/// @nodoc
-class __$$CharacterLocationsFetchedCopyWithImpl<$Res>
-    extends _$CharactersStateCopyWithImpl<$Res, _$CharacterLocationsFetched>
-    implements _$$CharacterLocationsFetchedCopyWith<$Res> {
-  __$$CharacterLocationsFetchedCopyWithImpl(_$CharacterLocationsFetched _value,
-      $Res Function(_$CharacterLocationsFetched) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? characterLocations = null,
-  }) {
-    return _then(_$CharacterLocationsFetched(
-      null == characterLocations
-          ? _value._characterLocations
-          : characterLocations // ignore: cast_nullable_to_non_nullable
-              as List<Location>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$CharacterLocationsFetched implements CharacterLocationsFetched {
-  const _$CharacterLocationsFetched(final List<Location> characterLocations)
-      : _characterLocations = characterLocations;
-
-  final List<Location> _characterLocations;
-  @override
-  List<Location> get characterLocations {
-    if (_characterLocations is EqualUnmodifiableListView)
-      return _characterLocations;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_characterLocations);
-  }
-
-  @override
-  String toString() {
-    return 'CharactersState.characterLocationsFetched(characterLocations: $characterLocations)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CharacterLocationsFetched &&
-            const DeepCollectionEquality()
-                .equals(other._characterLocations, _characterLocations));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_characterLocations));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CharacterLocationsFetchedCopyWith<_$CharacterLocationsFetched>
-      get copyWith => __$$CharacterLocationsFetchedCopyWithImpl<
-          _$CharacterLocationsFetched>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loadInProgress,
-    required TResult Function(ApiResponse<List<Character>> apiResponse) fetched,
-    required TResult Function(String message) faild,
-    required TResult Function() endOfList,
-    required TResult Function(List<Location> characterLocations)
-        characterLocationsFetched,
-  }) {
-    return characterLocationsFetched(characterLocations);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loadInProgress,
-    TResult? Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult? Function(String message)? faild,
-    TResult? Function()? endOfList,
-    TResult? Function(List<Location> characterLocations)?
-        characterLocationsFetched,
-  }) {
-    return characterLocationsFetched?.call(characterLocations);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loadInProgress,
-    TResult Function(ApiResponse<List<Character>> apiResponse)? fetched,
-    TResult Function(String message)? faild,
-    TResult Function()? endOfList,
-    TResult Function(List<Location> characterLocations)?
-        characterLocationsFetched,
-    required TResult orElse(),
-  }) {
-    if (characterLocationsFetched != null) {
-      return characterLocationsFetched(characterLocations);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(LoadInProgress value) loadInProgress,
-    required TResult Function(Fetched value) fetched,
-    required TResult Function(Faild value) faild,
-    required TResult Function(EndOfList value) endOfList,
-    required TResult Function(CharacterLocationsFetched value)
-        characterLocationsFetched,
-  }) {
-    return characterLocationsFetched(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(LoadInProgress value)? loadInProgress,
-    TResult? Function(Fetched value)? fetched,
-    TResult? Function(Faild value)? faild,
-    TResult? Function(EndOfList value)? endOfList,
-    TResult? Function(CharacterLocationsFetched value)?
-        characterLocationsFetched,
-  }) {
-    return characterLocationsFetched?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(LoadInProgress value)? loadInProgress,
-    TResult Function(Fetched value)? fetched,
-    TResult Function(Faild value)? faild,
-    TResult Function(EndOfList value)? endOfList,
-    TResult Function(CharacterLocationsFetched value)?
-        characterLocationsFetched,
-    required TResult orElse(),
-  }) {
-    if (characterLocationsFetched != null) {
-      return characterLocationsFetched(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CharacterLocationsFetched implements CharactersState {
-  const factory CharacterLocationsFetched(
-      final List<Location> characterLocations) = _$CharacterLocationsFetched;
-
-  List<Location> get characterLocations;
-  @JsonKey(ignore: true)
-  _$$CharacterLocationsFetchedCopyWith<_$CharacterLocationsFetched>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 mixin _$CharactersEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetch,
-    required TResult Function() fetchMore,
+    required TResult Function() characterFetch,
+    required TResult Function() characterFetchMore,
     required TResult Function() fetchCharacterLocations,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fetch,
-    TResult? Function()? fetchMore,
+    TResult? Function()? characterFetch,
+    TResult? Function()? characterFetchMore,
     TResult? Function()? fetchCharacterLocations,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetch,
-    TResult Function()? fetchMore,
+    TResult Function()? characterFetch,
+    TResult Function()? characterFetchMore,
     TResult Function()? fetchCharacterLocations,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Fetch value) fetch,
-    required TResult Function(FetchMore value) fetchMore,
+    required TResult Function(Fetch value) characterFetch,
+    required TResult Function(FetchMore value) characterFetchMore,
     required TResult Function(FetchCharacterLocations value)
         fetchCharacterLocations,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Fetch value)? fetch,
-    TResult? Function(FetchMore value)? fetchMore,
+    TResult? Function(Fetch value)? characterFetch,
+    TResult? Function(FetchMore value)? characterFetchMore,
     TResult? Function(FetchCharacterLocations value)? fetchCharacterLocations,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Fetch value)? fetch,
-    TResult Function(FetchMore value)? fetchMore,
+    TResult Function(Fetch value)? characterFetch,
+    TResult Function(FetchMore value)? characterFetchMore,
     TResult Function(FetchCharacterLocations value)? fetchCharacterLocations,
     required TResult orElse(),
   }) =>
@@ -1095,7 +866,7 @@ class _$Fetch implements Fetch {
 
   @override
   String toString() {
-    return 'CharactersEvent.fetch()';
+    return 'CharactersEvent.characterFetch()';
   }
 
   @override
@@ -1110,33 +881,33 @@ class _$Fetch implements Fetch {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetch,
-    required TResult Function() fetchMore,
+    required TResult Function() characterFetch,
+    required TResult Function() characterFetchMore,
     required TResult Function() fetchCharacterLocations,
   }) {
-    return fetch();
+    return characterFetch();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fetch,
-    TResult? Function()? fetchMore,
+    TResult? Function()? characterFetch,
+    TResult? Function()? characterFetchMore,
     TResult? Function()? fetchCharacterLocations,
   }) {
-    return fetch?.call();
+    return characterFetch?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetch,
-    TResult Function()? fetchMore,
+    TResult Function()? characterFetch,
+    TResult Function()? characterFetchMore,
     TResult Function()? fetchCharacterLocations,
     required TResult orElse(),
   }) {
-    if (fetch != null) {
-      return fetch();
+    if (characterFetch != null) {
+      return characterFetch();
     }
     return orElse();
   }
@@ -1144,34 +915,34 @@ class _$Fetch implements Fetch {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Fetch value) fetch,
-    required TResult Function(FetchMore value) fetchMore,
+    required TResult Function(Fetch value) characterFetch,
+    required TResult Function(FetchMore value) characterFetchMore,
     required TResult Function(FetchCharacterLocations value)
         fetchCharacterLocations,
   }) {
-    return fetch(this);
+    return characterFetch(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Fetch value)? fetch,
-    TResult? Function(FetchMore value)? fetchMore,
+    TResult? Function(Fetch value)? characterFetch,
+    TResult? Function(FetchMore value)? characterFetchMore,
     TResult? Function(FetchCharacterLocations value)? fetchCharacterLocations,
   }) {
-    return fetch?.call(this);
+    return characterFetch?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Fetch value)? fetch,
-    TResult Function(FetchMore value)? fetchMore,
+    TResult Function(Fetch value)? characterFetch,
+    TResult Function(FetchMore value)? characterFetchMore,
     TResult Function(FetchCharacterLocations value)? fetchCharacterLocations,
     required TResult orElse(),
   }) {
-    if (fetch != null) {
-      return fetch(this);
+    if (characterFetch != null) {
+      return characterFetch(this);
     }
     return orElse();
   }
@@ -1204,7 +975,7 @@ class _$FetchMore implements FetchMore {
 
   @override
   String toString() {
-    return 'CharactersEvent.fetchMore()';
+    return 'CharactersEvent.characterFetchMore()';
   }
 
   @override
@@ -1219,33 +990,33 @@ class _$FetchMore implements FetchMore {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetch,
-    required TResult Function() fetchMore,
+    required TResult Function() characterFetch,
+    required TResult Function() characterFetchMore,
     required TResult Function() fetchCharacterLocations,
   }) {
-    return fetchMore();
+    return characterFetchMore();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fetch,
-    TResult? Function()? fetchMore,
+    TResult? Function()? characterFetch,
+    TResult? Function()? characterFetchMore,
     TResult? Function()? fetchCharacterLocations,
   }) {
-    return fetchMore?.call();
+    return characterFetchMore?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetch,
-    TResult Function()? fetchMore,
+    TResult Function()? characterFetch,
+    TResult Function()? characterFetchMore,
     TResult Function()? fetchCharacterLocations,
     required TResult orElse(),
   }) {
-    if (fetchMore != null) {
-      return fetchMore();
+    if (characterFetchMore != null) {
+      return characterFetchMore();
     }
     return orElse();
   }
@@ -1253,34 +1024,34 @@ class _$FetchMore implements FetchMore {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Fetch value) fetch,
-    required TResult Function(FetchMore value) fetchMore,
+    required TResult Function(Fetch value) characterFetch,
+    required TResult Function(FetchMore value) characterFetchMore,
     required TResult Function(FetchCharacterLocations value)
         fetchCharacterLocations,
   }) {
-    return fetchMore(this);
+    return characterFetchMore(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Fetch value)? fetch,
-    TResult? Function(FetchMore value)? fetchMore,
+    TResult? Function(Fetch value)? characterFetch,
+    TResult? Function(FetchMore value)? characterFetchMore,
     TResult? Function(FetchCharacterLocations value)? fetchCharacterLocations,
   }) {
-    return fetchMore?.call(this);
+    return characterFetchMore?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Fetch value)? fetch,
-    TResult Function(FetchMore value)? fetchMore,
+    TResult Function(Fetch value)? characterFetch,
+    TResult Function(FetchMore value)? characterFetchMore,
     TResult Function(FetchCharacterLocations value)? fetchCharacterLocations,
     required TResult orElse(),
   }) {
-    if (fetchMore != null) {
-      return fetchMore(this);
+    if (characterFetchMore != null) {
+      return characterFetchMore(this);
     }
     return orElse();
   }
@@ -1329,8 +1100,8 @@ class _$FetchCharacterLocations implements FetchCharacterLocations {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() fetch,
-    required TResult Function() fetchMore,
+    required TResult Function() characterFetch,
+    required TResult Function() characterFetchMore,
     required TResult Function() fetchCharacterLocations,
   }) {
     return fetchCharacterLocations();
@@ -1339,8 +1110,8 @@ class _$FetchCharacterLocations implements FetchCharacterLocations {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? fetch,
-    TResult? Function()? fetchMore,
+    TResult? Function()? characterFetch,
+    TResult? Function()? characterFetchMore,
     TResult? Function()? fetchCharacterLocations,
   }) {
     return fetchCharacterLocations?.call();
@@ -1349,8 +1120,8 @@ class _$FetchCharacterLocations implements FetchCharacterLocations {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetch,
-    TResult Function()? fetchMore,
+    TResult Function()? characterFetch,
+    TResult Function()? characterFetchMore,
     TResult Function()? fetchCharacterLocations,
     required TResult orElse(),
   }) {
@@ -1363,8 +1134,8 @@ class _$FetchCharacterLocations implements FetchCharacterLocations {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Fetch value) fetch,
-    required TResult Function(FetchMore value) fetchMore,
+    required TResult Function(Fetch value) characterFetch,
+    required TResult Function(FetchMore value) characterFetchMore,
     required TResult Function(FetchCharacterLocations value)
         fetchCharacterLocations,
   }) {
@@ -1374,8 +1145,8 @@ class _$FetchCharacterLocations implements FetchCharacterLocations {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Fetch value)? fetch,
-    TResult? Function(FetchMore value)? fetchMore,
+    TResult? Function(Fetch value)? characterFetch,
+    TResult? Function(FetchMore value)? characterFetchMore,
     TResult? Function(FetchCharacterLocations value)? fetchCharacterLocations,
   }) {
     return fetchCharacterLocations?.call(this);
@@ -1384,8 +1155,8 @@ class _$FetchCharacterLocations implements FetchCharacterLocations {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Fetch value)? fetch,
-    TResult Function(FetchMore value)? fetchMore,
+    TResult Function(Fetch value)? characterFetch,
+    TResult Function(FetchMore value)? characterFetchMore,
     TResult Function(FetchCharacterLocations value)? fetchCharacterLocations,
     required TResult orElse(),
   }) {

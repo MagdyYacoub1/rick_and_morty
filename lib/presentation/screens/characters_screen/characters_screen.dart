@@ -47,10 +47,10 @@ class _CharactersScreenState extends State<CharactersScreen> {
       body: BlocBuilder<CharactersBloc, CharactersState>(
         builder: (context, state) {
           return state.maybeWhen(
-            loadInProgress: () => const Center(
+            characterLoadInProgress: () => const Center(
               child: CircularProgressIndicator(),
             ),
-            fetched: (characters) {
+            characterFetched: (characters) {
               return LayoutBuilder(
                 builder: (context, constraints) {
                   const aspectRatio = 0.55;
@@ -103,13 +103,13 @@ class _CharactersScreenState extends State<CharactersScreen> {
                 },
               );
             },
-            endOfList: () => const Center(
+            characterEndOfList: () => const Center(
               child: Text(
                 'End of list',
                 textAlign: TextAlign.center,
               ),
             ),
-            faild: (e) => Center(
+            characterFaild: (e) => Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

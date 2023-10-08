@@ -11,11 +11,11 @@ part 'characters_event.dart';
 part 'characters_bloc.freezed.dart';
 
 ///Character Bloc responsible for
-///managing the the state for the [Character] clss
+///managing the the state for the [Character] class
 class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
   ///Constructor for Characters bloc
   ///Responsible for emiting the initial state and register all events
-  CharactersBloc() : super(const CharactersState.initial()) {
+  CharactersBloc() : super(const CharactersState.charcterInitial()) {
     on<Fetch>((event, emit) async => _fetch(emit));
     on<FetchMore>((event, emit) async => _fetchMore(emit));
   }
@@ -40,7 +40,6 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
   Future<void> _fetchMore(Emitter<CharactersState> emit) async {
     if ((state as Fetched).apiResponse.info?.next != null) {
       try {
-        Log.debug((state as Fetched).apiResponse.info!.next);
         final charactersRepository = CharactersRepository();
         final response = await charactersRepository
             .getMoreCharacters((state as Fetched).apiResponse.info!.next!);
