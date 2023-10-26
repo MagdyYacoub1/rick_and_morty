@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/business_logic/bloc/characters/characters_bloc.dart';
 import 'package:rick_and_morty/constants/colors.dart';
 import 'package:rick_and_morty/presentation/screens/characters_details_screen/components/extended_details.dart';
-import 'package:rick_and_morty/presentation/widgets/character_image.dart';
+import 'package:rick_and_morty/presentation/widgets/custom_cached_image.dart';
 
 ///Creates a screen to dispaly each Character details
 class CharacterDetailscreen extends StatelessWidget {
@@ -26,7 +26,7 @@ class CharacterDetailscreen extends StatelessWidget {
               floating: true,
               expandedHeight: imageHeight,
               flexibleSpace: FlexibleSpaceBar(
-                background: CustomChachedImage(
+                background: CustomCachedImage(
                   imageUrl: character.image,
                   height: imageHeight,
                 ),

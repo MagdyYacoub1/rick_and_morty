@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty/data/models/character.dart';
 import 'package:rick_and_morty/presentation/screens/characters_screen/components/data_line.dart';
-import 'package:rick_and_morty/presentation/widgets/character_image.dart';
+import 'package:rick_and_morty/presentation/widgets/custom_cached_image.dart';
 
 /// Details area for each Character
 class DetailsArea extends StatelessWidget {
@@ -20,7 +20,7 @@ class DetailsArea extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CustomChachedImage(
+        CustomCachedImage(
           imageUrl: character.image,
           height: 170,
         ),

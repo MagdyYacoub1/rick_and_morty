@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:rick_and_morty/constants/colors.dart';
 
 /// Chached Image widget
-class CustomChachedImage extends StatelessWidget {
+class CustomCachedImage extends StatelessWidget {
   /// Chached image
-  const CustomChachedImage({
+  const CustomCachedImage({
     required this.imageUrl,
     required this.height,
     super.key,
