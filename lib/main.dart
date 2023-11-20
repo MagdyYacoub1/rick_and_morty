@@ -7,16 +7,27 @@ import 'package:rick_and_morty/business_logic/bloc_observer.dart';
 void main() {
   Bloc.observer = AppBlocObserver();
   runApp(
-    MyApp(),
+    const MyApp(),
   );
 }
 
 ///The route widget of the app
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   ///Construct and attch as a root widget to the widget tree
-  MyApp({super.key}) : _appRouter = AppRouter();
+  const MyApp({super.key});
 
-  final AppRouter _appRouter;
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final _router = AppRouter();
+
+  @override
+  void dispose() {
+    _router.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +42,7 @@ class MyApp extends StatelessWidget {
           },
         ),
       ),
-      onGenerateRoute: _appRouter.generateRoute,
+      onGenerateRoute: _router.generateRoute,
     );
   }
 }

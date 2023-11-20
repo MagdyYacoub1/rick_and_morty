@@ -25,7 +25,8 @@ class AppRouter {
           builder: (context) => MultiBlocProvider(
             providers: [
               BlocProvider(
-                create: (context) => charactersBloc..add(const Fetch()),
+                create: (context) =>
+                    charactersBloc..add(const CharacterFetch()),
               ),
               BlocProvider(
                 create: (context) => HomeTabIndexCubit(),
@@ -42,5 +43,10 @@ class AppRouter {
       default:
         return MaterialPageRoute(builder: (_) => const CharactersScreen());
     }
+  }
+
+  /// Closes the block
+  void dispose() {
+    charactersBloc.close();
   }
 }
