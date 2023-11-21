@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:rick_and_morty/constants/colors.dart';
 import 'package:rick_and_morty/presentation/screens/characters_screen/components/liveness_indicator.dart';
 
 /// Used to create data line in charcter card
@@ -40,11 +41,25 @@ class DataLine extends StatelessWidget {
                 title,
                 style: bigger
                     ? Theme.of(context).textTheme.labelLarge!.copyWith(
-                          fontWeight: FontWeight.bold,
-                        )
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.teal2,
+                        shadows: [
+                          const Shadow(
+                            blurRadius: 5,
+                            color: AppColors.teal2,
+                          )
+                        ],
+                      )
                     : Theme.of(context).textTheme.labelSmall!.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.teal2,
+                        shadows: [
+                          const Shadow(
+                            blurRadius: 5,
+                            color: AppColors.teal2,
+                          )
+                        ],
+                      ),
                 overflow: TextOverflow.ellipsis,
               ),
             ),
@@ -81,11 +96,23 @@ class DataLine extends StatelessWidget {
                     detail,
                     style: bigger
                         ? Theme.of(context).textTheme.bodyLarge!.copyWith(
-                              overflow: TextOverflow.ellipsis,
-                            )
+                            overflow: TextOverflow.ellipsis,
+                            shadows: [
+                              const Shadow(
+                                blurRadius: 5,
+                                color: AppColors.teal,
+                              )
+                            ],
+                          )
                         : Theme.of(context).textTheme.bodySmall!.copyWith(
-                              overflow: TextOverflow.ellipsis,
-                            ),
+                            overflow: TextOverflow.ellipsis,
+                            shadows: [
+                              const Shadow(
+                                blurRadius: 5,
+                                color: AppColors.teal,
+                              )
+                            ],
+                          ),
                   ),
           ),
         ),

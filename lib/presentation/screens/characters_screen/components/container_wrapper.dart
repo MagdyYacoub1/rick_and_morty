@@ -13,6 +13,7 @@ class ContainerWrapper extends StatelessWidget {
     required this.character,
     required this.closedCard,
     super.key,
+    required this.index,
   });
 
   /// Character widget to display
@@ -21,10 +22,12 @@ class ContainerWrapper extends StatelessWidget {
   /// Character Card Disblayed on close
   final Widget closedCard;
 
+  /// Character Card Disblayed on close
+  final int index;
+
   @override
   Widget build(BuildContext context) {
     return OpenContainer(
-      useRootNavigator: true,
       openBuilder: (context2, closedContainer) {
         return BlocProvider.value(
           value: BlocProvider.of<CharactersBloc>(context),
@@ -33,14 +36,22 @@ class ContainerWrapper extends StatelessWidget {
       },
       closedColor: Colors.transparent,
       closedShape: BeveledRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: index % 2 == 0
+            ? const BorderRadius.only(
+                topLeft: Radius.elliptical(20, 25),
+                bottomRight: Radius.elliptical(20, 25),
+              )
+            : const BorderRadius.only(
+                topRight: Radius.elliptical(20, 25),
+                bottomLeft: const Radius.elliptical(20, 25),
+              ),
         side: const BorderSide(
           width: 3,
           color: AppColors.teal,
         ),
       ),
       closedBuilder: (context, openContainer) {
-        return InkWell(
+        return GestureDetector(
           onTap: () {
             context.read<CharactersBloc>().currentlySelectedCharacter =
                 character;

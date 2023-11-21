@@ -28,6 +28,10 @@ class _LivenessIndicatorState extends State<LivenessIndicator> {
   @override
   void initState() {
     super.initState();
+    chooseColor();
+  }
+
+  void chooseColor() {
     if (widget.status == 'Alive') {
       color = AppColors.teal2;
       timer = Timer.periodic(
@@ -66,6 +70,12 @@ class _LivenessIndicatorState extends State<LivenessIndicator> {
             decoration: BoxDecoration(
               color: color,
               shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                  color: color,
+                  blurRadius: 5,
+                ),
+              ],
             ),
           ),
         ),
@@ -76,13 +86,25 @@ class _LivenessIndicatorState extends State<LivenessIndicator> {
           widget.status,
           style: widget.bigger
               ? Theme.of(context).textTheme.labelLarge!.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: color,
-                  )
+                  fontWeight: FontWeight.bold,
+                  color: color,
+                  shadows: [
+                    Shadow(
+                      blurRadius: 5,
+                      color: color,
+                    )
+                  ],
+                )
               : Theme.of(context).textTheme.labelSmall!.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: color,
-                  ),
+                  fontWeight: FontWeight.bold,
+                  color: color,
+                  shadows: [
+                    Shadow(
+                      blurRadius: 5,
+                      color: color,
+                    )
+                  ],
+                ),
           overflow: TextOverflow.ellipsis,
           softWrap: false,
         ),

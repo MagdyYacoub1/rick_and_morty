@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rick_and_morty/presentation/screens/characters_screen/components/details_area.dart';
 
 import '../../../../business_logic/bloc/characters/characters_bloc.dart';
 import '../../../../data/models/character.dart';
 import 'container_wrapper.dart';
-import 'details_box.dart';
 
 class CharactersGridView extends StatefulWidget {
   const CharactersGridView({
@@ -42,58 +42,44 @@ class _CharactersGridViewState extends State<CharactersGridView> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        const aspectRatio = 0.55;
-        final width = constraints.maxWidth;
-        final itemHeight = (width * 0.5) / aspectRatio;
-        final height = constraints.maxHeight + itemHeight;
-        return OverflowBox(
-          maxHeight: height,
-          minHeight: height,
-          maxWidth: width,
-          minWidth: width,
-          child: GridView.builder(
-            controller: scrollController,
-            padding: EdgeInsets.symmetric(
-              vertical: itemHeight * 0.5,
-              horizontal: 10,
-            ),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 12,
-              mainAxisSpacing: 12,
-              childAspectRatio: aspectRatio,
-            ),
-            itemCount: widget.characters.length + 1,
-            itemBuilder: (context, index) {
-              return index < widget.characters.length
-                  ? Transform.translate(
-                      offset: Offset(
-                        0,
-                        index.isOdd ? itemHeight * 0.5 : 0.0,
-                      ),
-                      child: ContainerWrapper(
-                        character: widget.characters[index],
-                        closedCard: DetailsBox(
-                          character: widget.characters[index],
-                        ),
-                      ),
-                    )
-                  : Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 32),
-                      child: Center(
-                        child: context.read<CharactersBloc>().state.maybeWhen(
-                              orElse: () => const SizedBox(),
-                              characterLoadMoreInProgress: (_) =>
-                                  const CircularProgressIndicator.adaptive(),
-                              characterEndOfList: () => const Text(
-                                'End of list',
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                      ),
-                    );
-            },
+        const aspectRatio = 0.66;
+        return GridView.builder(
+          controller: scrollController,
+          padding: const EdgeInsets.symmetric(
+            vertical: 10,
+            horizontal: 10,
           ),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 12,
+            mainAxisSpacing: 12,
+            childAspectRatio: aspectRatio,
+          ),
+          itemCount: widget.characters.length + 1,
+          itemBuilder: (context, index) {
+            return index < widget.characters.length
+                ? ContainerWrapper(
+                    index: index,
+                    character: widget.characters[index],
+                    closedCard: DetailsArea(
+                      character: widget.characters[index],
+                    ),
+                  )
+                : Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 32),
+                    child: Center(
+                      child: context.read<CharactersBloc>().state.maybeWhen(
+                            orElse: () => const SizedBox(),
+                            characterLoadMoreInProgress: (_) =>
+                                const CircularProgressIndicator.adaptive(),
+                            characterEndOfList: () => const Text(
+                              'End of list',
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                    ),
+                  );
+          },
         );
       },
     );

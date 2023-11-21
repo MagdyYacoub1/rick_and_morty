@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rick_and_morty/constants/colors.dart';
 import 'package:rick_and_morty/data/models/character.dart';
 import 'package:rick_and_morty/presentation/screens/characters_screen/components/data_line.dart';
 import 'package:rick_and_morty/presentation/widgets/custom_cached_image.dart';
@@ -35,7 +36,7 @@ class DetailsArea extends StatelessWidget {
                       Colors.transparent,
                       Colors.transparent,
                       Colors.transparent,
-                      Colors.black,
+                      AppColors.gray,
                     ],
                   ),
                 ),
@@ -78,8 +79,7 @@ class DetailsArea extends StatelessWidget {
                   status: character.status,
                 ),
                 const SizedBox(height: 7),
-                if (character.type != '')
-                  Column(
+                /*Column(
                     children: [
                       DataLine(
                         title: 'Type',
@@ -87,17 +87,17 @@ class DetailsArea extends StatelessWidget {
                       ),
                       const SizedBox(height: 7),
                     ],
-                  ),
+                  ),*/
                 DataLine(
                   title: 'Gender',
                   detail: character.gender,
                 ),
                 const SizedBox(height: 7),
-                DataLine(
+                /*DataLine(
                   title: 'Origin',
                   detail: character.origin.name,
                 ),
-                /*DataLine(
+                DataLine(
                   title: 'Location',
                   detail: character.location.name,
                 ),*/
