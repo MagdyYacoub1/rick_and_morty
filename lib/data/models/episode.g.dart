@@ -6,7 +6,8 @@ part of 'episode.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Episode _$$_EpisodeFromJson(Map<String, dynamic> json) => _$_Episode(
+_$EpisodeImpl _$$EpisodeImplFromJson(Map<String, dynamic> json) =>
+    _$EpisodeImpl(
       id: json['id'] as int,
       name: json['name'] as String,
       airDate: json['air_date'] as String,
@@ -16,7 +17,7 @@ _$_Episode _$$_EpisodeFromJson(Map<String, dynamic> json) => _$_Episode(
           .toList(),
     );
 
-Map<String, dynamic> _$$_EpisodeToJson(_$_Episode instance) =>
+Map<String, dynamic> _$$EpisodeImplToJson(_$EpisodeImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

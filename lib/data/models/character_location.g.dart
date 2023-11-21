@@ -6,14 +6,15 @@ part of 'character_location.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CharacterLocation _$$_CharacterLocationFromJson(Map<String, dynamic> json) =>
-    _$_CharacterLocation(
+_$CharacterLocationImpl _$$CharacterLocationImplFromJson(
+        Map<String, dynamic> json) =>
+    _$CharacterLocationImpl(
       name: json['name'] as String,
       url: json['url'] as String,
     );
 
-Map<String, dynamic> _$$_CharacterLocationToJson(
-        _$_CharacterLocation instance) =>
+Map<String, dynamic> _$$CharacterLocationImplToJson(
+        _$CharacterLocationImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'url': instance.url,

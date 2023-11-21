@@ -27,6 +27,7 @@ class DataLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final animate = false;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
@@ -58,23 +59,34 @@ class DataLine extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 15),
           child: FittedBox(
-            child: AnimatedTextKit(
-              isRepeatingAnimation: false,
-              animatedTexts: [
-                TypewriterAnimatedText(
-                  detail,
-                  curve: Curves.easeIn,
-                  speed: Duration(milliseconds: bigger ? 70 : 100),
-                  textStyle: bigger
-                      ? Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            overflow: TextOverflow.ellipsis,
-                          )
-                      : Theme.of(context).textTheme.bodySmall!.copyWith(
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                ),
-              ],
-            ),
+            child: animate
+                ? AnimatedTextKit(
+                    isRepeatingAnimation: false,
+                    animatedTexts: [
+                      TypewriterAnimatedText(
+                        detail,
+                        curve: Curves.easeIn,
+                        speed: Duration(milliseconds: bigger ? 70 : 100),
+                        textStyle: bigger
+                            ? Theme.of(context).textTheme.bodyLarge!.copyWith(
+                                  overflow: TextOverflow.ellipsis,
+                                )
+                            : Theme.of(context).textTheme.bodySmall!.copyWith(
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                      ),
+                    ],
+                  )
+                : Text(
+                    detail,
+                    style: bigger
+                        ? Theme.of(context).textTheme.bodyLarge!.copyWith(
+                              overflow: TextOverflow.ellipsis,
+                            )
+                        : Theme.of(context).textTheme.bodySmall!.copyWith(
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                  ),
           ),
         ),
       ],

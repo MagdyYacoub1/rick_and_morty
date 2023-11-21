@@ -9,7 +9,7 @@ part 'api_response.freezed.dart';
 class ApiResponse<T> with _$ApiResponse<T> {
   ///
   const factory ApiResponse({
-    T? data,
-    Info? info,
+    required List<T> data,
+    required Info info,
   }) = _ApiResponse;
 }

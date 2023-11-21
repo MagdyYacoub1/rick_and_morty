@@ -6,7 +6,8 @@ part of 'location.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Location _$$_LocationFromJson(Map<String, dynamic> json) => _$_Location(
+_$LocationImpl _$$LocationImplFromJson(Map<String, dynamic> json) =>
+    _$LocationImpl(
       id: json['id'] as int,
       name: json['name'] as String,
       type: json['type'] as String,
@@ -16,7 +17,7 @@ _$_Location _$$_LocationFromJson(Map<String, dynamic> json) => _$_Location(
           .toList(),
     );
 
-Map<String, dynamic> _$$_LocationToJson(_$_Location instance) =>
+Map<String, dynamic> _$$LocationImplToJson(_$LocationImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

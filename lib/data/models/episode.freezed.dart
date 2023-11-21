@@ -94,10 +94,10 @@ class _$EpisodeCopyWithImpl<$Res, $Val extends Episode>
 }
 
 /// @nodoc
-abstract class _$$_EpisodeCopyWith<$Res> implements $EpisodeCopyWith<$Res> {
-  factory _$$_EpisodeCopyWith(
-          _$_Episode value, $Res Function(_$_Episode) then) =
-      __$$_EpisodeCopyWithImpl<$Res>;
+abstract class _$$EpisodeImplCopyWith<$Res> implements $EpisodeCopyWith<$Res> {
+  factory _$$EpisodeImplCopyWith(
+          _$EpisodeImpl value, $Res Function(_$EpisodeImpl) then) =
+      __$$EpisodeImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -109,10 +109,11 @@ abstract class _$$_EpisodeCopyWith<$Res> implements $EpisodeCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_EpisodeCopyWithImpl<$Res>
-    extends _$EpisodeCopyWithImpl<$Res, _$_Episode>
-    implements _$$_EpisodeCopyWith<$Res> {
-  __$$_EpisodeCopyWithImpl(_$_Episode _value, $Res Function(_$_Episode) _then)
+class __$$EpisodeImplCopyWithImpl<$Res>
+    extends _$EpisodeCopyWithImpl<$Res, _$EpisodeImpl>
+    implements _$$EpisodeImplCopyWith<$Res> {
+  __$$EpisodeImplCopyWithImpl(
+      _$EpisodeImpl _value, $Res Function(_$EpisodeImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -124,7 +125,7 @@ class __$$_EpisodeCopyWithImpl<$Res>
     Object? episode = null,
     Object? characters = null,
   }) {
-    return _then(_$_Episode(
+    return _then(_$EpisodeImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -152,8 +153,8 @@ class __$$_EpisodeCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true)
-class _$_Episode with DiagnosticableTreeMixin implements _Episode {
-  const _$_Episode(
+class _$EpisodeImpl with DiagnosticableTreeMixin implements _Episode {
+  const _$EpisodeImpl(
       {@JsonKey(name: 'id') required this.id,
       @JsonKey(name: 'name') required this.name,
       @JsonKey(name: 'air_date') required this.airDate,
@@ -161,8 +162,8 @@ class _$_Episode with DiagnosticableTreeMixin implements _Episode {
       @JsonKey(name: 'characters') required final List<Character> characters})
       : _characters = characters;
 
-  factory _$_Episode.fromJson(Map<String, dynamic> json) =>
-      _$$_EpisodeFromJson(json);
+  factory _$EpisodeImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EpisodeImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -206,7 +207,7 @@ class _$_Episode with DiagnosticableTreeMixin implements _Episode {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Episode &&
+            other is _$EpisodeImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.airDate, airDate) || other.airDate == airDate) &&
@@ -223,12 +224,12 @@ class _$_Episode with DiagnosticableTreeMixin implements _Episode {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EpisodeCopyWith<_$_Episode> get copyWith =>
-      __$$_EpisodeCopyWithImpl<_$_Episode>(this, _$identity);
+  _$$EpisodeImplCopyWith<_$EpisodeImpl> get copyWith =>
+      __$$EpisodeImplCopyWithImpl<_$EpisodeImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EpisodeToJson(
+    return _$$EpisodeImplToJson(
       this,
     );
   }
@@ -241,9 +242,9 @@ abstract class _Episode implements Episode {
       @JsonKey(name: 'air_date') required final String airDate,
       @JsonKey(name: 'episode') required final String episode,
       @JsonKey(name: 'characters')
-      required final List<Character> characters}) = _$_Episode;
+      required final List<Character> characters}) = _$EpisodeImpl;
 
-  factory _Episode.fromJson(Map<String, dynamic> json) = _$_Episode.fromJson;
+  factory _Episode.fromJson(Map<String, dynamic> json) = _$EpisodeImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -262,6 +263,6 @@ abstract class _Episode implements Episode {
   List<Character> get characters;
   @override
   @JsonKey(ignore: true)
-  _$$_EpisodeCopyWith<_$_Episode> get copyWith =>
+  _$$EpisodeImplCopyWith<_$EpisodeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

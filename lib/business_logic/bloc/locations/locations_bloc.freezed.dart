@@ -18,9 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$LocationState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() locationInitial,
     required TResult Function() locationLoadInProgress,
-    required TResult Function(ApiResponse<List<Location>> apiResponse)
+    required TResult Function(ApiResponse<Location> apiResponse)
         locationFetched,
     required TResult Function(String message) locationFaild,
     required TResult Function() locationEndOfList,
@@ -28,18 +27,16 @@ mixin _$LocationState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? locationInitial,
     TResult? Function()? locationLoadInProgress,
-    TResult? Function(ApiResponse<List<Location>> apiResponse)? locationFetched,
+    TResult? Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult? Function(String message)? locationFaild,
     TResult? Function()? locationEndOfList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? locationInitial,
     TResult Function()? locationLoadInProgress,
-    TResult Function(ApiResponse<List<Location>> apiResponse)? locationFetched,
+    TResult Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult Function(String message)? locationFaild,
     TResult Function()? locationEndOfList,
     required TResult orElse(),
@@ -47,8 +44,7 @@ mixin _$LocationState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LocationInitial value) locationInitial,
-    required TResult Function(_LocationLoadInProgress value)
+    required TResult Function(LocationLoadInProgress value)
         locationLoadInProgress,
     required TResult Function(LocationFetched value) locationFetched,
     required TResult Function(LocationFaild value) locationFaild,
@@ -57,8 +53,7 @@ mixin _$LocationState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LocationInitial value)? locationInitial,
-    TResult? Function(_LocationLoadInProgress value)? locationLoadInProgress,
+    TResult? Function(LocationLoadInProgress value)? locationLoadInProgress,
     TResult? Function(LocationFetched value)? locationFetched,
     TResult? Function(LocationFaild value)? locationFaild,
     TResult? Function(LocationEndOfList value)? locationEndOfList,
@@ -66,8 +61,7 @@ mixin _$LocationState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LocationInitial value)? locationInitial,
-    TResult Function(_LocationLoadInProgress value)? locationLoadInProgress,
+    TResult Function(LocationLoadInProgress value)? locationLoadInProgress,
     TResult Function(LocationFetched value)? locationFetched,
     TResult Function(LocationFaild value)? locationFaild,
     TResult Function(LocationEndOfList value)? locationEndOfList,
@@ -95,147 +89,27 @@ class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
 }
 
 /// @nodoc
-abstract class _$$LocationInitialCopyWith<$Res> {
-  factory _$$LocationInitialCopyWith(
-          _$LocationInitial value, $Res Function(_$LocationInitial) then) =
-      __$$LocationInitialCopyWithImpl<$Res>;
+abstract class _$$LocationLoadInProgressImplCopyWith<$Res> {
+  factory _$$LocationLoadInProgressImplCopyWith(
+          _$LocationLoadInProgressImpl value,
+          $Res Function(_$LocationLoadInProgressImpl) then) =
+      __$$LocationLoadInProgressImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LocationInitialCopyWithImpl<$Res>
-    extends _$LocationStateCopyWithImpl<$Res, _$LocationInitial>
-    implements _$$LocationInitialCopyWith<$Res> {
-  __$$LocationInitialCopyWithImpl(
-      _$LocationInitial _value, $Res Function(_$LocationInitial) _then)
+class __$$LocationLoadInProgressImplCopyWithImpl<$Res>
+    extends _$LocationStateCopyWithImpl<$Res, _$LocationLoadInProgressImpl>
+    implements _$$LocationLoadInProgressImplCopyWith<$Res> {
+  __$$LocationLoadInProgressImplCopyWithImpl(
+      _$LocationLoadInProgressImpl _value,
+      $Res Function(_$LocationLoadInProgressImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LocationInitial implements LocationInitial {
-  const _$LocationInitial();
-
-  @override
-  String toString() {
-    return 'LocationState.locationInitial()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LocationInitial);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() locationInitial,
-    required TResult Function() locationLoadInProgress,
-    required TResult Function(ApiResponse<List<Location>> apiResponse)
-        locationFetched,
-    required TResult Function(String message) locationFaild,
-    required TResult Function() locationEndOfList,
-  }) {
-    return locationInitial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? locationInitial,
-    TResult? Function()? locationLoadInProgress,
-    TResult? Function(ApiResponse<List<Location>> apiResponse)? locationFetched,
-    TResult? Function(String message)? locationFaild,
-    TResult? Function()? locationEndOfList,
-  }) {
-    return locationInitial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? locationInitial,
-    TResult Function()? locationLoadInProgress,
-    TResult Function(ApiResponse<List<Location>> apiResponse)? locationFetched,
-    TResult Function(String message)? locationFaild,
-    TResult Function()? locationEndOfList,
-    required TResult orElse(),
-  }) {
-    if (locationInitial != null) {
-      return locationInitial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(LocationInitial value) locationInitial,
-    required TResult Function(_LocationLoadInProgress value)
-        locationLoadInProgress,
-    required TResult Function(LocationFetched value) locationFetched,
-    required TResult Function(LocationFaild value) locationFaild,
-    required TResult Function(LocationEndOfList value) locationEndOfList,
-  }) {
-    return locationInitial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LocationInitial value)? locationInitial,
-    TResult? Function(_LocationLoadInProgress value)? locationLoadInProgress,
-    TResult? Function(LocationFetched value)? locationFetched,
-    TResult? Function(LocationFaild value)? locationFaild,
-    TResult? Function(LocationEndOfList value)? locationEndOfList,
-  }) {
-    return locationInitial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(LocationInitial value)? locationInitial,
-    TResult Function(_LocationLoadInProgress value)? locationLoadInProgress,
-    TResult Function(LocationFetched value)? locationFetched,
-    TResult Function(LocationFaild value)? locationFaild,
-    TResult Function(LocationEndOfList value)? locationEndOfList,
-    required TResult orElse(),
-  }) {
-    if (locationInitial != null) {
-      return locationInitial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class LocationInitial implements LocationState {
-  const factory LocationInitial() = _$LocationInitial;
-}
-
-/// @nodoc
-abstract class _$$_LocationLoadInProgressCopyWith<$Res> {
-  factory _$$_LocationLoadInProgressCopyWith(_$_LocationLoadInProgress value,
-          $Res Function(_$_LocationLoadInProgress) then) =
-      __$$_LocationLoadInProgressCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_LocationLoadInProgressCopyWithImpl<$Res>
-    extends _$LocationStateCopyWithImpl<$Res, _$_LocationLoadInProgress>
-    implements _$$_LocationLoadInProgressCopyWith<$Res> {
-  __$$_LocationLoadInProgressCopyWithImpl(_$_LocationLoadInProgress _value,
-      $Res Function(_$_LocationLoadInProgress) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_LocationLoadInProgress implements _LocationLoadInProgress {
-  const _$_LocationLoadInProgress();
+class _$LocationLoadInProgressImpl implements LocationLoadInProgress {
+  const _$LocationLoadInProgressImpl();
 
   @override
   String toString() {
@@ -246,7 +120,7 @@ class _$_LocationLoadInProgress implements _LocationLoadInProgress {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LocationLoadInProgress);
+            other is _$LocationLoadInProgressImpl);
   }
 
   @override
@@ -255,9 +129,8 @@ class _$_LocationLoadInProgress implements _LocationLoadInProgress {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() locationInitial,
     required TResult Function() locationLoadInProgress,
-    required TResult Function(ApiResponse<List<Location>> apiResponse)
+    required TResult Function(ApiResponse<Location> apiResponse)
         locationFetched,
     required TResult Function(String message) locationFaild,
     required TResult Function() locationEndOfList,
@@ -268,9 +141,8 @@ class _$_LocationLoadInProgress implements _LocationLoadInProgress {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? locationInitial,
     TResult? Function()? locationLoadInProgress,
-    TResult? Function(ApiResponse<List<Location>> apiResponse)? locationFetched,
+    TResult? Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult? Function(String message)? locationFaild,
     TResult? Function()? locationEndOfList,
   }) {
@@ -280,9 +152,8 @@ class _$_LocationLoadInProgress implements _LocationLoadInProgress {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? locationInitial,
     TResult Function()? locationLoadInProgress,
-    TResult Function(ApiResponse<List<Location>> apiResponse)? locationFetched,
+    TResult Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult Function(String message)? locationFaild,
     TResult Function()? locationEndOfList,
     required TResult orElse(),
@@ -296,8 +167,7 @@ class _$_LocationLoadInProgress implements _LocationLoadInProgress {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LocationInitial value) locationInitial,
-    required TResult Function(_LocationLoadInProgress value)
+    required TResult Function(LocationLoadInProgress value)
         locationLoadInProgress,
     required TResult Function(LocationFetched value) locationFetched,
     required TResult Function(LocationFaild value) locationFaild,
@@ -309,8 +179,7 @@ class _$_LocationLoadInProgress implements _LocationLoadInProgress {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LocationInitial value)? locationInitial,
-    TResult? Function(_LocationLoadInProgress value)? locationLoadInProgress,
+    TResult? Function(LocationLoadInProgress value)? locationLoadInProgress,
     TResult? Function(LocationFetched value)? locationFetched,
     TResult? Function(LocationFaild value)? locationFaild,
     TResult? Function(LocationEndOfList value)? locationEndOfList,
@@ -321,8 +190,7 @@ class _$_LocationLoadInProgress implements _LocationLoadInProgress {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LocationInitial value)? locationInitial,
-    TResult Function(_LocationLoadInProgress value)? locationLoadInProgress,
+    TResult Function(LocationLoadInProgress value)? locationLoadInProgress,
     TResult Function(LocationFetched value)? locationFetched,
     TResult Function(LocationFaild value)? locationFaild,
     TResult Function(LocationEndOfList value)? locationEndOfList,
@@ -335,27 +203,27 @@ class _$_LocationLoadInProgress implements _LocationLoadInProgress {
   }
 }
 
-abstract class _LocationLoadInProgress implements LocationState {
-  const factory _LocationLoadInProgress() = _$_LocationLoadInProgress;
+abstract class LocationLoadInProgress implements LocationState {
+  const factory LocationLoadInProgress() = _$LocationLoadInProgressImpl;
 }
 
 /// @nodoc
-abstract class _$$LocationFetchedCopyWith<$Res> {
-  factory _$$LocationFetchedCopyWith(
-          _$LocationFetched value, $Res Function(_$LocationFetched) then) =
-      __$$LocationFetchedCopyWithImpl<$Res>;
+abstract class _$$LocationFetchedImplCopyWith<$Res> {
+  factory _$$LocationFetchedImplCopyWith(_$LocationFetchedImpl value,
+          $Res Function(_$LocationFetchedImpl) then) =
+      __$$LocationFetchedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ApiResponse<List<Location>> apiResponse});
+  $Res call({ApiResponse<Location> apiResponse});
 
-  $ApiResponseCopyWith<List<Location>, $Res> get apiResponse;
+  $ApiResponseCopyWith<Location, $Res> get apiResponse;
 }
 
 /// @nodoc
-class __$$LocationFetchedCopyWithImpl<$Res>
-    extends _$LocationStateCopyWithImpl<$Res, _$LocationFetched>
-    implements _$$LocationFetchedCopyWith<$Res> {
-  __$$LocationFetchedCopyWithImpl(
-      _$LocationFetched _value, $Res Function(_$LocationFetched) _then)
+class __$$LocationFetchedImplCopyWithImpl<$Res>
+    extends _$LocationStateCopyWithImpl<$Res, _$LocationFetchedImpl>
+    implements _$$LocationFetchedImplCopyWith<$Res> {
+  __$$LocationFetchedImplCopyWithImpl(
+      _$LocationFetchedImpl _value, $Res Function(_$LocationFetchedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -363,19 +231,18 @@ class __$$LocationFetchedCopyWithImpl<$Res>
   $Res call({
     Object? apiResponse = null,
   }) {
-    return _then(_$LocationFetched(
+    return _then(_$LocationFetchedImpl(
       null == apiResponse
           ? _value.apiResponse
           : apiResponse // ignore: cast_nullable_to_non_nullable
-              as ApiResponse<List<Location>>,
+              as ApiResponse<Location>,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ApiResponseCopyWith<List<Location>, $Res> get apiResponse {
-    return $ApiResponseCopyWith<List<Location>, $Res>(_value.apiResponse,
-        (value) {
+  $ApiResponseCopyWith<Location, $Res> get apiResponse {
+    return $ApiResponseCopyWith<Location, $Res>(_value.apiResponse, (value) {
       return _then(_value.copyWith(apiResponse: value));
     });
   }
@@ -383,11 +250,11 @@ class __$$LocationFetchedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LocationFetched implements LocationFetched {
-  const _$LocationFetched(this.apiResponse);
+class _$LocationFetchedImpl implements LocationFetched {
+  const _$LocationFetchedImpl(this.apiResponse);
 
   @override
-  final ApiResponse<List<Location>> apiResponse;
+  final ApiResponse<Location> apiResponse;
 
   @override
   String toString() {
@@ -398,7 +265,7 @@ class _$LocationFetched implements LocationFetched {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LocationFetched &&
+            other is _$LocationFetchedImpl &&
             (identical(other.apiResponse, apiResponse) ||
                 other.apiResponse == apiResponse));
   }
@@ -409,15 +276,15 @@ class _$LocationFetched implements LocationFetched {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LocationFetchedCopyWith<_$LocationFetched> get copyWith =>
-      __$$LocationFetchedCopyWithImpl<_$LocationFetched>(this, _$identity);
+  _$$LocationFetchedImplCopyWith<_$LocationFetchedImpl> get copyWith =>
+      __$$LocationFetchedImplCopyWithImpl<_$LocationFetchedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() locationInitial,
     required TResult Function() locationLoadInProgress,
-    required TResult Function(ApiResponse<List<Location>> apiResponse)
+    required TResult Function(ApiResponse<Location> apiResponse)
         locationFetched,
     required TResult Function(String message) locationFaild,
     required TResult Function() locationEndOfList,
@@ -428,9 +295,8 @@ class _$LocationFetched implements LocationFetched {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? locationInitial,
     TResult? Function()? locationLoadInProgress,
-    TResult? Function(ApiResponse<List<Location>> apiResponse)? locationFetched,
+    TResult? Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult? Function(String message)? locationFaild,
     TResult? Function()? locationEndOfList,
   }) {
@@ -440,9 +306,8 @@ class _$LocationFetched implements LocationFetched {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? locationInitial,
     TResult Function()? locationLoadInProgress,
-    TResult Function(ApiResponse<List<Location>> apiResponse)? locationFetched,
+    TResult Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult Function(String message)? locationFaild,
     TResult Function()? locationEndOfList,
     required TResult orElse(),
@@ -456,8 +321,7 @@ class _$LocationFetched implements LocationFetched {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LocationInitial value) locationInitial,
-    required TResult Function(_LocationLoadInProgress value)
+    required TResult Function(LocationLoadInProgress value)
         locationLoadInProgress,
     required TResult Function(LocationFetched value) locationFetched,
     required TResult Function(LocationFaild value) locationFaild,
@@ -469,8 +333,7 @@ class _$LocationFetched implements LocationFetched {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LocationInitial value)? locationInitial,
-    TResult? Function(_LocationLoadInProgress value)? locationLoadInProgress,
+    TResult? Function(LocationLoadInProgress value)? locationLoadInProgress,
     TResult? Function(LocationFetched value)? locationFetched,
     TResult? Function(LocationFaild value)? locationFaild,
     TResult? Function(LocationEndOfList value)? locationEndOfList,
@@ -481,8 +344,7 @@ class _$LocationFetched implements LocationFetched {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LocationInitial value)? locationInitial,
-    TResult Function(_LocationLoadInProgress value)? locationLoadInProgress,
+    TResult Function(LocationLoadInProgress value)? locationLoadInProgress,
     TResult Function(LocationFetched value)? locationFetched,
     TResult Function(LocationFaild value)? locationFaild,
     TResult Function(LocationEndOfList value)? locationEndOfList,
@@ -496,30 +358,30 @@ class _$LocationFetched implements LocationFetched {
 }
 
 abstract class LocationFetched implements LocationState {
-  const factory LocationFetched(final ApiResponse<List<Location>> apiResponse) =
-      _$LocationFetched;
+  const factory LocationFetched(final ApiResponse<Location> apiResponse) =
+      _$LocationFetchedImpl;
 
-  ApiResponse<List<Location>> get apiResponse;
+  ApiResponse<Location> get apiResponse;
   @JsonKey(ignore: true)
-  _$$LocationFetchedCopyWith<_$LocationFetched> get copyWith =>
+  _$$LocationFetchedImplCopyWith<_$LocationFetchedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LocationFaildCopyWith<$Res> {
-  factory _$$LocationFaildCopyWith(
-          _$LocationFaild value, $Res Function(_$LocationFaild) then) =
-      __$$LocationFaildCopyWithImpl<$Res>;
+abstract class _$$LocationFaildImplCopyWith<$Res> {
+  factory _$$LocationFaildImplCopyWith(
+          _$LocationFaildImpl value, $Res Function(_$LocationFaildImpl) then) =
+      __$$LocationFaildImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$LocationFaildCopyWithImpl<$Res>
-    extends _$LocationStateCopyWithImpl<$Res, _$LocationFaild>
-    implements _$$LocationFaildCopyWith<$Res> {
-  __$$LocationFaildCopyWithImpl(
-      _$LocationFaild _value, $Res Function(_$LocationFaild) _then)
+class __$$LocationFaildImplCopyWithImpl<$Res>
+    extends _$LocationStateCopyWithImpl<$Res, _$LocationFaildImpl>
+    implements _$$LocationFaildImplCopyWith<$Res> {
+  __$$LocationFaildImplCopyWithImpl(
+      _$LocationFaildImpl _value, $Res Function(_$LocationFaildImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -527,7 +389,7 @@ class __$$LocationFaildCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$LocationFaild(
+    return _then(_$LocationFaildImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -538,8 +400,8 @@ class __$$LocationFaildCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LocationFaild implements LocationFaild {
-  const _$LocationFaild(this.message);
+class _$LocationFaildImpl implements LocationFaild {
+  const _$LocationFaildImpl(this.message);
 
   @override
   final String message;
@@ -553,7 +415,7 @@ class _$LocationFaild implements LocationFaild {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LocationFaild &&
+            other is _$LocationFaildImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -563,15 +425,14 @@ class _$LocationFaild implements LocationFaild {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LocationFaildCopyWith<_$LocationFaild> get copyWith =>
-      __$$LocationFaildCopyWithImpl<_$LocationFaild>(this, _$identity);
+  _$$LocationFaildImplCopyWith<_$LocationFaildImpl> get copyWith =>
+      __$$LocationFaildImplCopyWithImpl<_$LocationFaildImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() locationInitial,
     required TResult Function() locationLoadInProgress,
-    required TResult Function(ApiResponse<List<Location>> apiResponse)
+    required TResult Function(ApiResponse<Location> apiResponse)
         locationFetched,
     required TResult Function(String message) locationFaild,
     required TResult Function() locationEndOfList,
@@ -582,9 +443,8 @@ class _$LocationFaild implements LocationFaild {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? locationInitial,
     TResult? Function()? locationLoadInProgress,
-    TResult? Function(ApiResponse<List<Location>> apiResponse)? locationFetched,
+    TResult? Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult? Function(String message)? locationFaild,
     TResult? Function()? locationEndOfList,
   }) {
@@ -594,9 +454,8 @@ class _$LocationFaild implements LocationFaild {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? locationInitial,
     TResult Function()? locationLoadInProgress,
-    TResult Function(ApiResponse<List<Location>> apiResponse)? locationFetched,
+    TResult Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult Function(String message)? locationFaild,
     TResult Function()? locationEndOfList,
     required TResult orElse(),
@@ -610,8 +469,7 @@ class _$LocationFaild implements LocationFaild {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LocationInitial value) locationInitial,
-    required TResult Function(_LocationLoadInProgress value)
+    required TResult Function(LocationLoadInProgress value)
         locationLoadInProgress,
     required TResult Function(LocationFetched value) locationFetched,
     required TResult Function(LocationFaild value) locationFaild,
@@ -623,8 +481,7 @@ class _$LocationFaild implements LocationFaild {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LocationInitial value)? locationInitial,
-    TResult? Function(_LocationLoadInProgress value)? locationLoadInProgress,
+    TResult? Function(LocationLoadInProgress value)? locationLoadInProgress,
     TResult? Function(LocationFetched value)? locationFetched,
     TResult? Function(LocationFaild value)? locationFaild,
     TResult? Function(LocationEndOfList value)? locationEndOfList,
@@ -635,8 +492,7 @@ class _$LocationFaild implements LocationFaild {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LocationInitial value)? locationInitial,
-    TResult Function(_LocationLoadInProgress value)? locationLoadInProgress,
+    TResult Function(LocationLoadInProgress value)? locationLoadInProgress,
     TResult Function(LocationFetched value)? locationFetched,
     TResult Function(LocationFaild value)? locationFaild,
     TResult Function(LocationEndOfList value)? locationEndOfList,
@@ -650,34 +506,34 @@ class _$LocationFaild implements LocationFaild {
 }
 
 abstract class LocationFaild implements LocationState {
-  const factory LocationFaild(final String message) = _$LocationFaild;
+  const factory LocationFaild(final String message) = _$LocationFaildImpl;
 
   String get message;
   @JsonKey(ignore: true)
-  _$$LocationFaildCopyWith<_$LocationFaild> get copyWith =>
+  _$$LocationFaildImplCopyWith<_$LocationFaildImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LocationEndOfListCopyWith<$Res> {
-  factory _$$LocationEndOfListCopyWith(
-          _$LocationEndOfList value, $Res Function(_$LocationEndOfList) then) =
-      __$$LocationEndOfListCopyWithImpl<$Res>;
+abstract class _$$LocationEndOfListImplCopyWith<$Res> {
+  factory _$$LocationEndOfListImplCopyWith(_$LocationEndOfListImpl value,
+          $Res Function(_$LocationEndOfListImpl) then) =
+      __$$LocationEndOfListImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LocationEndOfListCopyWithImpl<$Res>
-    extends _$LocationStateCopyWithImpl<$Res, _$LocationEndOfList>
-    implements _$$LocationEndOfListCopyWith<$Res> {
-  __$$LocationEndOfListCopyWithImpl(
-      _$LocationEndOfList _value, $Res Function(_$LocationEndOfList) _then)
+class __$$LocationEndOfListImplCopyWithImpl<$Res>
+    extends _$LocationStateCopyWithImpl<$Res, _$LocationEndOfListImpl>
+    implements _$$LocationEndOfListImplCopyWith<$Res> {
+  __$$LocationEndOfListImplCopyWithImpl(_$LocationEndOfListImpl _value,
+      $Res Function(_$LocationEndOfListImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LocationEndOfList implements LocationEndOfList {
-  const _$LocationEndOfList();
+class _$LocationEndOfListImpl implements LocationEndOfList {
+  const _$LocationEndOfListImpl();
 
   @override
   String toString() {
@@ -687,7 +543,7 @@ class _$LocationEndOfList implements LocationEndOfList {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LocationEndOfList);
+        (other.runtimeType == runtimeType && other is _$LocationEndOfListImpl);
   }
 
   @override
@@ -696,9 +552,8 @@ class _$LocationEndOfList implements LocationEndOfList {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() locationInitial,
     required TResult Function() locationLoadInProgress,
-    required TResult Function(ApiResponse<List<Location>> apiResponse)
+    required TResult Function(ApiResponse<Location> apiResponse)
         locationFetched,
     required TResult Function(String message) locationFaild,
     required TResult Function() locationEndOfList,
@@ -709,9 +564,8 @@ class _$LocationEndOfList implements LocationEndOfList {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? locationInitial,
     TResult? Function()? locationLoadInProgress,
-    TResult? Function(ApiResponse<List<Location>> apiResponse)? locationFetched,
+    TResult? Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult? Function(String message)? locationFaild,
     TResult? Function()? locationEndOfList,
   }) {
@@ -721,9 +575,8 @@ class _$LocationEndOfList implements LocationEndOfList {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? locationInitial,
     TResult Function()? locationLoadInProgress,
-    TResult Function(ApiResponse<List<Location>> apiResponse)? locationFetched,
+    TResult Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult Function(String message)? locationFaild,
     TResult Function()? locationEndOfList,
     required TResult orElse(),
@@ -737,8 +590,7 @@ class _$LocationEndOfList implements LocationEndOfList {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LocationInitial value) locationInitial,
-    required TResult Function(_LocationLoadInProgress value)
+    required TResult Function(LocationLoadInProgress value)
         locationLoadInProgress,
     required TResult Function(LocationFetched value) locationFetched,
     required TResult Function(LocationFaild value) locationFaild,
@@ -750,8 +602,7 @@ class _$LocationEndOfList implements LocationEndOfList {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LocationInitial value)? locationInitial,
-    TResult? Function(_LocationLoadInProgress value)? locationLoadInProgress,
+    TResult? Function(LocationLoadInProgress value)? locationLoadInProgress,
     TResult? Function(LocationFetched value)? locationFetched,
     TResult? Function(LocationFaild value)? locationFaild,
     TResult? Function(LocationEndOfList value)? locationEndOfList,
@@ -762,8 +613,7 @@ class _$LocationEndOfList implements LocationEndOfList {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LocationInitial value)? locationInitial,
-    TResult Function(_LocationLoadInProgress value)? locationLoadInProgress,
+    TResult Function(LocationLoadInProgress value)? locationLoadInProgress,
     TResult Function(LocationFetched value)? locationFetched,
     TResult Function(LocationFaild value)? locationFaild,
     TResult Function(LocationEndOfList value)? locationEndOfList,
@@ -777,7 +627,7 @@ class _$LocationEndOfList implements LocationEndOfList {
 }
 
 abstract class LocationEndOfList implements LocationState {
-  const factory LocationEndOfList() = _$LocationEndOfList;
+  const factory LocationEndOfList() = _$LocationEndOfListImpl;
 }
 
 /// @nodoc
@@ -848,25 +698,25 @@ class _$LocationsEventCopyWithImpl<$Res, $Val extends LocationsEvent>
 }
 
 /// @nodoc
-abstract class _$$LocationFetchCopyWith<$Res> {
-  factory _$$LocationFetchCopyWith(
-          _$LocationFetch value, $Res Function(_$LocationFetch) then) =
-      __$$LocationFetchCopyWithImpl<$Res>;
+abstract class _$$LocationFetchImplCopyWith<$Res> {
+  factory _$$LocationFetchImplCopyWith(
+          _$LocationFetchImpl value, $Res Function(_$LocationFetchImpl) then) =
+      __$$LocationFetchImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LocationFetchCopyWithImpl<$Res>
-    extends _$LocationsEventCopyWithImpl<$Res, _$LocationFetch>
-    implements _$$LocationFetchCopyWith<$Res> {
-  __$$LocationFetchCopyWithImpl(
-      _$LocationFetch _value, $Res Function(_$LocationFetch) _then)
+class __$$LocationFetchImplCopyWithImpl<$Res>
+    extends _$LocationsEventCopyWithImpl<$Res, _$LocationFetchImpl>
+    implements _$$LocationFetchImplCopyWith<$Res> {
+  __$$LocationFetchImplCopyWithImpl(
+      _$LocationFetchImpl _value, $Res Function(_$LocationFetchImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LocationFetch implements LocationFetch {
-  const _$LocationFetch();
+class _$LocationFetchImpl implements LocationFetch {
+  const _$LocationFetchImpl();
 
   @override
   String toString() {
@@ -876,7 +726,7 @@ class _$LocationFetch implements LocationFetch {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LocationFetch);
+        (other.runtimeType == runtimeType && other is _$LocationFetchImpl);
   }
 
   @override
@@ -953,29 +803,29 @@ class _$LocationFetch implements LocationFetch {
 }
 
 abstract class LocationFetch implements LocationsEvent {
-  const factory LocationFetch() = _$LocationFetch;
+  const factory LocationFetch() = _$LocationFetchImpl;
 }
 
 /// @nodoc
-abstract class _$$LocationFetchMoreCopyWith<$Res> {
-  factory _$$LocationFetchMoreCopyWith(
-          _$LocationFetchMore value, $Res Function(_$LocationFetchMore) then) =
-      __$$LocationFetchMoreCopyWithImpl<$Res>;
+abstract class _$$LocationFetchMoreImplCopyWith<$Res> {
+  factory _$$LocationFetchMoreImplCopyWith(_$LocationFetchMoreImpl value,
+          $Res Function(_$LocationFetchMoreImpl) then) =
+      __$$LocationFetchMoreImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LocationFetchMoreCopyWithImpl<$Res>
-    extends _$LocationsEventCopyWithImpl<$Res, _$LocationFetchMore>
-    implements _$$LocationFetchMoreCopyWith<$Res> {
-  __$$LocationFetchMoreCopyWithImpl(
-      _$LocationFetchMore _value, $Res Function(_$LocationFetchMore) _then)
+class __$$LocationFetchMoreImplCopyWithImpl<$Res>
+    extends _$LocationsEventCopyWithImpl<$Res, _$LocationFetchMoreImpl>
+    implements _$$LocationFetchMoreImplCopyWith<$Res> {
+  __$$LocationFetchMoreImplCopyWithImpl(_$LocationFetchMoreImpl _value,
+      $Res Function(_$LocationFetchMoreImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LocationFetchMore implements LocationFetchMore {
-  const _$LocationFetchMore();
+class _$LocationFetchMoreImpl implements LocationFetchMore {
+  const _$LocationFetchMoreImpl();
 
   @override
   String toString() {
@@ -985,7 +835,7 @@ class _$LocationFetchMore implements LocationFetchMore {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LocationFetchMore);
+        (other.runtimeType == runtimeType && other is _$LocationFetchMoreImpl);
   }
 
   @override
@@ -1062,29 +912,31 @@ class _$LocationFetchMore implements LocationFetchMore {
 }
 
 abstract class LocationFetchMore implements LocationsEvent {
-  const factory LocationFetchMore() = _$LocationFetchMore;
+  const factory LocationFetchMore() = _$LocationFetchMoreImpl;
 }
 
 /// @nodoc
-abstract class _$$FetchCharacterLocationsCopyWith<$Res> {
-  factory _$$FetchCharacterLocationsCopyWith(_$FetchCharacterLocations value,
-          $Res Function(_$FetchCharacterLocations) then) =
-      __$$FetchCharacterLocationsCopyWithImpl<$Res>;
+abstract class _$$FetchCharacterLocationsImplCopyWith<$Res> {
+  factory _$$FetchCharacterLocationsImplCopyWith(
+          _$FetchCharacterLocationsImpl value,
+          $Res Function(_$FetchCharacterLocationsImpl) then) =
+      __$$FetchCharacterLocationsImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FetchCharacterLocationsCopyWithImpl<$Res>
-    extends _$LocationsEventCopyWithImpl<$Res, _$FetchCharacterLocations>
-    implements _$$FetchCharacterLocationsCopyWith<$Res> {
-  __$$FetchCharacterLocationsCopyWithImpl(_$FetchCharacterLocations _value,
-      $Res Function(_$FetchCharacterLocations) _then)
+class __$$FetchCharacterLocationsImplCopyWithImpl<$Res>
+    extends _$LocationsEventCopyWithImpl<$Res, _$FetchCharacterLocationsImpl>
+    implements _$$FetchCharacterLocationsImplCopyWith<$Res> {
+  __$$FetchCharacterLocationsImplCopyWithImpl(
+      _$FetchCharacterLocationsImpl _value,
+      $Res Function(_$FetchCharacterLocationsImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$FetchCharacterLocations implements FetchCharacterLocations {
-  const _$FetchCharacterLocations();
+class _$FetchCharacterLocationsImpl implements FetchCharacterLocations {
+  const _$FetchCharacterLocationsImpl();
 
   @override
   String toString() {
@@ -1095,7 +947,7 @@ class _$FetchCharacterLocations implements FetchCharacterLocations {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchCharacterLocations);
+            other is _$FetchCharacterLocationsImpl);
   }
 
   @override
@@ -1172,5 +1024,5 @@ class _$FetchCharacterLocations implements FetchCharacterLocations {
 }
 
 abstract class FetchCharacterLocations implements LocationsEvent {
-  const factory FetchCharacterLocations() = _$FetchCharacterLocations;
+  const factory FetchCharacterLocations() = _$FetchCharacterLocationsImpl;
 }

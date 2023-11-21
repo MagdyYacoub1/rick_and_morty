@@ -78,18 +78,20 @@ class _$InfoCopyWithImpl<$Res, $Val extends Info>
 }
 
 /// @nodoc
-abstract class _$$_InfoCopyWith<$Res> implements $InfoCopyWith<$Res> {
-  factory _$$_InfoCopyWith(_$_Info value, $Res Function(_$_Info) then) =
-      __$$_InfoCopyWithImpl<$Res>;
+abstract class _$$InfoImplCopyWith<$Res> implements $InfoCopyWith<$Res> {
+  factory _$$InfoImplCopyWith(
+          _$InfoImpl value, $Res Function(_$InfoImpl) then) =
+      __$$InfoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int count, int pages, String? next, String? prev});
 }
 
 /// @nodoc
-class __$$_InfoCopyWithImpl<$Res> extends _$InfoCopyWithImpl<$Res, _$_Info>
-    implements _$$_InfoCopyWith<$Res> {
-  __$$_InfoCopyWithImpl(_$_Info _value, $Res Function(_$_Info) _then)
+class __$$InfoImplCopyWithImpl<$Res>
+    extends _$InfoCopyWithImpl<$Res, _$InfoImpl>
+    implements _$$InfoImplCopyWith<$Res> {
+  __$$InfoImplCopyWithImpl(_$InfoImpl _value, $Res Function(_$InfoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -100,7 +102,7 @@ class __$$_InfoCopyWithImpl<$Res> extends _$InfoCopyWithImpl<$Res, _$_Info>
     Object? next = freezed,
     Object? prev = freezed,
   }) {
-    return _then(_$_Info(
+    return _then(_$InfoImpl(
       count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
@@ -123,14 +125,15 @@ class __$$_InfoCopyWithImpl<$Res> extends _$InfoCopyWithImpl<$Res, _$_Info>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Info with DiagnosticableTreeMixin implements _Info {
-  const _$_Info(
+class _$InfoImpl with DiagnosticableTreeMixin implements _Info {
+  const _$InfoImpl(
       {required this.count,
       required this.pages,
       required this.next,
       required this.prev});
 
-  factory _$_Info.fromJson(Map<String, dynamic> json) => _$$_InfoFromJson(json);
+  factory _$InfoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$InfoImplFromJson(json);
 
   @override
   final int count;
@@ -161,7 +164,7 @@ class _$_Info with DiagnosticableTreeMixin implements _Info {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Info &&
+            other is _$InfoImpl &&
             (identical(other.count, count) || other.count == count) &&
             (identical(other.pages, pages) || other.pages == pages) &&
             (identical(other.next, next) || other.next == next) &&
@@ -175,12 +178,12 @@ class _$_Info with DiagnosticableTreeMixin implements _Info {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_InfoCopyWith<_$_Info> get copyWith =>
-      __$$_InfoCopyWithImpl<_$_Info>(this, _$identity);
+  _$$InfoImplCopyWith<_$InfoImpl> get copyWith =>
+      __$$InfoImplCopyWithImpl<_$InfoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_InfoToJson(
+    return _$$InfoImplToJson(
       this,
     );
   }
@@ -191,9 +194,9 @@ abstract class _Info implements Info {
       {required final int count,
       required final int pages,
       required final String? next,
-      required final String? prev}) = _$_Info;
+      required final String? prev}) = _$InfoImpl;
 
-  factory _Info.fromJson(Map<String, dynamic> json) = _$_Info.fromJson;
+  factory _Info.fromJson(Map<String, dynamic> json) = _$InfoImpl.fromJson;
 
   @override
   int get count;
@@ -205,5 +208,6 @@ abstract class _Info implements Info {
   String? get prev;
   @override
   @JsonKey(ignore: true)
-  _$$_InfoCopyWith<_$_Info> get copyWith => throw _privateConstructorUsedError;
+  _$$InfoImplCopyWith<_$InfoImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

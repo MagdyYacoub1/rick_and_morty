@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/business_logic/bloc/locations/locations_bloc.dart';
 
+import '../../widgets/faild_state_widget.dart';
+
 /// Shows a list of all Locations
 class LocationsScreen extends StatefulWidget {
   /// Locations screen
@@ -40,7 +42,7 @@ class _LocationsScreenState extends State<LocationsScreen> {
   Widget build(BuildContext context) {
     return BlocBuilder<LocationBloc, LocationState>(
       builder: (context, state) {
-        return state.maybeWhen(
+        return state.when(
           locationLoadInProgress: () => const Center(
             child: CircularProgressIndicator(),
           ),
@@ -90,26 +92,9 @@ class _LocationsScreenState extends State<LocationsScreen> {
               textAlign: TextAlign.center,
             ),
           ),
-          locationFaild: (e) => Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  e,
-                  textAlign: TextAlign.center,
-                ),
-                TextButton(
-                  onPressed: refresh,
-                  child: const Text('Refresh'),
-                ),
-              ],
-            ),
-          ),
-          orElse: () => const Center(
-            child: Text(
-              'error',
-              textAlign: TextAlign.center,
-            ),
+          locationFaild: (e) => FaildStateWidget(
+            messaage: e,
+            action: refresh,
           ),
         );
       },

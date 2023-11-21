@@ -16,8 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ApiResponse<T> {
-  T? get data => throw _privateConstructorUsedError;
-  Info? get info => throw _privateConstructorUsedError;
+  List<T> get data => throw _privateConstructorUsedError;
+  Info get info => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ApiResponseCopyWith<T, ApiResponse<T>> get copyWith =>
@@ -30,9 +30,9 @@ abstract class $ApiResponseCopyWith<T, $Res> {
           ApiResponse<T> value, $Res Function(ApiResponse<T>) then) =
       _$ApiResponseCopyWithImpl<T, $Res, ApiResponse<T>>;
   @useResult
-  $Res call({T? data, Info? info});
+  $Res call({List<T> data, Info info});
 
-  $InfoCopyWith<$Res>? get info;
+  $InfoCopyWith<$Res> get info;
 }
 
 /// @nodoc
@@ -48,84 +48,87 @@ class _$ApiResponseCopyWithImpl<T, $Res, $Val extends ApiResponse<T>>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
-    Object? info = freezed,
+    Object? data = null,
+    Object? info = null,
   }) {
     return _then(_value.copyWith(
-      data: freezed == data
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as T?,
-      info: freezed == info
+              as List<T>,
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
-              as Info?,
+              as Info,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $InfoCopyWith<$Res>? get info {
-    if (_value.info == null) {
-      return null;
-    }
-
-    return $InfoCopyWith<$Res>(_value.info!, (value) {
+  $InfoCopyWith<$Res> get info {
+    return $InfoCopyWith<$Res>(_value.info, (value) {
       return _then(_value.copyWith(info: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$_ApiResponseCopyWith<T, $Res>
+abstract class _$$ApiResponseImplCopyWith<T, $Res>
     implements $ApiResponseCopyWith<T, $Res> {
-  factory _$$_ApiResponseCopyWith(
-          _$_ApiResponse<T> value, $Res Function(_$_ApiResponse<T>) then) =
-      __$$_ApiResponseCopyWithImpl<T, $Res>;
+  factory _$$ApiResponseImplCopyWith(_$ApiResponseImpl<T> value,
+          $Res Function(_$ApiResponseImpl<T>) then) =
+      __$$ApiResponseImplCopyWithImpl<T, $Res>;
   @override
   @useResult
-  $Res call({T? data, Info? info});
+  $Res call({List<T> data, Info info});
 
   @override
-  $InfoCopyWith<$Res>? get info;
+  $InfoCopyWith<$Res> get info;
 }
 
 /// @nodoc
-class __$$_ApiResponseCopyWithImpl<T, $Res>
-    extends _$ApiResponseCopyWithImpl<T, $Res, _$_ApiResponse<T>>
-    implements _$$_ApiResponseCopyWith<T, $Res> {
-  __$$_ApiResponseCopyWithImpl(
-      _$_ApiResponse<T> _value, $Res Function(_$_ApiResponse<T>) _then)
+class __$$ApiResponseImplCopyWithImpl<T, $Res>
+    extends _$ApiResponseCopyWithImpl<T, $Res, _$ApiResponseImpl<T>>
+    implements _$$ApiResponseImplCopyWith<T, $Res> {
+  __$$ApiResponseImplCopyWithImpl(
+      _$ApiResponseImpl<T> _value, $Res Function(_$ApiResponseImpl<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
-    Object? info = freezed,
+    Object? data = null,
+    Object? info = null,
   }) {
-    return _then(_$_ApiResponse<T>(
-      data: freezed == data
-          ? _value.data
+    return _then(_$ApiResponseImpl<T>(
+      data: null == data
+          ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
-              as T?,
-      info: freezed == info
+              as List<T>,
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
-              as Info?,
+              as Info,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_ApiResponse<T> implements _ApiResponse<T> {
-  const _$_ApiResponse({this.data, this.info});
+class _$ApiResponseImpl<T> implements _ApiResponse<T> {
+  const _$ApiResponseImpl({required final List<T> data, required this.info})
+      : _data = data;
+
+  final List<T> _data;
+  @override
+  List<T> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
 
   @override
-  final T? data;
-  @override
-  final Info? info;
+  final Info info;
 
   @override
   String toString() {
@@ -136,32 +139,34 @@ class _$_ApiResponse<T> implements _ApiResponse<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ApiResponse<T> &&
-            const DeepCollectionEquality().equals(other.data, data) &&
+            other is _$ApiResponseImpl<T> &&
+            const DeepCollectionEquality().equals(other._data, _data) &&
             (identical(other.info, info) || other.info == info));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data), info);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_data), info);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ApiResponseCopyWith<T, _$_ApiResponse<T>> get copyWith =>
-      __$$_ApiResponseCopyWithImpl<T, _$_ApiResponse<T>>(this, _$identity);
+  _$$ApiResponseImplCopyWith<T, _$ApiResponseImpl<T>> get copyWith =>
+      __$$ApiResponseImplCopyWithImpl<T, _$ApiResponseImpl<T>>(
+          this, _$identity);
 }
 
 abstract class _ApiResponse<T> implements ApiResponse<T> {
-  const factory _ApiResponse({final T? data, final Info? info}) =
-      _$_ApiResponse<T>;
+  const factory _ApiResponse(
+      {required final List<T> data,
+      required final Info info}) = _$ApiResponseImpl<T>;
 
   @override
-  T? get data;
+  List<T> get data;
   @override
-  Info? get info;
+  Info get info;
   @override
   @JsonKey(ignore: true)
-  _$$_ApiResponseCopyWith<T, _$_ApiResponse<T>> get copyWith =>
+  _$$ApiResponseImplCopyWith<T, _$ApiResponseImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

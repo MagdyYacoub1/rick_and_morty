@@ -71,11 +71,11 @@ class _$CharacterLocationCopyWithImpl<$Res, $Val extends CharacterLocation>
 }
 
 /// @nodoc
-abstract class _$$_CharacterLocationCopyWith<$Res>
+abstract class _$$CharacterLocationImplCopyWith<$Res>
     implements $CharacterLocationCopyWith<$Res> {
-  factory _$$_CharacterLocationCopyWith(_$_CharacterLocation value,
-          $Res Function(_$_CharacterLocation) then) =
-      __$$_CharacterLocationCopyWithImpl<$Res>;
+  factory _$$CharacterLocationImplCopyWith(_$CharacterLocationImpl value,
+          $Res Function(_$CharacterLocationImpl) then) =
+      __$$CharacterLocationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -83,11 +83,11 @@ abstract class _$$_CharacterLocationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CharacterLocationCopyWithImpl<$Res>
-    extends _$CharacterLocationCopyWithImpl<$Res, _$_CharacterLocation>
-    implements _$$_CharacterLocationCopyWith<$Res> {
-  __$$_CharacterLocationCopyWithImpl(
-      _$_CharacterLocation _value, $Res Function(_$_CharacterLocation) _then)
+class __$$CharacterLocationImplCopyWithImpl<$Res>
+    extends _$CharacterLocationCopyWithImpl<$Res, _$CharacterLocationImpl>
+    implements _$$CharacterLocationImplCopyWith<$Res> {
+  __$$CharacterLocationImplCopyWithImpl(_$CharacterLocationImpl _value,
+      $Res Function(_$CharacterLocationImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -96,7 +96,7 @@ class __$$_CharacterLocationCopyWithImpl<$Res>
     Object? name = null,
     Object? url = null,
   }) {
-    return _then(_$_CharacterLocation(
+    return _then(_$CharacterLocationImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -111,13 +111,13 @@ class __$$_CharacterLocationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CharacterLocation implements _CharacterLocation {
-  const _$_CharacterLocation(
+class _$CharacterLocationImpl implements _CharacterLocation {
+  const _$CharacterLocationImpl(
       {@JsonKey(name: 'name') required this.name,
       @JsonKey(name: 'url') required this.url});
 
-  factory _$_CharacterLocation.fromJson(Map<String, dynamic> json) =>
-      _$$_CharacterLocationFromJson(json);
+  factory _$CharacterLocationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CharacterLocationImplFromJson(json);
 
   @override
   @JsonKey(name: 'name')
@@ -135,7 +135,7 @@ class _$_CharacterLocation implements _CharacterLocation {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CharacterLocation &&
+            other is _$CharacterLocationImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.url, url) || other.url == url));
   }
@@ -147,13 +147,13 @@ class _$_CharacterLocation implements _CharacterLocation {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CharacterLocationCopyWith<_$_CharacterLocation> get copyWith =>
-      __$$_CharacterLocationCopyWithImpl<_$_CharacterLocation>(
+  _$$CharacterLocationImplCopyWith<_$CharacterLocationImpl> get copyWith =>
+      __$$CharacterLocationImplCopyWithImpl<_$CharacterLocationImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CharacterLocationToJson(
+    return _$$CharacterLocationImplToJson(
       this,
     );
   }
@@ -161,11 +161,12 @@ class _$_CharacterLocation implements _CharacterLocation {
 
 abstract class _CharacterLocation implements CharacterLocation {
   const factory _CharacterLocation(
-      {@JsonKey(name: 'name') required final String name,
-      @JsonKey(name: 'url') required final String url}) = _$_CharacterLocation;
+          {@JsonKey(name: 'name') required final String name,
+          @JsonKey(name: 'url') required final String url}) =
+      _$CharacterLocationImpl;
 
   factory _CharacterLocation.fromJson(Map<String, dynamic> json) =
-      _$_CharacterLocation.fromJson;
+      _$CharacterLocationImpl.fromJson;
 
   @override
   @JsonKey(name: 'name')
@@ -175,6 +176,6 @@ abstract class _CharacterLocation implements CharacterLocation {
   String get url;
   @override
   @JsonKey(ignore: true)
-  _$$_CharacterLocationCopyWith<_$_CharacterLocation> get copyWith =>
+  _$$CharacterLocationImplCopyWith<_$CharacterLocationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

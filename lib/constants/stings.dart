@@ -5,6 +5,9 @@ import 'package:rick_and_morty/presentation/screens/characters_details_screen/ch
 class ConstantStrings {
   ///Base url for the api
   static const baseUrl = 'https://rickandmortyapi.com/api/';
+  static const charactersPath = 'character';
+  static const locationsPath = 'location';
+  static const episodesPath = 'episode';
 
   ///Path to home screen [CharactersScreen]
   static const charactersScreen = '/';

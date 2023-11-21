@@ -4,15 +4,14 @@ part of 'locations_bloc.dart';
 @freezed
 class LocationState with _$LocationState {
   ///Initial state means the Location page just opend
-  const factory LocationState.locationInitial() = LocationInitial;
+  //const factory LocationState.locationInitial() = LocationInitial;
 
   /// LoadInProgress state means the app loading data from api
-  const factory LocationState.locationLoadInProgress() =
-      _LocationLoadInProgress;
+  const factory LocationState.locationLoadInProgress() = LocationLoadInProgress;
 
   /// Fetched state means the app finished fetching data from api
   const factory LocationState.locationFetched(
-    ApiResponse<List<Location>> apiResponse,
+    ApiResponse<Location> apiResponse,
   ) = LocationFetched;
 
   ///Faild state means the app faild fetching data from api

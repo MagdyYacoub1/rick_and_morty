@@ -1,104 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/business_logic/bloc/characters/characters_bloc.dart';
-import 'package:rick_and_morty/constants/colors.dart';
-import 'package:rick_and_morty/data/models/character.dart';
-import 'package:rick_and_morty/presentation/screens/characters_screen/components/container_wrapper.dart';
-import 'package:rick_and_morty/presentation/screens/characters_screen/components/details_box.dart';
+
+import 'package:rick_and_morty/presentation/widgets/faild_state_widget.dart';
+
+import '../../widgets/initial_loading_widget.dart';
+import 'components/characters_grid_view.dart';
 
 /// Shows all characters
-class CharactersScreen extends StatefulWidget {
+class CharactersScreen extends StatelessWidget {
   /// Character Screen
   const CharactersScreen({super.key});
-
-  @override
-  State<CharactersScreen> createState() => _CharactersScreenState();
-}
-
-class _CharactersScreenState extends State<CharactersScreen> {
-  late ScrollController scrollController;
-
-  @override
-  void initState() {
-    super.initState();
-    scrollController = ScrollController();
-    scrollController.addListener(() {
-      if (scrollController.position.maxScrollExtent ==
-          scrollController.offset) {
-        context.read<CharactersBloc>().add(const FetchMore());
-      }
-    });
-  }
-
-  Future<void> refresh() async {
-    context.read<CharactersBloc>().add(const Fetch());
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    scrollController.dispose();
+  Future<void> refresh(BuildContext context) async {
+    context.read<CharactersBloc>().add(const CharacterFetch());
   }
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CharactersBloc, CharactersState>(
       builder: (context, state) {
-        return state.maybeWhen(
-          characterLoadInProgress: () => const Center(
-            child: CircularProgressIndicator(),
-          ),
+        return state.when(
+          characterLoadInProgress: () => const InitialLoadingWidget(),
           characterFetched: (characters) {
-            return LayoutBuilder(
-              builder: (context, constraints) {
-                const aspectRatio = 0.55;
-                final width = constraints.maxWidth;
-                final itemHeight = (width * 0.5) / aspectRatio;
-                final height = constraints.maxHeight + itemHeight;
-                return OverflowBox(
-                  maxHeight: height,
-                  minHeight: height,
-                  maxWidth: width,
-                  minWidth: width,
-                  child: GridView.builder(
-                    controller: scrollController,
-                    cacheExtent: 10,
-                    padding: EdgeInsets.symmetric(
-                      vertical: itemHeight * 0.5,
-                      horizontal: 10,
-                    ),
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 12,
-                      mainAxisSpacing: 12,
-                      childAspectRatio: aspectRatio,
-                    ),
-                    itemCount: characters.data!.length + 1,
-                    itemBuilder: (context, index) {
-                      return index < characters.data!.length
-                          ? Transform.translate(
-                              offset: Offset(
-                                0,
-                                index.isOdd ? itemHeight * 0.5 : 0.0,
-                              ),
-                              child: ContainerWrapper(
-                                character: characters.data![index],
-                                closedCard: DetailsBox(
-                                  character: characters.data![index],
-                                ),
-                              ),
-                            )
-                          : const Padding(
-                              padding: EdgeInsets.symmetric(vertical: 32),
-                              child: Center(
-                                child: CircularProgressIndicator.adaptive(),
-                              ),
-                            );
-                    },
-                  ),
-                );
-              },
+            return CharactersGridView(
+              characters: characters.data,
             );
           },
           characterEndOfList: () => const Center(
@@ -107,26 +32,9 @@ class _CharactersScreenState extends State<CharactersScreen> {
               textAlign: TextAlign.center,
             ),
           ),
-          characterFaild: (e) => Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  e,
-                  textAlign: TextAlign.center,
-                ),
-                TextButton(
-                  onPressed: refresh,
-                  child: const Text('Refresh'),
-                ),
-              ],
-            ),
-          ),
-          orElse: () => const Center(
-            child: Text(
-              'error',
-              textAlign: TextAlign.center,
-            ),
+          characterFaild: (e) => FaildStateWidget(
+            messaage: e,
+            action: () => refresh(context),
           ),
         );
       },

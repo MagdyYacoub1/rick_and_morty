@@ -15,48 +15,39 @@ part 'characters_bloc.freezed.dart';
 class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
   ///Constructor for Characters bloc
   ///Responsible for emiting the initial state and register all events
-  CharactersBloc() : super(const CharactersState.charcterInitial()) {
-    on<Fetch>((event, emit) async => _fetch(emit));
-    on<FetchMore>((event, emit) async => _fetchMore(emit));
+  CharactersBloc() : super(const CharactersState.characterLoadInProgress()) {
+    on<CharacterFetch>((event, emit) async => _fetch(emit));
+    on<CharacterFetchMore>((event, emit) async => _fetchMore(emit));
   }
 
   /// Currently selected character by user to display more details
   Character? currentlySelectedCharacter;
+  int _pageCount = 1;
 
   Future<void> _fetch(Emitter<CharactersState> emit) async {
-    if (state is EndOfList) {
-      return;
-    }
+    _pageCount = 1;
     try {
-      emit(const LoadInProgress());
+      emit(const CharcterLoadInProgress());
       final charactersRepository = CharactersRepository();
-      final response = await charactersRepository.getCharacters();
-      emit(Fetched(response));
+      final response = await charactersRepository.getCharacters(_pageCount);
+      emit(CharacterFetched(response));
     } catch (e) {
-      emit(const Faild('Unable to load data \n Please check your network'));
+      emit(CharacterFaild(e.toString()));
     }
   }
 
   Future<void> _fetchMore(Emitter<CharactersState> emit) async {
-    if ((state as Fetched).apiResponse.info?.next != null) {
+    if (_pageCount <= (state as CharacterFetched).apiResponse.info!.pages) {
       try {
         final charactersRepository = CharactersRepository();
-        final response = await charactersRepository
-            .getMoreCharacters((state as Fetched).apiResponse.info!.next!);
-        emit(
-          (state as Fetched).copyWith(
-            apiResponse: ApiResponse(
-              info: response.info,
-              data: List.of((state as Fetched).apiResponse.data!)
-                ..addAll(response.data!),
-            ),
-          ),
-        );
+        _pageCount++;
+        final response = await charactersRepository.getCharacters(_pageCount);
+        emit(CharacterFetched(response));
       } catch (e) {
-        emit(const Faild('Unable to load data \n Please check your network'));
+        emit(CharacterFaild(e.toString()));
       }
     } else {
-      emit(const EndOfList());
+      emit(const CharacterEndOfList());
     }
   }
 }

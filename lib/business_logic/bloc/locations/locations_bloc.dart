@@ -13,22 +13,21 @@ part 'locations_bloc.freezed.dart';
 class LocationBloc extends Bloc<LocationsEvent, LocationState> {
   ///Constructor for Location bloc
   ///Responsible for emiting the initial state and register all events
-  LocationBloc() : super(const LocationState.locationInitial()) {
+  LocationBloc() : super(const LocationState.locationLoadInProgress()) {
     on<LocationFetch>((event, emit) async => _fetch(emit));
     on<LocationFetchMore>((event, emit) async => _fetchMore(emit));
   }
 
   /// Currently selected character by user to display more details
   Location? currentlySelectedCharacter;
+  int _pageCount = 1;
 
   Future<void> _fetch(Emitter<LocationState> emit) async {
-    if (state is LocationEndOfList) {
-      return;
-    }
+    _pageCount = 1;
     try {
-      emit(const LocationEndOfList());
+      emit(const LocationLoadInProgress());
       final locationsRepository = LocationsRepository();
-      final response = await locationsRepository.getLocations();
+      final response = await locationsRepository.getLocations(_pageCount);
       emit(LocationFetched(response));
     } catch (e) {
       emit(
@@ -40,21 +39,12 @@ class LocationBloc extends Bloc<LocationsEvent, LocationState> {
   }
 
   Future<void> _fetchMore(Emitter<LocationState> emit) async {
-    if ((state as LocationFetched).apiResponse.info?.next != null) {
+    if (_pageCount <= (state as LocationFetched).apiResponse.info!.pages) {
       try {
         final locationsRepository = LocationsRepository();
-        final response = await locationsRepository.getMoreLocations(
-          (state as LocationFetched).apiResponse.info!.next!,
-        );
-        emit(
-          (state as LocationFetched).copyWith(
-            apiResponse: ApiResponse(
-              info: response.info,
-              data: List.of((state as LocationFetched).apiResponse.data!)
-                ..addAll(response.data!),
-            ),
-          ),
-        );
+        _pageCount++;
+        final response = await locationsRepository.getLocations(_pageCount);
+        emit(LocationFetched(response));
       } catch (e) {
         emit(const LocationFaild(
             'Unable to load data \n Please check your network'));
