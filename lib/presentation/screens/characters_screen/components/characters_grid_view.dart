@@ -53,7 +53,6 @@ class _CharactersGridViewState extends State<CharactersGridView> {
           minWidth: width,
           child: GridView.builder(
             controller: scrollController,
-            cacheExtent: 10,
             padding: EdgeInsets.symmetric(
               vertical: itemHeight * 0.5,
               horizontal: 10,

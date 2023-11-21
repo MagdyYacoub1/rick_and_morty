@@ -19,14 +19,9 @@ class ExtendedDetails extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           DataLine(
-            title: 'Name',
-            detail: character.name,
-            status: character.status,
-            bigger: true,
-          ),
-          DataLine(
             title: 'Species',
             detail: character.species,
+            status: character.status,
             bigger: true,
           ),
           if (character.type != '')

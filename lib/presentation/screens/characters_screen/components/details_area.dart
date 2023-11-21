@@ -16,50 +16,88 @@ class DetailsArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const imageHeight = 170.0;
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CustomCachedImage(
-          imageUrl: character.image,
-          height: 170,
+        SizedBox(
+          height: imageHeight,
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              DecoratedBox(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Colors.transparent,
+                      Colors.transparent,
+                      Colors.transparent,
+                      Colors.black,
+                    ],
+                  ),
+                ),
+                position: DecorationPosition.foreground,
+                child: CustomCachedImage(
+                  imageUrl: character.image,
+                  height: imageHeight,
+                ),
+              ),
+              Positioned(
+                bottom: 5,
+                left: 10,
+                child: FittedBox(
+                  child: Text(
+                    character.name,
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
         Expanded(
           child: Padding(
             padding: const EdgeInsets.only(
-              top: 5,
-              bottom: 5,
+              top: 10,
+              bottom: 10,
               left: 15,
               right: 8,
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                DataLine(
-                  title: 'Name',
-                  detail: character.name,
-                  status: character.status,
-                ),
                 DataLine(
                   title: 'Species',
                   detail: character.species,
+                  status: character.status,
                 ),
+                const SizedBox(height: 7),
                 if (character.type != '')
-                  DataLine(
-                    title: 'Type',
-                    detail: character.type,
+                  Column(
+                    children: [
+                      DataLine(
+                        title: 'Type',
+                        detail: character.type,
+                      ),
+                      const SizedBox(height: 7),
+                    ],
                   ),
                 DataLine(
                   title: 'Gender',
                   detail: character.gender,
                 ),
-                /*DataLine(
+                const SizedBox(height: 7),
+                DataLine(
                   title: 'Origin',
                   detail: character.origin.name,
                 ),
-                DataLine(
+                /*DataLine(
                   title: 'Location',
                   detail: character.location.name,
                 ),*/

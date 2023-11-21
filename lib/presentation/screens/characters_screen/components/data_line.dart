@@ -27,7 +27,7 @@ class DataLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final animate = false;
+    const animate = false;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
@@ -48,7 +48,7 @@ class DataLine extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            if (title == 'Name' && status != null)
+            if (title == 'Species' && status != null)
               LivenessIndicator(
                 status: status!,
                 bigger: bigger,

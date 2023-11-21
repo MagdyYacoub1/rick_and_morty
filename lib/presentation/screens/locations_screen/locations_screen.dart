@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/business_logic/bloc/locations/locations_bloc.dart';
+import 'package:rick_and_morty/presentation/screens/locations_screen/components/locations_list.dart';
 
 import '../../widgets/faild_state_widget.dart';
 
@@ -46,44 +47,14 @@ class _LocationsScreenState extends State<LocationsScreen> {
           locationLoadInProgress: () => const Center(
             child: CircularProgressIndicator(),
           ),
-          locationFetched: (locations) {
-            return LayoutBuilder(
-              builder: (context, constraints) {
-                const aspectRatio = 0.55;
-                final width = constraints.maxWidth;
-                final itemHeight = (width * 0.5) / aspectRatio;
-                final height = constraints.maxHeight + itemHeight;
-                return OverflowBox(
-                  maxHeight: height,
-                  minHeight: height,
-                  maxWidth: width,
-                  minWidth: width,
-                  child: ListView.builder(
-                    controller: scrollController,
-                    cacheExtent: 10,
-                    padding: EdgeInsets.symmetric(
-                      vertical: itemHeight * 0.5,
-                      horizontal: 10,
-                    ),
-                    itemCount: locations.data.length + 1,
-                    itemBuilder: (context, index) {
-                      return index < locations.data.length
-                          ? Transform.translate(
-                              offset: Offset(
-                                0,
-                                index.isOdd ? itemHeight * 0.5 : 0.0,
-                              ),
-                            )
-                          : const Padding(
-                              padding: EdgeInsets.symmetric(vertical: 32),
-                              child: Center(
-                                child: CircularProgressIndicator.adaptive(),
-                              ),
-                            );
-                    },
-                  ),
-                );
-              },
+          locationFetched: (apiResponse) {
+            return LocationsList(
+              locations: apiResponse.data,
+            );
+          },
+          locationLoadMoreInProgress: (locations) {
+            return LocationsList(
+              locations: locations,
             );
           },
           locationEndOfList: () => const Center(

@@ -21,9 +21,9 @@ class CharactersScreen extends StatelessWidget {
       builder: (context, state) {
         return state.when(
           characterLoadInProgress: () => const InitialLoadingWidget(),
-          characterFetched: (characters) {
+          characterFetched: (apiResponse) {
             return CharactersGridView(
-              characters: characters.data,
+              characters: apiResponse.data,
             );
           },
           characterLoadMoreInProgress: (characters) {
