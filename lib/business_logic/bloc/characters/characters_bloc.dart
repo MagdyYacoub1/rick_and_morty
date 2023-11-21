@@ -1,9 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:rick_and_morty/constants/helper.dart';
 import 'package:rick_and_morty/data/models/api_response.dart';
 import 'package:rick_and_morty/data/models/character.dart';
-import 'package:rick_and_morty/data/models/location.dart';
 import 'package:rick_and_morty/data/repository/characters_repository.dart';
 
 part 'characters_state.dart';
@@ -37,9 +35,10 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
   }
 
   Future<void> _fetchMore(Emitter<CharactersState> emit) async {
-    if (_pageCount <= (state as CharacterFetched).apiResponse.info!.pages) {
+    final charactersRepository = CharactersRepository();
+    if (_pageCount <= (state as CharacterFetched).apiResponse.info.pages) {
+      emit(CharcterLoadMoreInProgress(charactersRepository.allCharacters));
       try {
-        final charactersRepository = CharactersRepository();
         _pageCount++;
         final response = await charactersRepository.getCharacters(_pageCount);
         emit(CharacterFetched(response));

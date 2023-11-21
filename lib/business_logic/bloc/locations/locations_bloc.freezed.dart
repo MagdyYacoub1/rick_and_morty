@@ -19,6 +19,8 @@ mixin _$LocationState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() locationLoadInProgress,
+    required TResult Function(List<Location> allLocations)
+        locationLoadMoreInProgress,
     required TResult Function(ApiResponse<Location> apiResponse)
         locationFetched,
     required TResult Function(String message) locationFaild,
@@ -28,6 +30,7 @@ mixin _$LocationState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? locationLoadInProgress,
+    TResult? Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult? Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult? Function(String message)? locationFaild,
     TResult? Function()? locationEndOfList,
@@ -36,6 +39,7 @@ mixin _$LocationState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? locationLoadInProgress,
+    TResult Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult Function(String message)? locationFaild,
     TResult Function()? locationEndOfList,
@@ -46,6 +50,8 @@ mixin _$LocationState {
   TResult map<TResult extends Object?>({
     required TResult Function(LocationLoadInProgress value)
         locationLoadInProgress,
+    required TResult Function(LocationLoadMoreInProgress value)
+        locationLoadMoreInProgress,
     required TResult Function(LocationFetched value) locationFetched,
     required TResult Function(LocationFaild value) locationFaild,
     required TResult Function(LocationEndOfList value) locationEndOfList,
@@ -54,6 +60,8 @@ mixin _$LocationState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LocationLoadInProgress value)? locationLoadInProgress,
+    TResult? Function(LocationLoadMoreInProgress value)?
+        locationLoadMoreInProgress,
     TResult? Function(LocationFetched value)? locationFetched,
     TResult? Function(LocationFaild value)? locationFaild,
     TResult? Function(LocationEndOfList value)? locationEndOfList,
@@ -62,6 +70,8 @@ mixin _$LocationState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LocationLoadInProgress value)? locationLoadInProgress,
+    TResult Function(LocationLoadMoreInProgress value)?
+        locationLoadMoreInProgress,
     TResult Function(LocationFetched value)? locationFetched,
     TResult Function(LocationFaild value)? locationFaild,
     TResult Function(LocationEndOfList value)? locationEndOfList,
@@ -130,6 +140,8 @@ class _$LocationLoadInProgressImpl implements LocationLoadInProgress {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() locationLoadInProgress,
+    required TResult Function(List<Location> allLocations)
+        locationLoadMoreInProgress,
     required TResult Function(ApiResponse<Location> apiResponse)
         locationFetched,
     required TResult Function(String message) locationFaild,
@@ -142,6 +154,7 @@ class _$LocationLoadInProgressImpl implements LocationLoadInProgress {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? locationLoadInProgress,
+    TResult? Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult? Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult? Function(String message)? locationFaild,
     TResult? Function()? locationEndOfList,
@@ -153,6 +166,7 @@ class _$LocationLoadInProgressImpl implements LocationLoadInProgress {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? locationLoadInProgress,
+    TResult Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult Function(String message)? locationFaild,
     TResult Function()? locationEndOfList,
@@ -169,6 +183,8 @@ class _$LocationLoadInProgressImpl implements LocationLoadInProgress {
   TResult map<TResult extends Object?>({
     required TResult Function(LocationLoadInProgress value)
         locationLoadInProgress,
+    required TResult Function(LocationLoadMoreInProgress value)
+        locationLoadMoreInProgress,
     required TResult Function(LocationFetched value) locationFetched,
     required TResult Function(LocationFaild value) locationFaild,
     required TResult Function(LocationEndOfList value) locationEndOfList,
@@ -180,6 +196,8 @@ class _$LocationLoadInProgressImpl implements LocationLoadInProgress {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LocationLoadInProgress value)? locationLoadInProgress,
+    TResult? Function(LocationLoadMoreInProgress value)?
+        locationLoadMoreInProgress,
     TResult? Function(LocationFetched value)? locationFetched,
     TResult? Function(LocationFaild value)? locationFaild,
     TResult? Function(LocationEndOfList value)? locationEndOfList,
@@ -191,6 +209,8 @@ class _$LocationLoadInProgressImpl implements LocationLoadInProgress {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LocationLoadInProgress value)? locationLoadInProgress,
+    TResult Function(LocationLoadMoreInProgress value)?
+        locationLoadMoreInProgress,
     TResult Function(LocationFetched value)? locationFetched,
     TResult Function(LocationFaild value)? locationFaild,
     TResult Function(LocationEndOfList value)? locationEndOfList,
@@ -205,6 +225,175 @@ class _$LocationLoadInProgressImpl implements LocationLoadInProgress {
 
 abstract class LocationLoadInProgress implements LocationState {
   const factory LocationLoadInProgress() = _$LocationLoadInProgressImpl;
+}
+
+/// @nodoc
+abstract class _$$LocationLoadMoreInProgressImplCopyWith<$Res> {
+  factory _$$LocationLoadMoreInProgressImplCopyWith(
+          _$LocationLoadMoreInProgressImpl value,
+          $Res Function(_$LocationLoadMoreInProgressImpl) then) =
+      __$$LocationLoadMoreInProgressImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Location> allLocations});
+}
+
+/// @nodoc
+class __$$LocationLoadMoreInProgressImplCopyWithImpl<$Res>
+    extends _$LocationStateCopyWithImpl<$Res, _$LocationLoadMoreInProgressImpl>
+    implements _$$LocationLoadMoreInProgressImplCopyWith<$Res> {
+  __$$LocationLoadMoreInProgressImplCopyWithImpl(
+      _$LocationLoadMoreInProgressImpl _value,
+      $Res Function(_$LocationLoadMoreInProgressImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? allLocations = null,
+  }) {
+    return _then(_$LocationLoadMoreInProgressImpl(
+      null == allLocations
+          ? _value._allLocations
+          : allLocations // ignore: cast_nullable_to_non_nullable
+              as List<Location>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LocationLoadMoreInProgressImpl implements LocationLoadMoreInProgress {
+  const _$LocationLoadMoreInProgressImpl(final List<Location> allLocations)
+      : _allLocations = allLocations;
+
+  final List<Location> _allLocations;
+  @override
+  List<Location> get allLocations {
+    if (_allLocations is EqualUnmodifiableListView) return _allLocations;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_allLocations);
+  }
+
+  @override
+  String toString() {
+    return 'LocationState.locationLoadMoreInProgress(allLocations: $allLocations)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LocationLoadMoreInProgressImpl &&
+            const DeepCollectionEquality()
+                .equals(other._allLocations, _allLocations));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_allLocations));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LocationLoadMoreInProgressImplCopyWith<_$LocationLoadMoreInProgressImpl>
+      get copyWith => __$$LocationLoadMoreInProgressImplCopyWithImpl<
+          _$LocationLoadMoreInProgressImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() locationLoadInProgress,
+    required TResult Function(List<Location> allLocations)
+        locationLoadMoreInProgress,
+    required TResult Function(ApiResponse<Location> apiResponse)
+        locationFetched,
+    required TResult Function(String message) locationFaild,
+    required TResult Function() locationEndOfList,
+  }) {
+    return locationLoadMoreInProgress(allLocations);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? locationLoadInProgress,
+    TResult? Function(List<Location> allLocations)? locationLoadMoreInProgress,
+    TResult? Function(ApiResponse<Location> apiResponse)? locationFetched,
+    TResult? Function(String message)? locationFaild,
+    TResult? Function()? locationEndOfList,
+  }) {
+    return locationLoadMoreInProgress?.call(allLocations);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? locationLoadInProgress,
+    TResult Function(List<Location> allLocations)? locationLoadMoreInProgress,
+    TResult Function(ApiResponse<Location> apiResponse)? locationFetched,
+    TResult Function(String message)? locationFaild,
+    TResult Function()? locationEndOfList,
+    required TResult orElse(),
+  }) {
+    if (locationLoadMoreInProgress != null) {
+      return locationLoadMoreInProgress(allLocations);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LocationLoadInProgress value)
+        locationLoadInProgress,
+    required TResult Function(LocationLoadMoreInProgress value)
+        locationLoadMoreInProgress,
+    required TResult Function(LocationFetched value) locationFetched,
+    required TResult Function(LocationFaild value) locationFaild,
+    required TResult Function(LocationEndOfList value) locationEndOfList,
+  }) {
+    return locationLoadMoreInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LocationLoadInProgress value)? locationLoadInProgress,
+    TResult? Function(LocationLoadMoreInProgress value)?
+        locationLoadMoreInProgress,
+    TResult? Function(LocationFetched value)? locationFetched,
+    TResult? Function(LocationFaild value)? locationFaild,
+    TResult? Function(LocationEndOfList value)? locationEndOfList,
+  }) {
+    return locationLoadMoreInProgress?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LocationLoadInProgress value)? locationLoadInProgress,
+    TResult Function(LocationLoadMoreInProgress value)?
+        locationLoadMoreInProgress,
+    TResult Function(LocationFetched value)? locationFetched,
+    TResult Function(LocationFaild value)? locationFaild,
+    TResult Function(LocationEndOfList value)? locationEndOfList,
+    required TResult orElse(),
+  }) {
+    if (locationLoadMoreInProgress != null) {
+      return locationLoadMoreInProgress(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LocationLoadMoreInProgress implements LocationState {
+  const factory LocationLoadMoreInProgress(final List<Location> allLocations) =
+      _$LocationLoadMoreInProgressImpl;
+
+  List<Location> get allLocations;
+  @JsonKey(ignore: true)
+  _$$LocationLoadMoreInProgressImplCopyWith<_$LocationLoadMoreInProgressImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -284,6 +473,8 @@ class _$LocationFetchedImpl implements LocationFetched {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() locationLoadInProgress,
+    required TResult Function(List<Location> allLocations)
+        locationLoadMoreInProgress,
     required TResult Function(ApiResponse<Location> apiResponse)
         locationFetched,
     required TResult Function(String message) locationFaild,
@@ -296,6 +487,7 @@ class _$LocationFetchedImpl implements LocationFetched {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? locationLoadInProgress,
+    TResult? Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult? Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult? Function(String message)? locationFaild,
     TResult? Function()? locationEndOfList,
@@ -307,6 +499,7 @@ class _$LocationFetchedImpl implements LocationFetched {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? locationLoadInProgress,
+    TResult Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult Function(String message)? locationFaild,
     TResult Function()? locationEndOfList,
@@ -323,6 +516,8 @@ class _$LocationFetchedImpl implements LocationFetched {
   TResult map<TResult extends Object?>({
     required TResult Function(LocationLoadInProgress value)
         locationLoadInProgress,
+    required TResult Function(LocationLoadMoreInProgress value)
+        locationLoadMoreInProgress,
     required TResult Function(LocationFetched value) locationFetched,
     required TResult Function(LocationFaild value) locationFaild,
     required TResult Function(LocationEndOfList value) locationEndOfList,
@@ -334,6 +529,8 @@ class _$LocationFetchedImpl implements LocationFetched {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LocationLoadInProgress value)? locationLoadInProgress,
+    TResult? Function(LocationLoadMoreInProgress value)?
+        locationLoadMoreInProgress,
     TResult? Function(LocationFetched value)? locationFetched,
     TResult? Function(LocationFaild value)? locationFaild,
     TResult? Function(LocationEndOfList value)? locationEndOfList,
@@ -345,6 +542,8 @@ class _$LocationFetchedImpl implements LocationFetched {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LocationLoadInProgress value)? locationLoadInProgress,
+    TResult Function(LocationLoadMoreInProgress value)?
+        locationLoadMoreInProgress,
     TResult Function(LocationFetched value)? locationFetched,
     TResult Function(LocationFaild value)? locationFaild,
     TResult Function(LocationEndOfList value)? locationEndOfList,
@@ -432,6 +631,8 @@ class _$LocationFaildImpl implements LocationFaild {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() locationLoadInProgress,
+    required TResult Function(List<Location> allLocations)
+        locationLoadMoreInProgress,
     required TResult Function(ApiResponse<Location> apiResponse)
         locationFetched,
     required TResult Function(String message) locationFaild,
@@ -444,6 +645,7 @@ class _$LocationFaildImpl implements LocationFaild {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? locationLoadInProgress,
+    TResult? Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult? Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult? Function(String message)? locationFaild,
     TResult? Function()? locationEndOfList,
@@ -455,6 +657,7 @@ class _$LocationFaildImpl implements LocationFaild {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? locationLoadInProgress,
+    TResult Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult Function(String message)? locationFaild,
     TResult Function()? locationEndOfList,
@@ -471,6 +674,8 @@ class _$LocationFaildImpl implements LocationFaild {
   TResult map<TResult extends Object?>({
     required TResult Function(LocationLoadInProgress value)
         locationLoadInProgress,
+    required TResult Function(LocationLoadMoreInProgress value)
+        locationLoadMoreInProgress,
     required TResult Function(LocationFetched value) locationFetched,
     required TResult Function(LocationFaild value) locationFaild,
     required TResult Function(LocationEndOfList value) locationEndOfList,
@@ -482,6 +687,8 @@ class _$LocationFaildImpl implements LocationFaild {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LocationLoadInProgress value)? locationLoadInProgress,
+    TResult? Function(LocationLoadMoreInProgress value)?
+        locationLoadMoreInProgress,
     TResult? Function(LocationFetched value)? locationFetched,
     TResult? Function(LocationFaild value)? locationFaild,
     TResult? Function(LocationEndOfList value)? locationEndOfList,
@@ -493,6 +700,8 @@ class _$LocationFaildImpl implements LocationFaild {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LocationLoadInProgress value)? locationLoadInProgress,
+    TResult Function(LocationLoadMoreInProgress value)?
+        locationLoadMoreInProgress,
     TResult Function(LocationFetched value)? locationFetched,
     TResult Function(LocationFaild value)? locationFaild,
     TResult Function(LocationEndOfList value)? locationEndOfList,
@@ -553,6 +762,8 @@ class _$LocationEndOfListImpl implements LocationEndOfList {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() locationLoadInProgress,
+    required TResult Function(List<Location> allLocations)
+        locationLoadMoreInProgress,
     required TResult Function(ApiResponse<Location> apiResponse)
         locationFetched,
     required TResult Function(String message) locationFaild,
@@ -565,6 +776,7 @@ class _$LocationEndOfListImpl implements LocationEndOfList {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? locationLoadInProgress,
+    TResult? Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult? Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult? Function(String message)? locationFaild,
     TResult? Function()? locationEndOfList,
@@ -576,6 +788,7 @@ class _$LocationEndOfListImpl implements LocationEndOfList {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? locationLoadInProgress,
+    TResult Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult Function(String message)? locationFaild,
     TResult Function()? locationEndOfList,
@@ -592,6 +805,8 @@ class _$LocationEndOfListImpl implements LocationEndOfList {
   TResult map<TResult extends Object?>({
     required TResult Function(LocationLoadInProgress value)
         locationLoadInProgress,
+    required TResult Function(LocationLoadMoreInProgress value)
+        locationLoadMoreInProgress,
     required TResult Function(LocationFetched value) locationFetched,
     required TResult Function(LocationFaild value) locationFaild,
     required TResult Function(LocationEndOfList value) locationEndOfList,
@@ -603,6 +818,8 @@ class _$LocationEndOfListImpl implements LocationEndOfList {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LocationLoadInProgress value)? locationLoadInProgress,
+    TResult? Function(LocationLoadMoreInProgress value)?
+        locationLoadMoreInProgress,
     TResult? Function(LocationFetched value)? locationFetched,
     TResult? Function(LocationFaild value)? locationFaild,
     TResult? Function(LocationEndOfList value)? locationEndOfList,
@@ -614,6 +831,8 @@ class _$LocationEndOfListImpl implements LocationEndOfList {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LocationLoadInProgress value)? locationLoadInProgress,
+    TResult Function(LocationLoadMoreInProgress value)?
+        locationLoadMoreInProgress,
     TResult Function(LocationFetched value)? locationFetched,
     TResult Function(LocationFaild value)? locationFaild,
     TResult Function(LocationEndOfList value)? locationEndOfList,

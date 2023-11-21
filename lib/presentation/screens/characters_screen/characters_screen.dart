@@ -26,6 +26,11 @@ class CharactersScreen extends StatelessWidget {
               characters: characters.data,
             );
           },
+          characterLoadMoreInProgress: (characters) {
+            return CharactersGridView(
+              characters: characters,
+            );
+          },
           characterEndOfList: () => const Center(
             child: Text(
               'End of list',

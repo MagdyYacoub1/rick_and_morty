@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:rick_and_morty/app_router.dart';
 import 'package:rick_and_morty/business_logic/bloc_observer.dart';
+import 'package:rick_and_morty/constants/colors.dart';
 
 void main() {
   Bloc.observer = AppBlocObserver();
@@ -34,7 +35,10 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        brightness: Brightness.dark,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: AppColors.teal,
+          brightness: Brightness.dark,
+        ),
         fontFamily: 'Orbitron',
         pageTransitionsTheme: const PageTransitionsTheme(
           builders: <TargetPlatform, PageTransitionsBuilder>{

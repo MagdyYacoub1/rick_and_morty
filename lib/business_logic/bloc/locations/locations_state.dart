@@ -9,6 +9,11 @@ class LocationState with _$LocationState {
   /// LoadInProgress state means the app loading data from api
   const factory LocationState.locationLoadInProgress() = LocationLoadInProgress;
 
+  /// LoadMoreInProgress state means the app loading more data from api
+  const factory LocationState.locationLoadMoreInProgress(
+    List<Location> allLocations,
+  ) = LocationLoadMoreInProgress;
+
   /// Fetched state means the app finished fetching data from api
   const factory LocationState.locationFetched(
     ApiResponse<Location> apiResponse,

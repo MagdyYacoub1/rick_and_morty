@@ -10,6 +10,11 @@ class CharactersState with _$CharactersState {
   const factory CharactersState.characterLoadInProgress() =
       CharcterLoadInProgress;
 
+  /// LoadMoreInProgress state means the app loading more data from api
+  const factory CharactersState.characterLoadMoreInProgress(
+    List<Character> characters,
+  ) = CharcterLoadMoreInProgress;
+
   /// Fetched state means the app finished fetching data from api
   const factory CharactersState.characterFetched(
     ApiResponse<Character> apiResponse,

@@ -79,10 +79,18 @@ class _CharactersGridViewState extends State<CharactersGridView> {
                         ),
                       ),
                     )
-                  : const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 32),
+                  : Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 32),
                       child: Center(
-                        child: CircularProgressIndicator.adaptive(),
+                        child: context.read<CharactersBloc>().state.maybeWhen(
+                              orElse: () => const SizedBox(),
+                              characterLoadMoreInProgress: (_) =>
+                                  const CircularProgressIndicator.adaptive(),
+                              characterEndOfList: () => const Text(
+                                'End of list',
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
                       ),
                     );
             },

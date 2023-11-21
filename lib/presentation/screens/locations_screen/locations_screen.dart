@@ -65,9 +65,9 @@ class _LocationsScreenState extends State<LocationsScreen> {
                       vertical: itemHeight * 0.5,
                       horizontal: 10,
                     ),
-                    itemCount: locations.data!.length + 1,
+                    itemCount: locations.data.length + 1,
                     itemBuilder: (context, index) {
-                      return index < locations.data!.length
+                      return index < locations.data.length
                           ? Transform.translate(
                               offset: Offset(
                                 0,

@@ -16,7 +16,7 @@ class LocationCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final location = (context.read<LocationBloc>().state as LocationFetched)
         .apiResponse
-        .data![locationIndex];
+        .data[locationIndex];
     const cardRadius = 15.0;
     return Material(
       clipBehavior: Clip.antiAlias,

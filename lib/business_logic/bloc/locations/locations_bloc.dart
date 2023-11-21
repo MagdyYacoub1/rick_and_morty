@@ -39,7 +39,7 @@ class LocationBloc extends Bloc<LocationsEvent, LocationState> {
   }
 
   Future<void> _fetchMore(Emitter<LocationState> emit) async {
-    if (_pageCount <= (state as LocationFetched).apiResponse.info!.pages) {
+    if (_pageCount <= (state as LocationFetched).apiResponse.info.pages) {
       try {
         final locationsRepository = LocationsRepository();
         _pageCount++;

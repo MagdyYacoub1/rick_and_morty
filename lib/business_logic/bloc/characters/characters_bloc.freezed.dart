@@ -19,6 +19,8 @@ mixin _$CharactersState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() characterLoadInProgress,
+    required TResult Function(List<Character> characters)
+        characterLoadMoreInProgress,
     required TResult Function(ApiResponse<Character> apiResponse)
         characterFetched,
     required TResult Function(String message) characterFaild,
@@ -28,6 +30,7 @@ mixin _$CharactersState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? characterLoadInProgress,
+    TResult? Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult? Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult? Function(String message)? characterFaild,
     TResult? Function()? characterEndOfList,
@@ -36,6 +39,7 @@ mixin _$CharactersState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? characterLoadInProgress,
+    TResult Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult Function(String message)? characterFaild,
     TResult Function()? characterEndOfList,
@@ -46,6 +50,8 @@ mixin _$CharactersState {
   TResult map<TResult extends Object?>({
     required TResult Function(CharcterLoadInProgress value)
         characterLoadInProgress,
+    required TResult Function(CharcterLoadMoreInProgress value)
+        characterLoadMoreInProgress,
     required TResult Function(CharacterFetched value) characterFetched,
     required TResult Function(CharacterFaild value) characterFaild,
     required TResult Function(CharacterEndOfList value) characterEndOfList,
@@ -54,6 +60,8 @@ mixin _$CharactersState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(CharcterLoadInProgress value)? characterLoadInProgress,
+    TResult? Function(CharcterLoadMoreInProgress value)?
+        characterLoadMoreInProgress,
     TResult? Function(CharacterFetched value)? characterFetched,
     TResult? Function(CharacterFaild value)? characterFaild,
     TResult? Function(CharacterEndOfList value)? characterEndOfList,
@@ -62,6 +70,8 @@ mixin _$CharactersState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CharcterLoadInProgress value)? characterLoadInProgress,
+    TResult Function(CharcterLoadMoreInProgress value)?
+        characterLoadMoreInProgress,
     TResult Function(CharacterFetched value)? characterFetched,
     TResult Function(CharacterFaild value)? characterFaild,
     TResult Function(CharacterEndOfList value)? characterEndOfList,
@@ -130,6 +140,8 @@ class _$CharcterLoadInProgressImpl implements CharcterLoadInProgress {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() characterLoadInProgress,
+    required TResult Function(List<Character> characters)
+        characterLoadMoreInProgress,
     required TResult Function(ApiResponse<Character> apiResponse)
         characterFetched,
     required TResult Function(String message) characterFaild,
@@ -142,6 +154,7 @@ class _$CharcterLoadInProgressImpl implements CharcterLoadInProgress {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? characterLoadInProgress,
+    TResult? Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult? Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult? Function(String message)? characterFaild,
     TResult? Function()? characterEndOfList,
@@ -153,6 +166,7 @@ class _$CharcterLoadInProgressImpl implements CharcterLoadInProgress {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? characterLoadInProgress,
+    TResult Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult Function(String message)? characterFaild,
     TResult Function()? characterEndOfList,
@@ -169,6 +183,8 @@ class _$CharcterLoadInProgressImpl implements CharcterLoadInProgress {
   TResult map<TResult extends Object?>({
     required TResult Function(CharcterLoadInProgress value)
         characterLoadInProgress,
+    required TResult Function(CharcterLoadMoreInProgress value)
+        characterLoadMoreInProgress,
     required TResult Function(CharacterFetched value) characterFetched,
     required TResult Function(CharacterFaild value) characterFaild,
     required TResult Function(CharacterEndOfList value) characterEndOfList,
@@ -180,6 +196,8 @@ class _$CharcterLoadInProgressImpl implements CharcterLoadInProgress {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(CharcterLoadInProgress value)? characterLoadInProgress,
+    TResult? Function(CharcterLoadMoreInProgress value)?
+        characterLoadMoreInProgress,
     TResult? Function(CharacterFetched value)? characterFetched,
     TResult? Function(CharacterFaild value)? characterFaild,
     TResult? Function(CharacterEndOfList value)? characterEndOfList,
@@ -191,6 +209,8 @@ class _$CharcterLoadInProgressImpl implements CharcterLoadInProgress {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CharcterLoadInProgress value)? characterLoadInProgress,
+    TResult Function(CharcterLoadMoreInProgress value)?
+        characterLoadMoreInProgress,
     TResult Function(CharacterFetched value)? characterFetched,
     TResult Function(CharacterFaild value)? characterFaild,
     TResult Function(CharacterEndOfList value)? characterEndOfList,
@@ -205,6 +225,176 @@ class _$CharcterLoadInProgressImpl implements CharcterLoadInProgress {
 
 abstract class CharcterLoadInProgress implements CharactersState {
   const factory CharcterLoadInProgress() = _$CharcterLoadInProgressImpl;
+}
+
+/// @nodoc
+abstract class _$$CharcterLoadMoreInProgressImplCopyWith<$Res> {
+  factory _$$CharcterLoadMoreInProgressImplCopyWith(
+          _$CharcterLoadMoreInProgressImpl value,
+          $Res Function(_$CharcterLoadMoreInProgressImpl) then) =
+      __$$CharcterLoadMoreInProgressImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Character> characters});
+}
+
+/// @nodoc
+class __$$CharcterLoadMoreInProgressImplCopyWithImpl<$Res>
+    extends _$CharactersStateCopyWithImpl<$Res,
+        _$CharcterLoadMoreInProgressImpl>
+    implements _$$CharcterLoadMoreInProgressImplCopyWith<$Res> {
+  __$$CharcterLoadMoreInProgressImplCopyWithImpl(
+      _$CharcterLoadMoreInProgressImpl _value,
+      $Res Function(_$CharcterLoadMoreInProgressImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? characters = null,
+  }) {
+    return _then(_$CharcterLoadMoreInProgressImpl(
+      null == characters
+          ? _value._characters
+          : characters // ignore: cast_nullable_to_non_nullable
+              as List<Character>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CharcterLoadMoreInProgressImpl implements CharcterLoadMoreInProgress {
+  const _$CharcterLoadMoreInProgressImpl(final List<Character> characters)
+      : _characters = characters;
+
+  final List<Character> _characters;
+  @override
+  List<Character> get characters {
+    if (_characters is EqualUnmodifiableListView) return _characters;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_characters);
+  }
+
+  @override
+  String toString() {
+    return 'CharactersState.characterLoadMoreInProgress(characters: $characters)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CharcterLoadMoreInProgressImpl &&
+            const DeepCollectionEquality()
+                .equals(other._characters, _characters));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_characters));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CharcterLoadMoreInProgressImplCopyWith<_$CharcterLoadMoreInProgressImpl>
+      get copyWith => __$$CharcterLoadMoreInProgressImplCopyWithImpl<
+          _$CharcterLoadMoreInProgressImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() characterLoadInProgress,
+    required TResult Function(List<Character> characters)
+        characterLoadMoreInProgress,
+    required TResult Function(ApiResponse<Character> apiResponse)
+        characterFetched,
+    required TResult Function(String message) characterFaild,
+    required TResult Function() characterEndOfList,
+  }) {
+    return characterLoadMoreInProgress(characters);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? characterLoadInProgress,
+    TResult? Function(List<Character> characters)? characterLoadMoreInProgress,
+    TResult? Function(ApiResponse<Character> apiResponse)? characterFetched,
+    TResult? Function(String message)? characterFaild,
+    TResult? Function()? characterEndOfList,
+  }) {
+    return characterLoadMoreInProgress?.call(characters);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? characterLoadInProgress,
+    TResult Function(List<Character> characters)? characterLoadMoreInProgress,
+    TResult Function(ApiResponse<Character> apiResponse)? characterFetched,
+    TResult Function(String message)? characterFaild,
+    TResult Function()? characterEndOfList,
+    required TResult orElse(),
+  }) {
+    if (characterLoadMoreInProgress != null) {
+      return characterLoadMoreInProgress(characters);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CharcterLoadInProgress value)
+        characterLoadInProgress,
+    required TResult Function(CharcterLoadMoreInProgress value)
+        characterLoadMoreInProgress,
+    required TResult Function(CharacterFetched value) characterFetched,
+    required TResult Function(CharacterFaild value) characterFaild,
+    required TResult Function(CharacterEndOfList value) characterEndOfList,
+  }) {
+    return characterLoadMoreInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CharcterLoadInProgress value)? characterLoadInProgress,
+    TResult? Function(CharcterLoadMoreInProgress value)?
+        characterLoadMoreInProgress,
+    TResult? Function(CharacterFetched value)? characterFetched,
+    TResult? Function(CharacterFaild value)? characterFaild,
+    TResult? Function(CharacterEndOfList value)? characterEndOfList,
+  }) {
+    return characterLoadMoreInProgress?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CharcterLoadInProgress value)? characterLoadInProgress,
+    TResult Function(CharcterLoadMoreInProgress value)?
+        characterLoadMoreInProgress,
+    TResult Function(CharacterFetched value)? characterFetched,
+    TResult Function(CharacterFaild value)? characterFaild,
+    TResult Function(CharacterEndOfList value)? characterEndOfList,
+    required TResult orElse(),
+  }) {
+    if (characterLoadMoreInProgress != null) {
+      return characterLoadMoreInProgress(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CharcterLoadMoreInProgress implements CharactersState {
+  const factory CharcterLoadMoreInProgress(final List<Character> characters) =
+      _$CharcterLoadMoreInProgressImpl;
+
+  List<Character> get characters;
+  @JsonKey(ignore: true)
+  _$$CharcterLoadMoreInProgressImplCopyWith<_$CharcterLoadMoreInProgressImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -284,6 +474,8 @@ class _$CharacterFetchedImpl implements CharacterFetched {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() characterLoadInProgress,
+    required TResult Function(List<Character> characters)
+        characterLoadMoreInProgress,
     required TResult Function(ApiResponse<Character> apiResponse)
         characterFetched,
     required TResult Function(String message) characterFaild,
@@ -296,6 +488,7 @@ class _$CharacterFetchedImpl implements CharacterFetched {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? characterLoadInProgress,
+    TResult? Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult? Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult? Function(String message)? characterFaild,
     TResult? Function()? characterEndOfList,
@@ -307,6 +500,7 @@ class _$CharacterFetchedImpl implements CharacterFetched {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? characterLoadInProgress,
+    TResult Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult Function(String message)? characterFaild,
     TResult Function()? characterEndOfList,
@@ -323,6 +517,8 @@ class _$CharacterFetchedImpl implements CharacterFetched {
   TResult map<TResult extends Object?>({
     required TResult Function(CharcterLoadInProgress value)
         characterLoadInProgress,
+    required TResult Function(CharcterLoadMoreInProgress value)
+        characterLoadMoreInProgress,
     required TResult Function(CharacterFetched value) characterFetched,
     required TResult Function(CharacterFaild value) characterFaild,
     required TResult Function(CharacterEndOfList value) characterEndOfList,
@@ -334,6 +530,8 @@ class _$CharacterFetchedImpl implements CharacterFetched {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(CharcterLoadInProgress value)? characterLoadInProgress,
+    TResult? Function(CharcterLoadMoreInProgress value)?
+        characterLoadMoreInProgress,
     TResult? Function(CharacterFetched value)? characterFetched,
     TResult? Function(CharacterFaild value)? characterFaild,
     TResult? Function(CharacterEndOfList value)? characterEndOfList,
@@ -345,6 +543,8 @@ class _$CharacterFetchedImpl implements CharacterFetched {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CharcterLoadInProgress value)? characterLoadInProgress,
+    TResult Function(CharcterLoadMoreInProgress value)?
+        characterLoadMoreInProgress,
     TResult Function(CharacterFetched value)? characterFetched,
     TResult Function(CharacterFaild value)? characterFaild,
     TResult Function(CharacterEndOfList value)? characterEndOfList,
@@ -433,6 +633,8 @@ class _$CharacterFaildImpl implements CharacterFaild {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() characterLoadInProgress,
+    required TResult Function(List<Character> characters)
+        characterLoadMoreInProgress,
     required TResult Function(ApiResponse<Character> apiResponse)
         characterFetched,
     required TResult Function(String message) characterFaild,
@@ -445,6 +647,7 @@ class _$CharacterFaildImpl implements CharacterFaild {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? characterLoadInProgress,
+    TResult? Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult? Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult? Function(String message)? characterFaild,
     TResult? Function()? characterEndOfList,
@@ -456,6 +659,7 @@ class _$CharacterFaildImpl implements CharacterFaild {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? characterLoadInProgress,
+    TResult Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult Function(String message)? characterFaild,
     TResult Function()? characterEndOfList,
@@ -472,6 +676,8 @@ class _$CharacterFaildImpl implements CharacterFaild {
   TResult map<TResult extends Object?>({
     required TResult Function(CharcterLoadInProgress value)
         characterLoadInProgress,
+    required TResult Function(CharcterLoadMoreInProgress value)
+        characterLoadMoreInProgress,
     required TResult Function(CharacterFetched value) characterFetched,
     required TResult Function(CharacterFaild value) characterFaild,
     required TResult Function(CharacterEndOfList value) characterEndOfList,
@@ -483,6 +689,8 @@ class _$CharacterFaildImpl implements CharacterFaild {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(CharcterLoadInProgress value)? characterLoadInProgress,
+    TResult? Function(CharcterLoadMoreInProgress value)?
+        characterLoadMoreInProgress,
     TResult? Function(CharacterFetched value)? characterFetched,
     TResult? Function(CharacterFaild value)? characterFaild,
     TResult? Function(CharacterEndOfList value)? characterEndOfList,
@@ -494,6 +702,8 @@ class _$CharacterFaildImpl implements CharacterFaild {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CharcterLoadInProgress value)? characterLoadInProgress,
+    TResult Function(CharcterLoadMoreInProgress value)?
+        characterLoadMoreInProgress,
     TResult Function(CharacterFetched value)? characterFetched,
     TResult Function(CharacterFaild value)? characterFaild,
     TResult Function(CharacterEndOfList value)? characterEndOfList,
@@ -554,6 +764,8 @@ class _$CharacterEndOfListImpl implements CharacterEndOfList {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() characterLoadInProgress,
+    required TResult Function(List<Character> characters)
+        characterLoadMoreInProgress,
     required TResult Function(ApiResponse<Character> apiResponse)
         characterFetched,
     required TResult Function(String message) characterFaild,
@@ -566,6 +778,7 @@ class _$CharacterEndOfListImpl implements CharacterEndOfList {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? characterLoadInProgress,
+    TResult? Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult? Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult? Function(String message)? characterFaild,
     TResult? Function()? characterEndOfList,
@@ -577,6 +790,7 @@ class _$CharacterEndOfListImpl implements CharacterEndOfList {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? characterLoadInProgress,
+    TResult Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult Function(String message)? characterFaild,
     TResult Function()? characterEndOfList,
@@ -593,6 +807,8 @@ class _$CharacterEndOfListImpl implements CharacterEndOfList {
   TResult map<TResult extends Object?>({
     required TResult Function(CharcterLoadInProgress value)
         characterLoadInProgress,
+    required TResult Function(CharcterLoadMoreInProgress value)
+        characterLoadMoreInProgress,
     required TResult Function(CharacterFetched value) characterFetched,
     required TResult Function(CharacterFaild value) characterFaild,
     required TResult Function(CharacterEndOfList value) characterEndOfList,
@@ -604,6 +820,8 @@ class _$CharacterEndOfListImpl implements CharacterEndOfList {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(CharcterLoadInProgress value)? characterLoadInProgress,
+    TResult? Function(CharcterLoadMoreInProgress value)?
+        characterLoadMoreInProgress,
     TResult? Function(CharacterFetched value)? characterFetched,
     TResult? Function(CharacterFaild value)? characterFaild,
     TResult? Function(CharacterEndOfList value)? characterEndOfList,
@@ -615,6 +833,8 @@ class _$CharacterEndOfListImpl implements CharacterEndOfList {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CharcterLoadInProgress value)? characterLoadInProgress,
+    TResult Function(CharcterLoadMoreInProgress value)?
+        characterLoadMoreInProgress,
     TResult Function(CharacterFetched value)? characterFetched,
     TResult Function(CharacterFaild value)? characterFaild,
     TResult Function(CharacterEndOfList value)? characterEndOfList,
