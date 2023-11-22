@@ -46,7 +46,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
         emit(CharacterFaild(e.toString()));
       }
     } else {
-      emit(const CharacterEndOfList());
+      emit(CharacterEndOfList(charactersRepository.allCharacters));
     }
   }
 }

@@ -32,12 +32,11 @@ class LocationsScreen extends StatelessWidget {
               locations: locations,
             );
           },
-          locationEndOfList: () => const Center(
-            child: Text(
-              'End of list',
-              textAlign: TextAlign.center,
-            ),
-          ),
+          locationEndOfList: (locations) {
+            return LocationsList(
+              locations: locations,
+            );
+          },
           locationFaild: (e) => FaildStateWidget(
             messaage: e,
             action: () => refresh(context),

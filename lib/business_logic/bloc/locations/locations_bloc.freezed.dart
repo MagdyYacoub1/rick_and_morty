@@ -24,7 +24,7 @@ mixin _$LocationState {
     required TResult Function(ApiResponse<Location> apiResponse)
         locationFetched,
     required TResult Function(String message) locationFaild,
-    required TResult Function() locationEndOfList,
+    required TResult Function(List<Location> allLocations) locationEndOfList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -33,7 +33,7 @@ mixin _$LocationState {
     TResult? Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult? Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult? Function(String message)? locationFaild,
-    TResult? Function()? locationEndOfList,
+    TResult? Function(List<Location> allLocations)? locationEndOfList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,7 +42,7 @@ mixin _$LocationState {
     TResult Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult Function(String message)? locationFaild,
-    TResult Function()? locationEndOfList,
+    TResult Function(List<Location> allLocations)? locationEndOfList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -145,7 +145,7 @@ class _$LocationLoadInProgressImpl implements LocationLoadInProgress {
     required TResult Function(ApiResponse<Location> apiResponse)
         locationFetched,
     required TResult Function(String message) locationFaild,
-    required TResult Function() locationEndOfList,
+    required TResult Function(List<Location> allLocations) locationEndOfList,
   }) {
     return locationLoadInProgress();
   }
@@ -157,7 +157,7 @@ class _$LocationLoadInProgressImpl implements LocationLoadInProgress {
     TResult? Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult? Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult? Function(String message)? locationFaild,
-    TResult? Function()? locationEndOfList,
+    TResult? Function(List<Location> allLocations)? locationEndOfList,
   }) {
     return locationLoadInProgress?.call();
   }
@@ -169,7 +169,7 @@ class _$LocationLoadInProgressImpl implements LocationLoadInProgress {
     TResult Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult Function(String message)? locationFaild,
-    TResult Function()? locationEndOfList,
+    TResult Function(List<Location> allLocations)? locationEndOfList,
     required TResult orElse(),
   }) {
     if (locationLoadInProgress != null) {
@@ -308,7 +308,7 @@ class _$LocationLoadMoreInProgressImpl implements LocationLoadMoreInProgress {
     required TResult Function(ApiResponse<Location> apiResponse)
         locationFetched,
     required TResult Function(String message) locationFaild,
-    required TResult Function() locationEndOfList,
+    required TResult Function(List<Location> allLocations) locationEndOfList,
   }) {
     return locationLoadMoreInProgress(allLocations);
   }
@@ -320,7 +320,7 @@ class _$LocationLoadMoreInProgressImpl implements LocationLoadMoreInProgress {
     TResult? Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult? Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult? Function(String message)? locationFaild,
-    TResult? Function()? locationEndOfList,
+    TResult? Function(List<Location> allLocations)? locationEndOfList,
   }) {
     return locationLoadMoreInProgress?.call(allLocations);
   }
@@ -332,7 +332,7 @@ class _$LocationLoadMoreInProgressImpl implements LocationLoadMoreInProgress {
     TResult Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult Function(String message)? locationFaild,
-    TResult Function()? locationEndOfList,
+    TResult Function(List<Location> allLocations)? locationEndOfList,
     required TResult orElse(),
   }) {
     if (locationLoadMoreInProgress != null) {
@@ -478,7 +478,7 @@ class _$LocationFetchedImpl implements LocationFetched {
     required TResult Function(ApiResponse<Location> apiResponse)
         locationFetched,
     required TResult Function(String message) locationFaild,
-    required TResult Function() locationEndOfList,
+    required TResult Function(List<Location> allLocations) locationEndOfList,
   }) {
     return locationFetched(apiResponse);
   }
@@ -490,7 +490,7 @@ class _$LocationFetchedImpl implements LocationFetched {
     TResult? Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult? Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult? Function(String message)? locationFaild,
-    TResult? Function()? locationEndOfList,
+    TResult? Function(List<Location> allLocations)? locationEndOfList,
   }) {
     return locationFetched?.call(apiResponse);
   }
@@ -502,7 +502,7 @@ class _$LocationFetchedImpl implements LocationFetched {
     TResult Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult Function(String message)? locationFaild,
-    TResult Function()? locationEndOfList,
+    TResult Function(List<Location> allLocations)? locationEndOfList,
     required TResult orElse(),
   }) {
     if (locationFetched != null) {
@@ -636,7 +636,7 @@ class _$LocationFaildImpl implements LocationFaild {
     required TResult Function(ApiResponse<Location> apiResponse)
         locationFetched,
     required TResult Function(String message) locationFaild,
-    required TResult Function() locationEndOfList,
+    required TResult Function(List<Location> allLocations) locationEndOfList,
   }) {
     return locationFaild(message);
   }
@@ -648,7 +648,7 @@ class _$LocationFaildImpl implements LocationFaild {
     TResult? Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult? Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult? Function(String message)? locationFaild,
-    TResult? Function()? locationEndOfList,
+    TResult? Function(List<Location> allLocations)? locationEndOfList,
   }) {
     return locationFaild?.call(message);
   }
@@ -660,7 +660,7 @@ class _$LocationFaildImpl implements LocationFaild {
     TResult Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult Function(String message)? locationFaild,
-    TResult Function()? locationEndOfList,
+    TResult Function(List<Location> allLocations)? locationEndOfList,
     required TResult orElse(),
   }) {
     if (locationFaild != null) {
@@ -728,6 +728,8 @@ abstract class _$$LocationEndOfListImplCopyWith<$Res> {
   factory _$$LocationEndOfListImplCopyWith(_$LocationEndOfListImpl value,
           $Res Function(_$LocationEndOfListImpl) then) =
       __$$LocationEndOfListImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Location> allLocations});
 }
 
 /// @nodoc
@@ -737,26 +739,59 @@ class __$$LocationEndOfListImplCopyWithImpl<$Res>
   __$$LocationEndOfListImplCopyWithImpl(_$LocationEndOfListImpl _value,
       $Res Function(_$LocationEndOfListImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? allLocations = null,
+  }) {
+    return _then(_$LocationEndOfListImpl(
+      null == allLocations
+          ? _value._allLocations
+          : allLocations // ignore: cast_nullable_to_non_nullable
+              as List<Location>,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$LocationEndOfListImpl implements LocationEndOfList {
-  const _$LocationEndOfListImpl();
+  const _$LocationEndOfListImpl(final List<Location> allLocations)
+      : _allLocations = allLocations;
+
+  final List<Location> _allLocations;
+  @override
+  List<Location> get allLocations {
+    if (_allLocations is EqualUnmodifiableListView) return _allLocations;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_allLocations);
+  }
 
   @override
   String toString() {
-    return 'LocationState.locationEndOfList()';
+    return 'LocationState.locationEndOfList(allLocations: $allLocations)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LocationEndOfListImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$LocationEndOfListImpl &&
+            const DeepCollectionEquality()
+                .equals(other._allLocations, _allLocations));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_allLocations));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LocationEndOfListImplCopyWith<_$LocationEndOfListImpl> get copyWith =>
+      __$$LocationEndOfListImplCopyWithImpl<_$LocationEndOfListImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -767,9 +802,9 @@ class _$LocationEndOfListImpl implements LocationEndOfList {
     required TResult Function(ApiResponse<Location> apiResponse)
         locationFetched,
     required TResult Function(String message) locationFaild,
-    required TResult Function() locationEndOfList,
+    required TResult Function(List<Location> allLocations) locationEndOfList,
   }) {
-    return locationEndOfList();
+    return locationEndOfList(allLocations);
   }
 
   @override
@@ -779,9 +814,9 @@ class _$LocationEndOfListImpl implements LocationEndOfList {
     TResult? Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult? Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult? Function(String message)? locationFaild,
-    TResult? Function()? locationEndOfList,
+    TResult? Function(List<Location> allLocations)? locationEndOfList,
   }) {
-    return locationEndOfList?.call();
+    return locationEndOfList?.call(allLocations);
   }
 
   @override
@@ -791,11 +826,11 @@ class _$LocationEndOfListImpl implements LocationEndOfList {
     TResult Function(List<Location> allLocations)? locationLoadMoreInProgress,
     TResult Function(ApiResponse<Location> apiResponse)? locationFetched,
     TResult Function(String message)? locationFaild,
-    TResult Function()? locationEndOfList,
+    TResult Function(List<Location> allLocations)? locationEndOfList,
     required TResult orElse(),
   }) {
     if (locationEndOfList != null) {
-      return locationEndOfList();
+      return locationEndOfList(allLocations);
     }
     return orElse();
   }
@@ -846,7 +881,13 @@ class _$LocationEndOfListImpl implements LocationEndOfList {
 }
 
 abstract class LocationEndOfList implements LocationState {
-  const factory LocationEndOfList() = _$LocationEndOfListImpl;
+  const factory LocationEndOfList(final List<Location> allLocations) =
+      _$LocationEndOfListImpl;
+
+  List<Location> get allLocations;
+  @JsonKey(ignore: true)
+  _$$LocationEndOfListImplCopyWith<_$LocationEndOfListImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

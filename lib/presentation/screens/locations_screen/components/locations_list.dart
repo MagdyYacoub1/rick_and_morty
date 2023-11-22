@@ -23,9 +23,18 @@ class _LocationsListState extends State<LocationsList> {
     scrollController.addListener(() {
       if (scrollController.position.maxScrollExtent ==
           scrollController.offset) {
-        context.read<LocationBloc>().add(const LocationFetchMore());
+        fetchDataByStateType();
       }
     });
+  }
+
+  void fetchDataByStateType() {
+    context.read<LocationBloc>().state.mapOrNull(
+          locationFetched: (_) => context.read<LocationBloc>().add(
+                const LocationFetchMore(),
+              ),
+          locationEndOfList: (_) => {},
+        );
   }
 
   @override
@@ -46,10 +55,18 @@ class _LocationsListState extends State<LocationsList> {
       itemBuilder: (context, index) {
         return index < widget.locations.length
             ? LocationCard(location: widget.locations[index])
-            : const Padding(
-                padding: EdgeInsets.symmetric(vertical: 32),
+            : Padding(
+                padding: const EdgeInsets.symmetric(vertical: 32),
                 child: Center(
-                  child: CircularProgressIndicator.adaptive(),
+                  child: context.read<LocationBloc>().state.maybeWhen(
+                        orElse: () => const SizedBox(),
+                        locationLoadMoreInProgress: (_) =>
+                            const CircularProgressIndicator.adaptive(),
+                        locationEndOfList: (_) => const Text(
+                          'End of list',
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
                 ),
               );
       },

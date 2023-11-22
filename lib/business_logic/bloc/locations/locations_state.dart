@@ -24,5 +24,7 @@ class LocationState with _$LocationState {
 
   /// End Of List state means the we loaded all data from api
   /// and no more data to fetch
-  const factory LocationState.locationEndOfList() = LocationEndOfList;
+  const factory LocationState.locationEndOfList(
+    List<Location> allLocations,
+  ) = LocationEndOfList;
 }

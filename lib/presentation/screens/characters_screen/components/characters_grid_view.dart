@@ -27,9 +27,18 @@ class _CharactersGridViewState extends State<CharactersGridView> {
     scrollController.addListener(() {
       if (scrollController.position.maxScrollExtent ==
           scrollController.offset) {
-        context.read<CharactersBloc>().add(const CharacterFetchMore());
+        fetchDataByStateType();
       }
     });
+  }
+
+  void fetchDataByStateType() {
+    context.read<CharactersBloc>().state.mapOrNull(
+          characterFetched: (_) => context.read<CharactersBloc>().add(
+                const CharacterFetchMore(),
+              ),
+          characterEndOfList: (_) => {},
+        );
   }
 
   @override
@@ -72,7 +81,7 @@ class _CharactersGridViewState extends State<CharactersGridView> {
                             orElse: () => const SizedBox(),
                             characterLoadMoreInProgress: (_) =>
                                 const CircularProgressIndicator.adaptive(),
-                            characterEndOfList: () => const Text(
+                            characterEndOfList: (_) => const Text(
                               'End of list',
                               textAlign: TextAlign.center,
                             ),

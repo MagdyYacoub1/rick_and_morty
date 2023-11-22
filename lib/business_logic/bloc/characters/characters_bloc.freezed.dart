@@ -24,7 +24,7 @@ mixin _$CharactersState {
     required TResult Function(ApiResponse<Character> apiResponse)
         characterFetched,
     required TResult Function(String message) characterFaild,
-    required TResult Function() characterEndOfList,
+    required TResult Function(List<Character> characters) characterEndOfList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -33,7 +33,7 @@ mixin _$CharactersState {
     TResult? Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult? Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult? Function(String message)? characterFaild,
-    TResult? Function()? characterEndOfList,
+    TResult? Function(List<Character> characters)? characterEndOfList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,7 +42,7 @@ mixin _$CharactersState {
     TResult Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult Function(String message)? characterFaild,
-    TResult Function()? characterEndOfList,
+    TResult Function(List<Character> characters)? characterEndOfList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -145,7 +145,7 @@ class _$CharcterLoadInProgressImpl implements CharcterLoadInProgress {
     required TResult Function(ApiResponse<Character> apiResponse)
         characterFetched,
     required TResult Function(String message) characterFaild,
-    required TResult Function() characterEndOfList,
+    required TResult Function(List<Character> characters) characterEndOfList,
   }) {
     return characterLoadInProgress();
   }
@@ -157,7 +157,7 @@ class _$CharcterLoadInProgressImpl implements CharcterLoadInProgress {
     TResult? Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult? Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult? Function(String message)? characterFaild,
-    TResult? Function()? characterEndOfList,
+    TResult? Function(List<Character> characters)? characterEndOfList,
   }) {
     return characterLoadInProgress?.call();
   }
@@ -169,7 +169,7 @@ class _$CharcterLoadInProgressImpl implements CharcterLoadInProgress {
     TResult Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult Function(String message)? characterFaild,
-    TResult Function()? characterEndOfList,
+    TResult Function(List<Character> characters)? characterEndOfList,
     required TResult orElse(),
   }) {
     if (characterLoadInProgress != null) {
@@ -309,7 +309,7 @@ class _$CharcterLoadMoreInProgressImpl implements CharcterLoadMoreInProgress {
     required TResult Function(ApiResponse<Character> apiResponse)
         characterFetched,
     required TResult Function(String message) characterFaild,
-    required TResult Function() characterEndOfList,
+    required TResult Function(List<Character> characters) characterEndOfList,
   }) {
     return characterLoadMoreInProgress(characters);
   }
@@ -321,7 +321,7 @@ class _$CharcterLoadMoreInProgressImpl implements CharcterLoadMoreInProgress {
     TResult? Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult? Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult? Function(String message)? characterFaild,
-    TResult? Function()? characterEndOfList,
+    TResult? Function(List<Character> characters)? characterEndOfList,
   }) {
     return characterLoadMoreInProgress?.call(characters);
   }
@@ -333,7 +333,7 @@ class _$CharcterLoadMoreInProgressImpl implements CharcterLoadMoreInProgress {
     TResult Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult Function(String message)? characterFaild,
-    TResult Function()? characterEndOfList,
+    TResult Function(List<Character> characters)? characterEndOfList,
     required TResult orElse(),
   }) {
     if (characterLoadMoreInProgress != null) {
@@ -479,7 +479,7 @@ class _$CharacterFetchedImpl implements CharacterFetched {
     required TResult Function(ApiResponse<Character> apiResponse)
         characterFetched,
     required TResult Function(String message) characterFaild,
-    required TResult Function() characterEndOfList,
+    required TResult Function(List<Character> characters) characterEndOfList,
   }) {
     return characterFetched(apiResponse);
   }
@@ -491,7 +491,7 @@ class _$CharacterFetchedImpl implements CharacterFetched {
     TResult? Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult? Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult? Function(String message)? characterFaild,
-    TResult? Function()? characterEndOfList,
+    TResult? Function(List<Character> characters)? characterEndOfList,
   }) {
     return characterFetched?.call(apiResponse);
   }
@@ -503,7 +503,7 @@ class _$CharacterFetchedImpl implements CharacterFetched {
     TResult Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult Function(String message)? characterFaild,
-    TResult Function()? characterEndOfList,
+    TResult Function(List<Character> characters)? characterEndOfList,
     required TResult orElse(),
   }) {
     if (characterFetched != null) {
@@ -638,7 +638,7 @@ class _$CharacterFaildImpl implements CharacterFaild {
     required TResult Function(ApiResponse<Character> apiResponse)
         characterFetched,
     required TResult Function(String message) characterFaild,
-    required TResult Function() characterEndOfList,
+    required TResult Function(List<Character> characters) characterEndOfList,
   }) {
     return characterFaild(message);
   }
@@ -650,7 +650,7 @@ class _$CharacterFaildImpl implements CharacterFaild {
     TResult? Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult? Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult? Function(String message)? characterFaild,
-    TResult? Function()? characterEndOfList,
+    TResult? Function(List<Character> characters)? characterEndOfList,
   }) {
     return characterFaild?.call(message);
   }
@@ -662,7 +662,7 @@ class _$CharacterFaildImpl implements CharacterFaild {
     TResult Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult Function(String message)? characterFaild,
-    TResult Function()? characterEndOfList,
+    TResult Function(List<Character> characters)? characterEndOfList,
     required TResult orElse(),
   }) {
     if (characterFaild != null) {
@@ -730,6 +730,8 @@ abstract class _$$CharacterEndOfListImplCopyWith<$Res> {
   factory _$$CharacterEndOfListImplCopyWith(_$CharacterEndOfListImpl value,
           $Res Function(_$CharacterEndOfListImpl) then) =
       __$$CharacterEndOfListImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Character> characters});
 }
 
 /// @nodoc
@@ -739,26 +741,59 @@ class __$$CharacterEndOfListImplCopyWithImpl<$Res>
   __$$CharacterEndOfListImplCopyWithImpl(_$CharacterEndOfListImpl _value,
       $Res Function(_$CharacterEndOfListImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? characters = null,
+  }) {
+    return _then(_$CharacterEndOfListImpl(
+      null == characters
+          ? _value._characters
+          : characters // ignore: cast_nullable_to_non_nullable
+              as List<Character>,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$CharacterEndOfListImpl implements CharacterEndOfList {
-  const _$CharacterEndOfListImpl();
+  const _$CharacterEndOfListImpl(final List<Character> characters)
+      : _characters = characters;
+
+  final List<Character> _characters;
+  @override
+  List<Character> get characters {
+    if (_characters is EqualUnmodifiableListView) return _characters;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_characters);
+  }
 
   @override
   String toString() {
-    return 'CharactersState.characterEndOfList()';
+    return 'CharactersState.characterEndOfList(characters: $characters)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CharacterEndOfListImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$CharacterEndOfListImpl &&
+            const DeepCollectionEquality()
+                .equals(other._characters, _characters));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_characters));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CharacterEndOfListImplCopyWith<_$CharacterEndOfListImpl> get copyWith =>
+      __$$CharacterEndOfListImplCopyWithImpl<_$CharacterEndOfListImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -769,9 +804,9 @@ class _$CharacterEndOfListImpl implements CharacterEndOfList {
     required TResult Function(ApiResponse<Character> apiResponse)
         characterFetched,
     required TResult Function(String message) characterFaild,
-    required TResult Function() characterEndOfList,
+    required TResult Function(List<Character> characters) characterEndOfList,
   }) {
-    return characterEndOfList();
+    return characterEndOfList(characters);
   }
 
   @override
@@ -781,9 +816,9 @@ class _$CharacterEndOfListImpl implements CharacterEndOfList {
     TResult? Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult? Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult? Function(String message)? characterFaild,
-    TResult? Function()? characterEndOfList,
+    TResult? Function(List<Character> characters)? characterEndOfList,
   }) {
-    return characterEndOfList?.call();
+    return characterEndOfList?.call(characters);
   }
 
   @override
@@ -793,11 +828,11 @@ class _$CharacterEndOfListImpl implements CharacterEndOfList {
     TResult Function(List<Character> characters)? characterLoadMoreInProgress,
     TResult Function(ApiResponse<Character> apiResponse)? characterFetched,
     TResult Function(String message)? characterFaild,
-    TResult Function()? characterEndOfList,
+    TResult Function(List<Character> characters)? characterEndOfList,
     required TResult orElse(),
   }) {
     if (characterEndOfList != null) {
-      return characterEndOfList();
+      return characterEndOfList(characters);
     }
     return orElse();
   }
@@ -848,7 +883,13 @@ class _$CharacterEndOfListImpl implements CharacterEndOfList {
 }
 
 abstract class CharacterEndOfList implements CharactersState {
-  const factory CharacterEndOfList() = _$CharacterEndOfListImpl;
+  const factory CharacterEndOfList(final List<Character> characters) =
+      _$CharacterEndOfListImpl;
+
+  List<Character> get characters;
+  @JsonKey(ignore: true)
+  _$$CharacterEndOfListImplCopyWith<_$CharacterEndOfListImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

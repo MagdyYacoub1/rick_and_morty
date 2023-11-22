@@ -37,9 +37,10 @@ class LocationBloc extends Bloc<LocationsEvent, LocationState> {
   }
 
   Future<void> _fetchMore(Emitter<LocationState> emit) async {
+    final locationsRepository = LocationsRepository();
     if (_pageCount < (state as LocationFetched).apiResponse.info.pages) {
+      emit(LocationLoadMoreInProgress(locationsRepository.allLocations));
       try {
-        final locationsRepository = LocationsRepository();
         _pageCount++;
         final response = await locationsRepository.getLocations(_pageCount);
         emit(LocationFetched(response));
@@ -47,7 +48,7 @@ class LocationBloc extends Bloc<LocationsEvent, LocationState> {
         emit(LocationFaild(e.toString()));
       }
     } else {
-      emit(const LocationEndOfList());
+      emit(LocationEndOfList(locationsRepository.allLocations));
     }
   }
 }

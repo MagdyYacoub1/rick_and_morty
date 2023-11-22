@@ -25,5 +25,7 @@ class CharactersState with _$CharactersState {
 
   /// End Of List state means the we loaded all data from api
   /// and no more data to fetch
-  const factory CharactersState.characterEndOfList() = CharacterEndOfList;
+  const factory CharactersState.characterEndOfList(
+    List<Character> characters,
+  ) = CharacterEndOfList;
 }

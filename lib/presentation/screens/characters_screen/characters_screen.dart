@@ -31,12 +31,11 @@ class CharactersScreen extends StatelessWidget {
               characters: characters,
             );
           },
-          characterEndOfList: () => const Center(
-            child: Text(
-              'End of list',
-              textAlign: TextAlign.center,
-            ),
-          ),
+          characterEndOfList: (characters) {
+            return CharactersGridView(
+              characters: characters,
+            );
+          },
           characterFaild: (e) => FaildStateWidget(
             messaage: e,
             action: () => refresh(context),
