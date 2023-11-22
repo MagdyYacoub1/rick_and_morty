@@ -6,37 +6,12 @@ import 'package:rick_and_morty/presentation/screens/locations_screen/components/
 import '../../widgets/faild_state_widget.dart';
 
 /// Shows a list of all Locations
-class LocationsScreen extends StatefulWidget {
+class LocationsScreen extends StatelessWidget {
   /// Locations screen
   const LocationsScreen({super.key});
 
-  @override
-  State<LocationsScreen> createState() => _LocationsScreenState();
-}
-
-class _LocationsScreenState extends State<LocationsScreen> {
-  late ScrollController scrollController;
-
-  @override
-  void initState() {
-    super.initState();
-    scrollController = ScrollController();
-    scrollController.addListener(() {
-      if (scrollController.position.maxScrollExtent ==
-          scrollController.offset) {
-        context.read<LocationBloc>().add(const LocationFetchMore());
-      }
-    });
-  }
-
-  Future<void> refresh() async {
+  Future<void> refresh(BuildContext context) async {
     context.read<LocationBloc>().add(const LocationFetch());
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    scrollController.dispose();
   }
 
   @override
@@ -65,7 +40,7 @@ class _LocationsScreenState extends State<LocationsScreen> {
           ),
           locationFaild: (e) => FaildStateWidget(
             messaage: e,
-            action: refresh,
+            action: () => refresh(context),
           ),
         );
       },

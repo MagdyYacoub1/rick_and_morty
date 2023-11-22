@@ -17,24 +17,21 @@ class CharacterDetailscreen extends StatelessWidget {
         context.read<CharactersBloc>().currentlySelectedCharacter!;
     final imageHeight = MediaQuery.of(context).size.height * 0.4;
     return Scaffold(
-      body: ColoredBox(
-        color: AppColors.teal.withOpacity(0.3),
-        child: CustomScrollView(
-          physics: const BouncingScrollPhysics(),
-          slivers: [
-            SliverAppBar(
-              stretch: true,
-              floating: false,
-              pinned: true,
-              expandedHeight: imageHeight,
-              flexibleSpace: FlexibleImageArea(
-                  character: character, imageHeight: imageHeight),
-            ),
-            const SliverToBoxAdapter(
-              child: ExtendedDetails(),
-            ),
-          ],
-        ),
+      body: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
+        slivers: [
+          SliverAppBar(
+            stretch: true,
+            floating: false,
+            pinned: true,
+            expandedHeight: imageHeight,
+            flexibleSpace: FlexibleImageArea(
+                character: character, imageHeight: imageHeight),
+          ),
+          const SliverToBoxAdapter(
+            child: ExtendedDetails(),
+          ),
+        ],
       ),
     );
   }

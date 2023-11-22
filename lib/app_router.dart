@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/business_logic/bloc/characters/characters_bloc.dart';
+import 'package:rick_and_morty/business_logic/bloc/locations/locations_bloc.dart';
 import 'package:rick_and_morty/business_logic/cubit/home_tab_index_cubit.dart';
 import 'package:rick_and_morty/constants/stings.dart';
 import 'package:rick_and_morty/presentation/screens/characters_details_screen/characters_details_screen.dart';
@@ -27,6 +28,9 @@ class AppRouter {
               BlocProvider(
                 create: (context) =>
                     charactersBloc..add(const CharacterFetch()),
+              ),
+              BlocProvider(
+                create: (context) => LocationBloc()..add(const LocationFetch()),
               ),
               BlocProvider(
                 create: (context) => HomeTabIndexCubit(),

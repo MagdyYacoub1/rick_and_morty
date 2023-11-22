@@ -31,23 +31,20 @@ class LocationBloc extends Bloc<LocationsEvent, LocationState> {
       emit(LocationFetched(response));
     } catch (e) {
       emit(
-        const LocationFaild(
-          'Unable to load data \n Please check your network',
-        ),
+        LocationFaild(e.toString()),
       );
     }
   }
 
   Future<void> _fetchMore(Emitter<LocationState> emit) async {
-    if (_pageCount <= (state as LocationFetched).apiResponse.info.pages) {
+    if (_pageCount < (state as LocationFetched).apiResponse.info.pages) {
       try {
         final locationsRepository = LocationsRepository();
         _pageCount++;
         final response = await locationsRepository.getLocations(_pageCount);
         emit(LocationFetched(response));
       } catch (e) {
-        emit(const LocationFaild(
-            'Unable to load data \n Please check your network'));
+        emit(LocationFaild(e.toString()));
       }
     } else {
       emit(const LocationEndOfList());

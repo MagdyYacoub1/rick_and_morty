@@ -29,7 +29,7 @@ mixin _$Location {
   @JsonKey(name: 'dimension')
   String get dimension => throw _privateConstructorUsedError;
   @JsonKey(name: 'residents')
-  List<Character> get residents => throw _privateConstructorUsedError;
+  List<String> get residents => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -47,7 +47,7 @@ abstract class $LocationCopyWith<$Res> {
       @JsonKey(name: 'name') String name,
       @JsonKey(name: 'type') String type,
       @JsonKey(name: 'dimension') String dimension,
-      @JsonKey(name: 'residents') List<Character> residents});
+      @JsonKey(name: 'residents') List<String> residents});
 }
 
 /// @nodoc
@@ -89,7 +89,7 @@ class _$LocationCopyWithImpl<$Res, $Val extends Location>
       residents: null == residents
           ? _value.residents
           : residents // ignore: cast_nullable_to_non_nullable
-              as List<Character>,
+              as List<String>,
     ) as $Val);
   }
 }
@@ -107,7 +107,7 @@ abstract class _$$LocationImplCopyWith<$Res>
       @JsonKey(name: 'name') String name,
       @JsonKey(name: 'type') String type,
       @JsonKey(name: 'dimension') String dimension,
-      @JsonKey(name: 'residents') List<Character> residents});
+      @JsonKey(name: 'residents') List<String> residents});
 }
 
 /// @nodoc
@@ -147,7 +147,7 @@ class __$$LocationImplCopyWithImpl<$Res>
       residents: null == residents
           ? _value._residents
           : residents // ignore: cast_nullable_to_non_nullable
-              as List<Character>,
+              as List<String>,
     ));
   }
 }
@@ -161,7 +161,7 @@ class _$LocationImpl with DiagnosticableTreeMixin implements _Location {
       @JsonKey(name: 'name') required this.name,
       @JsonKey(name: 'type') required this.type,
       @JsonKey(name: 'dimension') required this.dimension,
-      @JsonKey(name: 'residents') required final List<Character> residents})
+      @JsonKey(name: 'residents') required final List<String> residents})
       : _residents = residents;
 
   factory _$LocationImpl.fromJson(Map<String, dynamic> json) =>
@@ -179,10 +179,10 @@ class _$LocationImpl with DiagnosticableTreeMixin implements _Location {
   @override
   @JsonKey(name: 'dimension')
   final String dimension;
-  final List<Character> _residents;
+  final List<String> _residents;
   @override
   @JsonKey(name: 'residents')
-  List<Character> get residents {
+  List<String> get residents {
     if (_residents is EqualUnmodifiableListView) return _residents;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_residents);
@@ -240,12 +240,12 @@ class _$LocationImpl with DiagnosticableTreeMixin implements _Location {
 
 abstract class _Location implements Location {
   const factory _Location(
-      {@JsonKey(name: 'id') required final int id,
-      @JsonKey(name: 'name') required final String name,
-      @JsonKey(name: 'type') required final String type,
-      @JsonKey(name: 'dimension') required final String dimension,
-      @JsonKey(name: 'residents')
-      required final List<Character> residents}) = _$LocationImpl;
+          {@JsonKey(name: 'id') required final int id,
+          @JsonKey(name: 'name') required final String name,
+          @JsonKey(name: 'type') required final String type,
+          @JsonKey(name: 'dimension') required final String dimension,
+          @JsonKey(name: 'residents') required final List<String> residents}) =
+      _$LocationImpl;
 
   factory _Location.fromJson(Map<String, dynamic> json) =
       _$LocationImpl.fromJson;
@@ -264,7 +264,7 @@ abstract class _Location implements Location {
   String get dimension;
   @override
   @JsonKey(name: 'residents')
-  List<Character> get residents;
+  List<String> get residents;
   @override
   @JsonKey(ignore: true)
   _$$LocationImplCopyWith<_$LocationImpl> get copyWith =>

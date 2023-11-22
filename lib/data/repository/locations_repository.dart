@@ -4,6 +4,8 @@ import 'package:rick_and_morty/data/models/info.dart';
 import 'package:rick_and_morty/data/models/location.dart';
 import 'package:rick_and_morty/data/web_services/web_serviece.dart';
 
+import '../../constants/helper.dart';
+
 ///Responsible for getting Characters from json responce
 class LocationsRepository {
   ///Creates a repo instance
@@ -24,11 +26,12 @@ class LocationsRepository {
         'page': pageCount,
       },
     );
+    Log.debug(pageCount);
     allLocations.addAll((response.data['results'] as List<dynamic>)
         .map((e) => Location.fromJson(e))
         .toList());
     final repository = ApiResponse<Location>(
-      info: Info.fromJson(response.data['info'] as Map<String, dynamic>),
+      info: Info.fromJson(response.data['info']),
       data: allLocations,
     );
     return repository;

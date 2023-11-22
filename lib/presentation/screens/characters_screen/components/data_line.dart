@@ -63,7 +63,7 @@ class DataLine extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            if (title == 'Species' && status != null)
+            if (status != null)
               LivenessIndicator(
                 status: status!,
                 bigger: bigger,

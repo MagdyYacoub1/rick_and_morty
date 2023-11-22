@@ -36,7 +36,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
 
   Future<void> _fetchMore(Emitter<CharactersState> emit) async {
     final charactersRepository = CharactersRepository();
-    if (_pageCount <= (state as CharacterFetched).apiResponse.info.pages) {
+    if (_pageCount < (state as CharacterFetched).apiResponse.info.pages) {
       emit(CharcterLoadMoreInProgress(charactersRepository.allCharacters));
       try {
         _pageCount++;

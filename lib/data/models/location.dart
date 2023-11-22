@@ -16,7 +16,7 @@ class Location with _$Location {
     @JsonKey(name: 'name') required String name,
     @JsonKey(name: 'type') required String type,
     @JsonKey(name: 'dimension') required String dimension,
-    @JsonKey(name: 'residents') required List<Character> residents,
+    @JsonKey(name: 'residents') required List<String> residents,
   }) = _Location;
 
   ///Used to decode instances from json

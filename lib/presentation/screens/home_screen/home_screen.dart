@@ -3,11 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/business_logic/cubit/home_tab_index_cubit.dart';
 import 'package:rick_and_morty/constants/colors.dart';
 import 'package:rick_and_morty/presentation/screens/characters_screen/characters_screen.dart';
+import 'package:rick_and_morty/presentation/screens/locations_screen/locations_screen.dart';
 
 /// List of screens which the nav bar will be used to navigate between
 List<Widget> screens = [
   const CharactersScreen(),
-  Text("data"),
+  const LocationsScreen(),
 ];
 
 /// Home screens include the bottom nav bar
@@ -32,7 +33,7 @@ class HomeScreen extends StatelessWidget {
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.place),
-                label: 'Planets',
+                label: 'Locations',
               ),
             ],
             selectedItemColor: AppColors.teal,

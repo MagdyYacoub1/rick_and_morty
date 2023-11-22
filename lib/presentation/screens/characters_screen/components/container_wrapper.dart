@@ -43,7 +43,7 @@ class ContainerWrapper extends StatelessWidget {
               )
             : const BorderRadius.only(
                 topRight: Radius.elliptical(20, 25),
-                bottomLeft: const Radius.elliptical(20, 25),
+                bottomLeft: Radius.elliptical(20, 25),
               ),
         side: const BorderSide(
           width: 3,
@@ -51,7 +51,7 @@ class ContainerWrapper extends StatelessWidget {
         ),
       ),
       closedBuilder: (context, openContainer) {
-        return GestureDetector(
+        return InkWell(
           onTap: () {
             context.read<CharactersBloc>().currentlySelectedCharacter =
                 character;
