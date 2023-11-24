@@ -1,8 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'package:rick_and_morty/data/models/character.dart';
-
 part 'location.freezed.dart';
 part 'location.g.dart';
 
